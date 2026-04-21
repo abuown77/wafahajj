@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>وفاء الحج — مسودة عربية للمراجعة الداخلية</title>
+  <meta name="description" content="وفاء الحج — خدمة حج وعمرة بالنيابة، بإشراف شرعي كامل، لمن أراد أن يُتم ركن والديه الراحلين." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Google Fonts: IBM Plex Arabic + Inter + Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Arabic:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles/design-system.css" />
+  <style>
+    /* ===== Page-specific tweaks (مرجعية فقط) ===== */
+    .review-banner {
+      background: var(--color-accent);
+      color: var(--color-neutral);
+      text-align: center;
+      padding: var(--s-2) var(--s-3);
+      font-size: var(--fs-xs);
+      letter-spacing: 0.05em;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245, 241, 232, 0.92);
+      backdrop-filter: saturate(140%) blur(8px);
+      border-bottom: 1px solid var(--color-line);
+    }
+    .navbar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: var(--s-3);
+    }
+    .brand {
+      font-family: var(--font-display);
+      font-size: var(--fs-lg);
+      color: var(--color-secondary);
+      text-decoration: none;
+    }
+    .brand span { color: var(--color-primary); }
+
+    .nav-cta {
+      font-size: var(--fs-xs);
+      padding: var(--s-2) var(--s-3);
+    }
+
+    /* Hero */
+    .hero { padding-block: clamp(var(--s-6), 10vw, var(--s-7)); }
+    .hero__eyebrow {
+      color: var(--color-primary);
+      font-size: var(--fs-xs);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: var(--s-4);
+    }
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw + 1rem, 3.25rem);
+      line-height: 1.25;
+      color: var(--color-secondary);
+      max-width: 18ch;
+      margin-bottom: var(--s-4);
+    }
+    .hero__title em { color: var(--color-primary); font-style: normal; }
+    .hero__actions { display: flex; gap: var(--s-3); flex-wrap: wrap; margin-top: var(--s-5); }
+
+    /* Problem */
+    .problem__questions {
+      display: grid;
+      gap: var(--s-3);
+      margin-top: var(--s-5);
+    }
+    .problem__q {
+      background: var(--color-white);
+      padding: var(--s-4) var(--s-5);
+      border-inline-start: 3px solid var(--color-primary);
+      border-radius: var(--radius-sm);
+      font-size: var(--fs-lg);
+      color: var(--color-secondary);
+    }
+
+    /* Solution features */
+    .feature {
+      padding: var(--s-4);
+    }
+    .feature__mark {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(200, 155, 60, 0.12);
+      color: var(--color-primary);
+      font-weight: 700;
+      font-family: var(--font-en);
+      margin-bottom: var(--s-3);
+    }
+    .feature h3 { font-size: var(--fs-lg); margin-bottom: var(--s-2); }
+    .feature p  { color: var(--color-muted); margin: 0; }
+
+    /* Proof assets */
+    .proof__list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--s-4);
+      display: grid;
+      gap: var(--s-2);
+    }
+    .proof__list li {
+      padding-inline-start: var(--s-4);
+      position: relative;
+    }
+    .proof__list li::before {
+      content: "✓";
+      position: absolute;
+      inset-inline-start: 0;
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+    .proof__gallery { margin-top: var(--s-5); }
+
+    /* Final CTA */
+    .final-cta {
+      text-align: center;
+      padding-block: var(--s-7);
+    }
+    .final-cta h2 {
+      font-family: var(--font-display);
+      font-size: var(--fs-3xl);
+      color: var(--color-primary);
+    }
+    .final-cta p { margin-inline: auto; color: var(--color-neutral); opacity: 0.85; }
+
+    /* Footer */
+    .footer {
+      padding-block: var(--s-5);
+      border-top: 1px solid var(--color-line);
+      font-size: var(--fs-xs);
+      color: var(--color-muted);
+      text-align: center;
+    }
+    .footer .hadith-foot {
+      font-style: italic;
+      color: var(--color-secondary);
+      margin-bottom: var(--s-3);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="review-banner">
+    مسودة داخلية للمراجعة — لا تُنشر. النسخة الإعلانية ستكون بالإنجليزية والسويدية والنرويجية.
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="brand">Wafa <span>Hajj</span> — وفاء الحج</a>
+      <a class="btn btn--gold nav-cta" href="https://wa.me/12342800554?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A9%20%D9%88%D9%81%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AD%D8%AC" target="_blank" rel="noopener">تواصل عبر واتساب</a>
+    </div>
+  </header>
+
+  <!-- ============ HERO (الخطّاف العاطفي) ============ -->
+  <section class="section hero">
+    <div class="container">
+      <p class="hero__eyebrow">وفاء الحج</p>
+      <h1 class="hero__title">
+        توفّي والدك — رحمه الله — وفي قلبه أمنيةٌ لم تكتمل:
+        <em>أن يُتمّ الركن الخامس من الإسلام.</em>
+      </h1>
+      <p class="lead" style="max-width: 44ch;">
+        رحلت والدتك، وبقيَ حجّها ديناً في ذمتها تتمنى قضاءه.
+        <br />
+        أنت من حمل الأمانة بعدهم.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="https://wa.me/12342800554?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A9%20%D9%88%D9%81%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AD%D8%AC" target="_blank" rel="noopener">ابدأ المحادثة على واتساب</a>
+        <a class="btn btn--ghost" href="#pricing">اطّلع على الشفافية الكاملة</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM (تضخيم المشكلة) ============ -->
+  <section class="section section--cream">
+    <div class="container">
+      <p class="eyebrow">من بعيد، كيف تطمئن؟</p>
+      <h2>لكن من بلاد بعيدة عن مكّة، الطريق إلى أداء هذه الأمانة ليس سهلاً.</h2>
+      <hr class="divider" />
+      <div class="problem__questions">
+        <div class="problem__q">بمن تثق؟</div>
+        <div class="problem__q">من الذي سيؤدّيها فعلاً؟</div>
+        <div class="problem__q">كيف تطمئن أنها أُدِّيت باسم والدك، في الميقات، في عرفة، في كل نسك؟</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOLUTION (كشف الحل) ============ -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">كشف الحل</p>
+      <h2><strong>Wafa Hajj (وفاء الحج)</strong></h2>
+      <p class="lead" style="max-width: 60ch;">
+        خدمة يديرها أخٌ لكم ذو خلفية شرعية، أدّى حج البدل بنفسه،
+        ويشرف على كل عملية بإشراف شرعي كامل لضمان أداء الفريضة على الوجه الصحيح.
+      </p>
+      <p style="max-width: 60ch;">
+        من <strong>داخل مكة المكرّمة</strong> مباشرةً، يقوم بأدائها نائبٌ قد قضى حجّ الإسلام عن نفسه أوّلاً —
+        التزاماً بقول النبي ﷺ في حديث شُبرُمة:
+      </p>
+
+      <blockquote class="hadith">«حُجَّ عن نفسك، ثم حُجَّ عن شُبرُمة»</blockquote>
+
+      <p style="max-width: 60ch;">
+        هذا ليس تفضيلاً عندنا، بل <strong>شرطٌ شرعيّ لا استثناء فيه</strong>.
+      </p>
+
+      <div class="grid grid--3" style="margin-top: var(--s-6);">
+        <div class="feature">
+          <div class="feature__mark">١</div>
+          <h3>إشراف شرعي مباشر</h3>
+          <p>المؤسس نفسه يتابع كل ملف، والحجاج من طلبة العلم في مكة.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__mark">٢</div>
+          <h3>نيابة موثقة</h3>
+          <p>كل عملية باسم موكّلها، ومشهودٌ لها بالوثائق والفيديو.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__mark">٣</div>
+          <h3>شفافية مالية</h3>
+          <p>سعر واحد شامل، بدون رسوم خفية أو خطوات مفاجئة.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__mark">٤</div>
+          <h3>قناة واحدة واضحة</h3>
+          <p>كل التواصل عبر واتساب — بدون نماذج طويلة أو منصات مربكة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROOF (حزمة الإثبات الكاملة) ============ -->
+  <section class="section section--neutral">
+    <div class="container">
+      <p class="eyebrow">حزمة الإثبات الكاملة</p>
+      <h2>حين تكتمل المناسك، تستلم عبر واتساب خلال أيام:</h2>
+      <hr class="divider" />
+
+      <ul class="proof__list">
+        <li><strong>فيديو من عرفة</strong> — النائب ينطق اسم والدك/والدتك بوضوح</li>
+        <li><strong>فيديو من ذبح الهدي</strong> داخل الحرم</li>
+        <li><strong>صك الهدي الرسمي</strong> بختم المؤسسة المعتمدة</li>
+        <li><strong>شهادة رسمية</strong> لأداء حج البدل — تحفظها إرثاً لعائلتك</li>
+      </ul>
+
+      <div class="grid grid--3 proof__gallery">
+        <figure class="card" style="padding: var(--s-3);">
+          <div class="asset-slot" aria-label="صورة الشهادة">
+            <div>
+              <strong>شهادة حج البدل</strong>
+              assets/images/certificate.jpg
+            </div>
+          </div>
+          <figcaption style="text-align:center; margin-top: var(--s-2); color: var(--color-muted); font-size: var(--fs-xs);">
+            الشهادة الرسمية (PDF ذهبي)
+          </figcaption>
+        </figure>
+
+        <figure class="card" style="padding: var(--s-3);">
+          <div class="asset-slot" aria-label="صورة صك الهدي">
+            <div>
+              <strong>صك الهدي</strong>
+              assets/images/hady-receipt.jpg
+            </div>
+          </div>
+          <figcaption style="text-align:center; margin-top: var(--s-2); color: var(--color-muted); font-size: var(--fs-xs);">
+            الصك الرسمي المختوم
+          </figcaption>
+        </figure>
+
+        <figure class="card" style="padding: var(--s-3);">
+          <div class="asset-slot" aria-label="ثمبنيل فيديو عرفة">
+            <div>
+              <strong>ثمبنيل فيديو عرفة</strong>
+              assets/images/arafa-thumb.jpg
+            </div>
+          </div>
+          <figcaption style="text-align:center; margin-top: var(--s-2); color: var(--color-muted); font-size: var(--fs-xs);">
+            لقطة من فيديو يوم عرفة
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING (بشفافية تامة) ============ -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <p class="eyebrow">بشفافية تامة</p>
+      <h2>السعر</h2>
+      <hr class="divider" />
+
+      <table class="pricing">
+        <tbody>
+          <tr>
+            <th>
+              <div>حج البدل</div>
+              <div style="color: var(--color-muted); font-weight: 400; font-size: var(--fs-xs); margin-top: var(--s-1);">
+                كامل المناسك + الحزمة الكاملة
+              </div>
+            </th>
+            <td class="price">$2,000</td>
+          </tr>
+          <tr>
+            <th>
+              <div>عمرة البدل</div>
+              <div style="color: var(--color-muted); font-weight: 400; font-size: var(--fs-xs); margin-top: var(--s-1);">
+                كاملة + شهادة
+              </div>
+            </th>
+            <td class="price">$150</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="text-align: center; margin-top: var(--s-4); color: var(--color-secondary); font-weight: 500;">
+        بلا رسوم خفية. بلا تأشيرة. بلا منصة نُسك. بلا سفرٍ منكَ.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS (٤ خطوات) ============ -->
+  <section class="section section--cream">
+    <div class="container">
+      <p class="eyebrow">الرحلة من طلبك إلى الشهادة</p>
+      <h2>٤ خطوات واضحة</h2>
+      <hr class="divider" />
+
+      <ol class="steps" style="margin-top: var(--s-5); max-width: 60ch;">
+        <li class="step">
+          <h3>طلب عبر واتساب</h3>
+          <p>ترسل اسم والدك أو والدتك، وعلاقة الصلة، ونيّة الحج أو العمرة.</p>
+        </li>
+        <li class="step">
+          <h3>اتفاق وتأكيد</h3>
+          <p>نتفق على الخدمة والسعر، ويصلك إيصال التحويل البنكي أو تحويل Payoneer.</p>
+        </li>
+        <li class="step">
+          <h3>تنفيذ المناسك</h3>
+          <p>نائبٌ قضى حجّ الإسلام يؤدّي النسك باسم موكّلك، بإشرافٍ شرعي مباشر.</p>
+        </li>
+        <li class="step">
+          <h3>توثيق وتسليم</h3>
+          <p>تستلم الفيديوهات والصك والشهادة عبر واتساب خلال أيام من اكتمال النسك.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA (الدعوة للفعل) ============ -->
+  <section class="section--dark final-cta">
+    <div class="container">
+      <h2>أَكمِل لوالديك ركنهم الخامس.</h2>
+      <p class="lead" style="color: var(--color-neutral); opacity: 0.88; max-width: 42ch;">
+        تواصل معنا على واتساب — بكرامة، شفافية، ودون أي ضغط.
+      </p>
+      <div style="margin-top: var(--s-5);">
+        <a class="btn btn--gold" href="https://wa.me/12342800554?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A9%20%D9%88%D9%81%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AD%D8%AC" target="_blank" rel="noopener">👉 ابدأ على واتساب</a>
+      </div>
+      <p style="margin-top: var(--s-4); font-size: var(--fs-xs); opacity: 0.7;">
+        الرد خلال ساعات · +1 (234) 280-0554
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="hadith-foot">«حُجَّ عن نفسك، ثم حُجَّ عن شُبرُمة»</p>
+      <p>© 2026 Wafa Hajj — وفاء الحج. جميع الحقوق محفوظة.</p>
+      <p style="margin-top: var(--s-1);">
+        هذه المسودة الداخلية العربية مرجعٌ للمراجعة فقط — النسخ النهائية ستكون بالإنجليزية والسويدية والنرويجية.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
