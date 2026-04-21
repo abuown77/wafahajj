@@ -1,0 +1,93 @@
+---
+import Hadith from '@components/ui/Hadith.astro';
+import { content as c } from '@lib/content';
+---
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.solution.eyebrow[l]}</span>
+      ))}
+    </p>
+
+    <h2 class="display">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.solution.headline[l]}</span>
+      ))}
+    </h2>
+
+    <p class="lead">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.solution.lead[l]}</span>
+      ))}
+    </p>
+
+    <p>
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.solution.body[l]}</span>
+      ))}
+    </p>
+
+    <Hadith />
+
+    <p>
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.solution.afterHadith[l]}</span>
+      ))}
+    </p>
+
+    <div class="features">
+      {[0, 1, 2, 3].map((i) => (
+        <div class="feature">
+          <div class="feature__mark" aria-hidden="true">0{i + 1}</div>
+          <h3 class="feature__title">
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.solution.features[l][i]!.title}</span>
+            ))}
+          </h3>
+          <p class="feature__body">
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.solution.features[l][i]!.body}</span>
+            ))}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--s-4);
+    margin-top: var(--s-6);
+  }
+  .feature {
+    padding: var(--s-3);
+  }
+  .feature__mark {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(200, 155, 60, 0.1);
+    color: var(--c-gold-500);
+    font-family: var(--ff-display);
+    font-style: italic;
+    font-weight: 600;
+    font-size: var(--fs-base);
+    margin-bottom: var(--s-3);
+  }
+  .feature__title {
+    font-size: var(--fs-md);
+    margin-bottom: var(--s-2);
+  }
+  .feature__body {
+    font-size: var(--fs-sm);
+    color: var(--c-text-soft);
+    margin: 0;
+  }
+</style>

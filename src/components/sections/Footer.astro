@@ -1,0 +1,69 @@
+---
+import Logo from '@components/Logo.astro';
+import { SITE, SACRED_TEXT } from '@config/site';
+import { content as c } from '@lib/content';
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <Logo scale={0.55} showWordmark={true} />
+    </div>
+
+    <p class="footer__tagline">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.footer.tagline[l]}</span>
+      ))}
+    </p>
+
+    <p class="footer__identity">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.footer.identity[l]}</span>
+      ))}
+    </p>
+
+    <p class="footer__rights">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.footer.rights[l]}</span>
+      ))}
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--c-paper);
+    padding-block: var(--s-5);
+    border-top: 1px solid var(--c-line);
+    text-align: center;
+  }
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--s-3);
+  }
+  .footer__tagline {
+    font-family: var(--ff-display);
+    font-style: italic;
+    font-size: var(--fs-lg);
+    color: var(--c-secondary);
+    margin: 0;
+  }
+  :global(html[lang="ar"]) .footer__tagline {
+    font-family: var(--ff-arabic);
+    font-style: normal;
+    font-weight: 600;
+  }
+  .footer__identity {
+    margin: 0;
+    font-size: var(--fs-sm);
+    color: var(--c-text-soft);
+  }
+  .footer__rights {
+    margin: 0;
+    font-size: var(--fs-xs);
+    color: var(--c-text-soft);
+    opacity: 0.8;
+  }
+</style>

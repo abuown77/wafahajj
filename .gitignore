@@ -18,6 +18,7 @@ build/
 Thumbs.db
 .vscode/
 .idea/
+.claude/
 
 # Logs
 *.log
@@ -29,4 +30,9 @@ yarn-debug.log*
 
 # Internal strategy docs & briefs — not for public repo
 docs/
+
+# Handoff bundles from Claude Design (local reference only)
+Wafa Hajj/
+Wafa Hajj-handoff.zip
+*.zip
 

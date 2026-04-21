@@ -1,0 +1,64 @@
+---
+import { LOCALES, LOCALE_META, type Locale } from '@config/site';
+---
+
+<nav class="lang-tabs" role="tablist" aria-label="Language">
+  {LOCALES.map((code: Locale) => (
+    <button
+      type="button"
+      role="tab"
+      class="lang-tab"
+      data-lang-tab={code}
+      aria-selected={code === 'en' ? 'true' : 'false'}
+      lang={LOCALE_META[code].lang}
+    >
+      {LOCALE_META[code].label}
+    </button>
+  ))}
+</nav>
+
+<style>
+  .lang-tabs {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-card);
+  }
+
+  .lang-tab {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--c-text-soft);
+    padding: 7px 14px;
+    border-radius: var(--radius-pill);
+    font-family: var(--ff-body);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s var(--ease-soft), color 0.2s var(--ease-soft);
+    line-height: 1;
+  }
+  .lang-tab[lang="ar"] {
+    font-family: var(--ff-arabic);
+    font-size: 0.9375rem;
+  }
+
+  .lang-tab:hover { color: var(--c-secondary); }
+
+  .lang-tab.is-active,
+  .lang-tab[aria-selected="true"] {
+    background: var(--c-secondary);
+    color: var(--c-gold-300);
+    font-weight: 600;
+  }
+
+  :global(html[lang="ar"]) .lang-tabs {
+    direction: ltr; /* keep tab order stable regardless of page direction */
+  }
+</style>

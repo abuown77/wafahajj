@@ -1,0 +1,19 @@
+---
+/**
+ * Hadith card — standalone framed block.
+ * Shows Arabic text + source citation (per approved design).
+ */
+import { SACRED_TEXT } from '@config/site';
+
+interface Props {
+  showSource?: boolean;
+}
+const { showSource = true } = Astro.props;
+---
+
+<blockquote class="hadith">
+  <span dir="rtl">{SACRED_TEXT.hadithArabic}</span>
+  {showSource && (
+    <span class="hadith-translit" dir="rtl">— رواه أبو داود وابن ماجه</span>
+  )}
+</blockquote>

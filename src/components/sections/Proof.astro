@@ -1,0 +1,87 @@
+---
+import AssetSlot from '@components/ui/AssetSlot.astro';
+import { content as c } from '@lib/content';
+---
+
+<section class="section section--cream">
+  <div class="container">
+    <p class="eyebrow">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.proof.eyebrow[l]}</span>
+      ))}
+    </p>
+    <h2>
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.proof.headline[l]}</span>
+      ))}
+    </h2>
+    <div class="ornament" aria-hidden="true"><span class="ornament-dot"></span></div>
+
+    <ul class="proof-list">
+      {[0, 1, 2, 3].map((i) => (
+        <li>
+          <strong>
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.proof.items[l][i]!.label}</span>
+            ))}
+          </strong>
+          {' '}
+          <span>
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>— {c.proof.items[l][i]!.detail}</span>
+            ))}
+          </span>
+        </li>
+      ))}
+    </ul>
+
+    <div class="proof-gallery">
+      <figure>
+        <AssetSlot title="Certificate" filename="certificate.jpg" />
+        <figcaption>
+          {(['en','ar','sv','nb'] as const).map((l) => (
+            <span data-lang={l}>{c.proof.galleryCaptions.certificate[l]}</span>
+          ))}
+        </figcaption>
+      </figure>
+      <figure>
+        <AssetSlot title="Hady Receipt" filename="hady-receipt.jpg" />
+        <figcaption>
+          {(['en','ar','sv','nb'] as const).map((l) => (
+            <span data-lang={l}>{c.proof.galleryCaptions.hadyReceipt[l]}</span>
+          ))}
+        </figcaption>
+      </figure>
+      <figure>
+        <AssetSlot title="Arafah Video" filename="arafa-thumb.jpg" />
+        <figcaption>
+          {(['en','ar','sv','nb'] as const).map((l) => (
+            <span data-lang={l}>{c.proof.galleryCaptions.arafaThumb[l]}</span>
+          ))}
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<style>
+  .proof-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--s-4);
+    margin-top: var(--s-5);
+  }
+  figure {
+    margin: 0;
+    background: #fff;
+    border-radius: var(--radius-md);
+    padding: var(--s-3);
+    box-shadow: var(--shadow-card);
+  }
+  figcaption {
+    text-align: center;
+    margin-top: var(--s-2);
+    font-size: var(--fs-xs);
+    color: var(--c-text-soft);
+  }
+</style>

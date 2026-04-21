@@ -1,0 +1,52 @@
+---
+import WhatsAppButton from '@components/ui/WhatsAppButton.astro';
+import { content as c } from '@lib/content';
+---
+
+<section class="section section--dark final-cta">
+  <div class="container">
+    <h2 class="display">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.finalCta.headline[l]}</span>
+      ))}
+    </h2>
+    <p class="lead">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.finalCta.subhead[l]}</span>
+      ))}
+    </p>
+
+    <div class="final-cta__action">
+      <WhatsAppButton messages={c.whatsappPresets} variant="gold" size="lg" />
+    </div>
+
+    <p class="final-cta__note">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.finalCta.note[l]}</span>
+      ))}
+    </p>
+  </div>
+</section>
+
+<style>
+  .final-cta {
+    text-align: center;
+  }
+  .final-cta h2 {
+    color: var(--c-gold-300);
+    font-size: clamp(2rem, 3.5vw + 1rem, var(--fs-3xl));
+    max-width: 22ch;
+    margin-inline: auto;
+  }
+  .final-cta .lead {
+    max-width: 42ch;
+    margin: 0 auto var(--s-5);
+    color: rgba(245, 241, 232, 0.82);
+  }
+  .final-cta__action { margin: var(--s-4) 0; }
+  .final-cta__note {
+    margin-top: var(--s-4);
+    font-size: var(--fs-sm);
+    color: rgba(245, 241, 232, 0.55);
+  }
+</style>

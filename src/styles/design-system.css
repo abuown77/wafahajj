@@ -1,0 +1,565 @@
+/* =========================================================
+   Wafa Hajj — Design System
+   Based on Claude Design handoff (Badr identity).
+   3 font families · 11 colors · editorial whitespace.
+   ========================================================= */
+
+:root {
+  /* ───── Colors (from Claude Design handoff) ───── */
+  --c-gold-300:    #E4C582;
+  --c-gold-500:    #C89B3C;
+  --c-gold-700:    #A37E2A;
+
+  --c-green-700:   #1E4D2B;
+  --c-green-900:   #133018;
+
+  --c-beige:       #F5F1E8;
+  --c-beige-deep:  #ECE5D3;
+  --c-paper:       #FBF8F1;
+
+  --c-ink:         #2C2C2C;
+  --c-ink-soft:    #5A554C;
+
+  --c-burgundy:    #8B2D2D;
+
+  /* semantic aliases */
+  --c-primary:     var(--c-gold-500);
+  --c-secondary:   var(--c-green-700);
+  --c-bg:          var(--c-beige);
+  --c-text:        var(--c-ink);
+  --c-text-soft:   var(--c-ink-soft);
+  --c-line:        var(--c-beige-deep);
+
+  /* WhatsApp brand */
+  --c-whatsapp:    #25D366;
+
+  /* ───── Typography — 3 families only ───── */
+  --ff-display:    'Playfair Display', Georgia, serif;
+  --ff-body:       'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --ff-arabic:     'IBM Plex Sans Arabic', 'IBM Plex Sans', 'Tahoma', sans-serif;
+
+  /* scale: 12 · 14 · 15 · 17 · 22 · 28 · 40 · 56 · 72 */
+  --fs-xs:   0.75rem;
+  --fs-sm:   0.875rem;
+  --fs-base: 1rem;
+  --fs-md:   1.0625rem;
+  --fs-lg:   1.375rem;
+  --fs-xl:   1.75rem;
+  --fs-2xl:  2.5rem;
+  --fs-3xl:  3.5rem;
+  --fs-4xl:  4.5rem;
+
+  --lh-tight:  1.1;
+  --lh-snug:   1.3;
+  --lh-normal: 1.55;
+  --lh-loose:  1.8;
+
+  --ls-tight:  -0.02em;
+  --ls-normal: 0;
+  --ls-wide:   0.12em;
+  --ls-wider:  0.2em;
+
+  /* ───── Spacing ───── */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 1rem;
+  --s-4: 1.5rem;
+  --s-5: 2.5rem;
+  --s-6: 4rem;
+  --s-7: 6rem;
+  --s-8: 8rem;
+
+  /* ───── Layout ───── */
+  --content-max:   68ch;
+  --container-max: 1200px;
+
+  /* ───── Decoration ───── */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-pill: 999px;
+
+  --shadow-soft:  0 6px 32px rgba(30, 77, 43, 0.10);
+  --shadow-card:  0 2px 12px rgba(44, 44, 44, 0.06);
+  --shadow-float: 0 12px 40px rgba(30, 77, 43, 0.22);
+
+  --ease-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ─────────────────────────────────────────────────────────
+   RESET
+   ───────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-body);
+  font-size: var(--fs-md);
+  line-height: var(--lh-normal);
+  color: var(--c-text);
+  background: var(--c-bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  margin: 0 0 var(--s-3);
+  color: var(--c-secondary);
+}
+
+h1 { font-size: var(--fs-3xl); font-weight: 400; }
+h2 { font-size: var(--fs-2xl); }
+h3 { font-size: var(--fs-xl); }
+
+p  { margin: 0 0 var(--s-3); }
+
+strong { font-weight: 600; color: var(--c-secondary); }
+
+/* ─────────────────────────────────────────────────────────
+   ARABIC / RTL
+   ───────────────────────────────────────────────────────── */
+html[lang="ar"] body {
+  font-family: var(--ff-arabic);
+}
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3 {
+  font-family: var(--ff-arabic);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+/* ─────────────────────────────────────────────────────────
+   I18N DISPLAY — show only active language
+   ───────────────────────────────────────────────────────── */
+[data-lang] { display: none; }
+html[lang="en"] [data-lang="en"],
+html[lang="ar"] [data-lang="ar"],
+html[lang="sv"] [data-lang="sv"],
+html[lang="nb"] [data-lang="nb"] {
+  display: revert;
+}
+
+/* ─────────────────────────────────────────────────────────
+   UTILITIES
+   ───────────────────────────────────────────────────────── */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--s-4);
+}
+
+.section {
+  padding-block: clamp(var(--s-6), 8vw, var(--s-8));
+}
+
+.section--cream { background: var(--c-paper); }
+
+.section--dark {
+  background: var(--c-secondary);
+  color: var(--c-beige);
+  position: relative;
+  overflow: hidden;
+}
+.section--dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(228,197,130,0.14) 0%, transparent 55%);
+  pointer-events: none;
+}
+.section--dark h2,
+.section--dark h3 {
+  color: var(--c-gold-300);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--c-gold-500);
+  margin-bottom: var(--s-3);
+}
+
+.section--dark .eyebrow { color: var(--c-gold-300); }
+
+.lead {
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--c-text-soft);
+  max-width: var(--content-max);
+}
+
+.section--dark .lead { color: rgba(245, 241, 232, 0.78); }
+
+.display {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 4vw + 1rem, var(--fs-3xl));
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+
+.display em,
+.accent {
+  color: var(--c-gold-500);
+  font-style: inherit;
+}
+
+.section--dark .display em,
+.section--dark .accent {
+  color: var(--c-gold-300);
+}
+
+/* ornamental divider */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: var(--s-4) auto;
+}
+.ornament::before,
+.ornament::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--c-gold-500));
+  opacity: 0.65;
+}
+.ornament::after {
+  background: linear-gradient(to left, transparent, var(--c-gold-500));
+}
+.ornament-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-gold-500);
+}
+.section--dark .ornament::before,
+.section--dark .ornament::after {
+  background-image: linear-gradient(to right, transparent, var(--c-gold-300));
+}
+
+/* ─────────────────────────────────────────────────────────
+   BUTTONS
+   ───────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--ff-body);
+  font-weight: 500;
+  font-size: var(--fs-md);
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease-soft), box-shadow 0.25s var(--ease-soft), background-color 0.2s;
+  white-space: nowrap;
+}
+
+html[lang="ar"] .btn { font-family: var(--ff-arabic); }
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn--whatsapp {
+  background: var(--c-whatsapp);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.28);
+}
+.btn--whatsapp:hover {
+  box-shadow: 0 14px 40px rgba(37, 211, 102, 0.38);
+}
+.btn--whatsapp svg { width: 22px; height: 22px; fill: currentColor; }
+
+.btn--gold {
+  background: var(--c-gold-500);
+  color: var(--c-green-900);
+  box-shadow: var(--shadow-soft);
+}
+.btn--gold:hover { background: var(--c-gold-700); color: #fff; }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--c-secondary);
+  border: 1px solid var(--c-gold-500);
+  padding: calc(1rem - 1px) calc(2rem - 1px);
+}
+
+.section--dark .btn--ghost {
+  color: var(--c-gold-300);
+  border-color: var(--c-gold-300);
+}
+
+/* ─────────────────────────────────────────────────────────
+   CARDS
+   ───────────────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--s-5);
+  box-shadow: var(--shadow-card);
+}
+
+/* ─────────────────────────────────────────────────────────
+   HADITH CARD — standalone framed block (design brief)
+   Border-radius 4px (dignity needs crispness, not softness)
+   Generous padding, paper background, centered
+   ───────────────────────────────────────────────────────── */
+.hadith {
+  font-family: var(--ff-arabic);
+  direction: rtl;
+  text-align: center;
+  font-size: clamp(var(--fs-lg), 2.2vw, var(--fs-xl));
+  line-height: 1.9;
+  color: var(--c-secondary);
+  padding: clamp(var(--s-4), 5vw, var(--s-6)) clamp(var(--s-4), 6vw, var(--s-6));
+  border: 1px solid var(--c-gold-500);
+  border-radius: var(--radius-sm); /* 4px — sharp, not rounded */
+  background: var(--c-paper);
+  box-shadow: 0 2px 24px rgba(200, 155, 60, 0.12);
+  margin: clamp(var(--s-5), 6vw, var(--s-7)) auto;
+  max-width: 48ch;
+  font-weight: 600;
+}
+.section--dark .hadith {
+  color: var(--c-gold-300);
+  border-color: rgba(228, 197, 130, 0.5);
+  background: rgba(19, 48, 24, 0.4);
+  box-shadow: 0 2px 24px rgba(228, 197, 130, 0.08);
+}
+.hadith-translit {
+  display: block;
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: calc(var(--fs-sm) * 1);
+  color: var(--c-text-soft);
+  direction: rtl;
+  margin-top: var(--s-3);
+  opacity: 0.75;
+}
+.section--dark .hadith-translit { color: rgba(228, 197, 130, 0.7); }
+
+/* ─────────────────────────────────────────────────────────
+   PLEDGE — "حَجُّكَ أمانتُنا أمام الله" (big, centered, whitespace)
+   ───────────────────────────────────────────────────────── */
+.pledge {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 4vw + 0.5rem, 3rem);
+  line-height: var(--lh-tight);
+  text-align: center;
+  color: var(--c-secondary);
+  margin: clamp(var(--s-6), 10vw, var(--s-8)) auto clamp(var(--s-6), 10vw, var(--s-8));
+  padding-inline: var(--s-4);
+  max-width: 20ch;
+  letter-spacing: var(--ls-tight);
+}
+html[lang="ar"] .pledge {
+  font-family: var(--ff-arabic);
+  font-style: normal;
+  font-weight: 600;
+  max-width: 16ch;
+}
+
+/* ─────────────────────────────────────────────────────────
+   PRICING CARD
+   ───────────────────────────────────────────────────────── */
+.pricing {
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 560px;
+  margin-inline: auto;
+  box-shadow: var(--shadow-soft);
+}
+.pricing-row {
+  padding: var(--s-4) var(--s-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  border-bottom: 1px solid var(--c-line);
+}
+.pricing-row:last-child { border-bottom: 0; }
+.pricing-label {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-size: var(--fs-lg);
+  color: var(--c-secondary);
+  margin-bottom: 4px;
+}
+html[lang="ar"] .pricing-label {
+  font-family: var(--ff-arabic);
+  font-style: normal;
+  font-weight: 600;
+}
+.pricing-sub {
+  font-size: var(--fs-sm);
+  color: var(--c-text-soft);
+}
+.pricing-value {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--fs-xl);
+  color: var(--c-gold-500);
+  white-space: nowrap;
+}
+
+/* ─────────────────────────────────────────────────────────
+   STEPS (4-step process)
+   ───────────────────────────────────────────────────────── */
+.steps {
+  counter-reset: step;
+  display: grid;
+  gap: var(--s-4);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  list-style: none;
+  padding: 0;
+  margin: var(--s-5) 0 0;
+}
+.step {
+  counter-increment: step;
+  position: relative;
+  padding: var(--s-4);
+  padding-top: var(--s-5);
+  background: var(--c-paper);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-line);
+}
+.step::before {
+  content: '0' counter(step);
+  position: absolute;
+  top: -18px;
+  inset-inline-start: var(--s-3);
+  width: 44px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: var(--c-gold-500);
+  color: var(--c-green-900);
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-md);
+  border-radius: var(--radius-sm);
+}
+.step h3 {
+  font-size: var(--fs-md);
+  margin-bottom: var(--s-2);
+  color: var(--c-secondary);
+}
+.step p {
+  font-size: var(--fs-sm);
+  color: var(--c-text-soft);
+  margin: 0;
+  line-height: var(--lh-normal);
+}
+
+/* ─────────────────────────────────────────────────────────
+   PROOF LIST
+   ───────────────────────────────────────────────────────── */
+.proof-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--s-4) 0;
+  display: grid;
+  gap: var(--s-2);
+}
+.proof-list li {
+  position: relative;
+  padding-inline-start: calc(var(--s-4) + 4px);
+  line-height: var(--lh-loose);
+}
+.proof-list li::before {
+  content: '✓';
+  position: absolute;
+  inset-inline-start: 0;
+  color: var(--c-gold-500);
+  font-weight: 700;
+}
+.proof-list strong { color: var(--c-secondary); }
+
+/* ─────────────────────────────────────────────────────────
+   ASSET SLOT (placeholder for not-yet-delivered images)
+   ───────────────────────────────────────────────────────── */
+.asset-slot {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  padding: var(--s-4);
+  text-align: center;
+  color: var(--c-text-soft);
+  font-size: var(--fs-xs);
+  background:
+    repeating-linear-gradient(45deg, var(--c-beige-deep) 0 10px, transparent 10px 20px),
+    var(--c-paper);
+  border: 1px dashed var(--c-gold-500);
+  border-radius: var(--radius-md);
+}
+.asset-slot strong {
+  display: block;
+  color: var(--c-secondary);
+  margin-bottom: var(--s-1);
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-size: var(--fs-sm);
+}
+
+/* ─────────────────────────────────────────────────────────
+   ACCESSIBILITY
+   ───────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--c-gold-500);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  html { scroll-behavior: auto; }
+}

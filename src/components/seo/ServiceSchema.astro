@@ -1,0 +1,38 @@
+---
+import { SITE, PRICING, WHATSAPP } from '@config/site';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: SITE.name,
+  description: 'Hajj and Umrah Badal (proxy pilgrimage) on behalf of deceased Muslim parents, performed from within Makkah under full shariah supervision.',
+  provider: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+  },
+  areaServed: ['US', 'CA', 'SE', 'NO'],
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Hajj Badal',
+      price: PRICING.hajjBadal,
+      priceCurrency: PRICING.currency,
+    },
+    {
+      '@type': 'Offer',
+      name: 'Umrah Badal',
+      price: PRICING.umrahBadal,
+      priceCurrency: PRICING.currency,
+    },
+  ],
+  serviceType: 'Proxy Hajj / Umrah',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: `https://wa.me/${WHATSAPP.number}`,
+    serviceSmsNumber: WHATSAPP.display,
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>

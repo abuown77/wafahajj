@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wafahajj.com/sitemap-index.xml

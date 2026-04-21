@@ -1,0 +1,36 @@
+---
+import { content as c } from '@lib/content';
+---
+
+<section class="section section--cream">
+  <div class="container">
+    <p class="eyebrow">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.process.eyebrow[l]}</span>
+      ))}
+    </p>
+    <h2>
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.process.headline[l]}</span>
+      ))}
+    </h2>
+    <div class="ornament" aria-hidden="true"><span class="ornament-dot"></span></div>
+
+    <ol class="steps">
+      {[0, 1, 2, 3, 4].map((i) => (
+        <li class="step">
+          <h3>
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.process.steps[l][i]!.title}</span>
+            ))}
+          </h3>
+          <p>
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.process.steps[l][i]!.body}</span>
+            ))}
+          </p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

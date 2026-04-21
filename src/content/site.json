@@ -1,0 +1,386 @@
+{
+  "id": "wafahajj",
+
+  "nav": {
+    "cta": {
+      "en": "WhatsApp",
+      "ar": "واتساب",
+      "sv": "WhatsApp",
+      "nb": "WhatsApp"
+    }
+  },
+
+  "hero": {
+    "eyebrow": {
+      "en": "Wafa Hajj · al-Badr",
+      "ar": "وفاء الحج",
+      "sv": "Wafa Hajj · al-Badr",
+      "nb": "Wafa Hajj · al-Badr"
+    },
+    "headline": {
+      "en": "A promise kept.",
+      "ar": "وفاءٌ للعهد،",
+      "sv": "Ett löfte hålls.",
+      "nb": "Et løfte holdt."
+    },
+    "headlineAccent": {
+      "en": "A pillar fulfilled.",
+      "ar": "وإتمامٌ للرُّكن",
+      "sv": "En pelare fullbordas.",
+      "nb": "En søyle fullført."
+    },
+    "subhead": {
+      "en": "Hajj and Umrah Badal on behalf of your late parents — performed from within Makkah, under full shariah supervision, documented with video and certificate.",
+      "ar": "توفّي والدك — رحمه الله — وفي قلبه أمنيةٌ لم تكتمل: أن يُتمّ الركن الخامس من الإسلام. رحلت والدتك، وبقيَ حجّها أمنيةً تتمنى تحقيقها. أنت من حمل الأمانة بعدهم.",
+      "sv": "Hajj och Umrah badal på dina föräldrars vägnar — utförd från Makkah, under full shariah-tillsyn, dokumenterad med video och intyg.",
+      "nb": "Hajj og Umrah badal på dine foreldres vegne — utført fra Makkah, under full shariah-tilsyn, dokumentert med video og sertifikat."
+    },
+    "primaryCta": {
+      "en": "Start on WhatsApp",
+      "ar": "ابدأ على واتساب",
+      "sv": "Starta på WhatsApp",
+      "nb": "Start på WhatsApp"
+    },
+    "secondaryCta": {
+      "en": "See full transparency",
+      "ar": "+1 (234) 280-0554",
+      "sv": "Se full transparens",
+      "nb": "Se full åpenhet"
+    }
+  },
+
+  "problem": {
+    "eyebrow": {
+      "en": "From far away, how can you be sure?",
+      "ar": "",
+      "sv": "Från långt borta — hur kan man vara säker?",
+      "nb": "Fra langt borte — hvordan kan man være trygg?"
+    },
+    "headline": {
+      "en": "From lands far from Makkah, fulfilling this trust is not easy.",
+      "ar": "فريضةٌ لا تتكرّر. موسمٌ لا ينتظر. فرصةٌ لا تُؤجَّل.",
+      "sv": "Från länder långt från Makkah är det inte enkelt att fullfölja detta förtroende.",
+      "nb": "Fra land langt fra Makkah er det ikke enkelt å fullføre dette ansvaret."
+    },
+    "questions": {
+      "en": [
+        "Whom can you trust?",
+        "Who will actually perform it?",
+        "How do you know it was done in your parent's name — at the miqat, at Arafah, at every rite?"
+      ],
+      "ar": [
+        "فريضةٌ لا تتكرّر.",
+        "موسمٌ لا ينتظر.",
+        "فرصةٌ لا تُؤجَّل."
+      ],
+      "sv": [
+        "Vem kan du lita på?",
+        "Vem utför den egentligen?",
+        "Hur vet du att den utfördes i din anhörigs namn — vid miqāt, vid Arafat, vid varje rit?"
+      ],
+      "nb": [
+        "Hvem kan du stole på?",
+        "Hvem utfører den egentlig?",
+        "Hvordan vet du at den ble utført i din kjæres navn — ved miqāt, ved Arafat, ved hver rite?"
+      ]
+    }
+  },
+
+  "solution": {
+    "eyebrow": {
+      "en": "The Solution",
+      "ar": "تحت إشراف شرعي كامل، من داخل مكّة المكرّمة",
+      "sv": "Lösningen",
+      "nb": "Løsningen"
+    },
+    "headline": {
+      "en": "Wafa Hajj",
+      "ar": "Wafa Hajj — وفاء الحج",
+      "sv": "Wafa Hajj",
+      "nb": "Wafa Hajj"
+    },
+    "lead": {
+      "en": "Run by a brother with shariah background who has performed Hajj Badal himself, and who supervises every case under full shariah oversight.",
+      "ar": "خدمة يديرها أخٌ لكم ذو خلفية شرعية، أدّى حج البدل بنفسه، ويشرف على كل عملية بإشراف شرعي كامل لضمان أداء الفريضة على الوجه الصحيح.",
+      "sv": "Drivs av en bror med shariah-utbildning som själv utfört Hajj Badal och övervakar varje fall med full shariah-tillsyn.",
+      "nb": "Drevet av en bror med shariah-bakgrunn som selv har utført Hajj Badal og som overvåker hvert tilfelle med full shariah-tilsyn."
+    },
+    "body": {
+      "en": "From within Makkah directly, the rite is performed by a substitute who has already completed his own Hajj of Islam — in compliance with the Prophet's ﷺ ruling in the Shubrumah narration:",
+      "ar": "من داخل مكة المكرّمة مباشرةً، يقوم بأدائها نائبٌ قد قضى حجّ الإسلام عن نفسه أوّلاً — التزاماً بقول النبي ﷺ في حديث شُبرُمة:",
+      "sv": "Från Makkah direkt utförs riten av en ställföreträdare som redan fullbordat sin egen Hajj al-Islam — i enlighet med Profetens ﷺ avgörande i Shubrumah-narrationen:",
+      "nb": "Fra Makkah direkte utføres riten av en stedfortreder som allerede har fullført sin egen Hajj al-Islam — i tråd med Profetens ﷺ avgjørelse i Shubrumah-narrasjonen:"
+    },
+    "afterHadith": {
+      "en": "This is not a preference — it is a shariah condition with no exception.",
+      "ar": "هذا شرطٌ شرعيٌّ لا استثناء فيه.",
+      "sv": "Detta är ingen preferens — det är ett shariah-villkor utan undantag.",
+      "nb": "Dette er ikke en preferanse — det er et shariah-vilkår uten unntak."
+    },
+    "features": {
+      "en": [
+        { "title": "Direct Shariah Oversight", "body": "The founder supervises every file; pilgrims are students of knowledge in Makkah." },
+        { "title": "Documented Niyābah", "body": "Every rite performed in the name of its principal, witnessed with documents and video." },
+        { "title": "Full Price Transparency", "body": "One flat all-inclusive price. No hidden fees. No surprises." },
+        { "title": "One Clear Channel", "body": "All communication through WhatsApp — no long forms, no confusing platforms." }
+      ],
+      "ar": [
+        { "title": "إشراف شرعي مباشر", "body": "أنا شخصياً أشرف على كل عملية، لست وسيطاً." },
+        { "title": "توثيق مصوَّر", "body": "كل نسك يُؤدّى باسم والدك، مُوثَّقاً بصوت وصورة." },
+        { "title": "قناة واحدة واضحة", "body": "كل التواصل عبر واتساب، بلا نماذج أو منصات معقّدة." },
+        { "title": "نيابةٌ موثقة", "body": "كلُّ عملية باسم موكّلها، ومشهودٌ لها بالوثائق والفيديو." }
+      ],
+      "sv": [
+        { "title": "Direkt shariah-tillsyn", "body": "Grundaren följer varje ärende; pilgrimerna är kunskapsstudenter i Makkah." },
+        { "title": "Dokumenterad niyābah", "body": "Varje rit utförs i huvudmannens namn, styrkt med dokument och video." },
+        { "title": "Full pris-transparens", "body": "Ett enda pris, allt inkluderat. Inga dolda avgifter. Inga överraskningar." },
+        { "title": "En tydlig kanal", "body": "All kommunikation via WhatsApp — inga långa formulär, inga förvirrande plattformar." }
+      ],
+      "nb": [
+        { "title": "Direkte shariah-tilsyn", "body": "Grunnleggeren følger hver sak; pilegrimene er kunnskapsstudenter i Makkah." },
+        { "title": "Dokumentert niyābah", "body": "Hver rite utføres i hovedmannens navn, bekreftet med dokumenter og video." },
+        { "title": "Full pris-åpenhet", "body": "Én fast pris, alt inkludert. Ingen skjulte avgifter. Ingen overraskelser." },
+        { "title": "Én tydelig kanal", "body": "All kommunikasjon via WhatsApp — ingen lange skjemaer, ingen forvirrende plattformer." }
+      ]
+    }
+  },
+
+  "proof": {
+    "eyebrow": {
+      "en": "Complete Proof Package",
+      "ar": "حزمة الإثبات — كما تصل إليك",
+      "sv": "Komplett bevispaket",
+      "nb": "Komplett bevispakke"
+    },
+    "headline": {
+      "en": "When the rites are complete, you receive via WhatsApp within days:",
+      "ar": "حين تكتمل المناسك، تستلم عبر واتساب:",
+      "sv": "När riterna är fullbordade får du via WhatsApp inom några dagar:",
+      "nb": "Når ritene er fullført, mottar du via WhatsApp innen få dager:"
+    },
+    "items": {
+      "en": [
+        { "label": "Video from Arafah", "detail": "the substitute calls your parent's name clearly" },
+        { "label": "Video from Hady slaughter", "detail": "inside the sanctuary" },
+        { "label": "Official Hady Receipt", "detail": "stamped by the accredited institution" },
+        { "label": "Formal Hajj Badal Certificate", "detail": "preserved as a family heirloom" }
+      ],
+      "ar": [
+        { "label": "فيديو من عرفة", "detail": "النائب ينطق اسم والدك بوضوح" },
+        { "label": "فيديو من ذبح الهدي", "detail": "داخل الحرم" },
+        { "label": "صك الهدي الرسمي", "detail": "بختم المؤسسة المعتمدة" },
+        { "label": "شهادة رسمية لأداء حج البدل", "detail": "تحفظها إرثاً لعائلتك" }
+      ],
+      "sv": [
+        { "label": "Video från Arafat", "detail": "ställföreträdaren säger din anhörigs namn tydligt" },
+        { "label": "Video från Hady-offret", "detail": "inom det heliga området" },
+        { "label": "Officiellt Hady-kvitto", "detail": "stämplat av den auktoriserade institutionen" },
+        { "label": "Formellt Hajj Badal-intyg", "detail": "bevarat som familjearvedel" }
+      ],
+      "nb": [
+        { "label": "Video fra Arafat", "detail": "stedfortrederen sier din kjæres navn tydelig" },
+        { "label": "Video fra Hady-ofringen", "detail": "innenfor det hellige området" },
+        { "label": "Offisiell Hady-kvittering", "detail": "stemplet av den autoriserte institusjonen" },
+        { "label": "Formelt Hajj Badal-sertifikat", "detail": "bevart som familiearv" }
+      ]
+    },
+    "galleryCaptions": {
+      "certificate": {
+        "en": "Official Hajj Badal Certificate",
+        "ar": "شهادة حج البدل الرسمية",
+        "sv": "Officiellt Hajj Badal-intyg",
+        "nb": "Offisielt Hajj Badal-sertifikat"
+      },
+      "hadyReceipt": {
+        "en": "Official stamped Hady receipt",
+        "ar": "صكُّ الهدي الرسمي المختوم",
+        "sv": "Officiellt stämplat Hady-kvitto",
+        "nb": "Offisielt stemplet Hady-kvittering"
+      },
+      "arafaThumb": {
+        "en": "Frame from the Day of Arafah video",
+        "ar": "لقطة من فيديو يوم عرفة",
+        "sv": "Stillbild från Arafat-dagens video",
+        "nb": "Stillbilde fra Arafat-dagens video"
+      }
+    }
+  },
+
+  "pricing": {
+    "eyebrow": {
+      "en": "With Full Transparency",
+      "ar": "",
+      "sv": "Med full transparens",
+      "nb": "Med full åpenhet"
+    },
+    "headline": {
+      "en": "Pricing",
+      "ar": "السعر",
+      "sv": "Pris",
+      "nb": "Pris"
+    },
+    "hajjLabel": {
+      "en": "Hajj Badal",
+      "ar": "حج البدل",
+      "sv": "Hajj Badal",
+      "nb": "Hajj Badal"
+    },
+    "hajjPrice": {
+      "en": "$1,990",
+      "ar": "$1,990",
+      "sv": "$1,990",
+      "nb": "$1,990"
+    },
+    "hajjSubtitle": {
+      "en": "Full rites + complete documentation package",
+      "ar": "كامل المناسك + الحزمة الموثَّقة",
+      "sv": "Alla riter + komplett dokumentationspaket",
+      "nb": "Alle riter + komplett dokumentasjonspakke"
+    },
+    "umrahLabel": {
+      "en": "Umrah Badal",
+      "ar": "عمرة البدل",
+      "sv": "Umrah Badal",
+      "nb": "Umrah Badal"
+    },
+    "umrahPrice": {
+      "en": "$150",
+      "ar": "$150",
+      "sv": "$150",
+      "nb": "$150"
+    },
+    "umrahSubtitle": {
+      "en": "Full Umrah + certificate",
+      "ar": "كاملة + شهادة",
+      "sv": "Full Umrah + intyg",
+      "nb": "Full Umrah + sertifikat"
+    },
+    "pledge": {
+      "en": "Your Hajj is our trust before Allah.",
+      "ar": "حَجُّكَ أمانتُنا أمام الله.",
+      "sv": "Your Hajj is our trust before Allah.",
+      "nb": "Your Hajj is our trust before Allah."
+    },
+    "footnote": {
+      "en": "No hidden fees. No visa. No Nusuk platform. No travel required from you.",
+      "ar": "الدفع بالتحويل البنكي. رسوم التحويل من بنكك تُدفع منك. نساعدك في اختيار الطريقة الأقل كلفة.",
+      "sv": "Inga dolda avgifter. Ingen visum. Ingen Nusuk-plattform. Ingen resa för dig.",
+      "nb": "Ingen skjulte avgifter. Ingen visum. Ingen Nusuk-plattform. Ingen reise for deg."
+    }
+  },
+
+  "process": {
+    "eyebrow": {
+      "en": "From Your Request to the Certificate",
+      "ar": "من طلبك إلى شهادتك",
+      "sv": "Från begäran till intyg",
+      "nb": "Fra forespørsel til sertifikat"
+    },
+    "headline": {
+      "en": "Four clear steps.",
+      "ar": "خمس خطوات واضحة",
+      "sv": "Fyra tydliga steg.",
+      "nb": "Fire tydelige steg."
+    },
+    "steps": {
+      "en": [
+        { "title": "Request via WhatsApp", "body": "Send your parent's name, your relationship, and whether Hajj or Umrah." },
+        { "title": "Choose the Rite", "body": "Hajj Badal or Umrah Badal, and when you want it performed." },
+        { "title": "Agreement & Confirmation", "body": "We confirm service and price; you receive bank transfer instructions." },
+        { "title": "Rites Performed", "body": "A substitute who has completed his own Hajj performs the rites under direct shariah supervision." },
+        { "title": "Documentation Delivered", "body": "Videos, receipt, and certificate arrive via WhatsApp within days of completion." }
+      ],
+      "ar": [
+        { "title": "تواصل عبر واتساب", "body": "أرسل اسم والدك أو والدتك، وحالته (متوفى أم حي)، وتسجيل صوتي قصير بنطق الاسم — لضمان أدائه بالصيغة الصحيحة." },
+        { "title": "تحديد النسك", "body": "حج بدل أم عمرة بدل؟ ومتى تريد أداءها." },
+        { "title": "اتفاق وتأكيد", "body": "نؤكد الخدمة والسعر، وتستلم تعليمات الدفع البنكي." },
+        { "title": "أداء المناسك", "body": "النائب الذي قضى حجّه عن نفسه يؤدّي المناسك باسم والدك، تحت إشرافي الشرعي المباشر." },
+        { "title": "تسليم التوثيق", "body": "بعد اكتمال الفريضة، تصلك الفيديوهات والصكوك والشهادة عبر واتساب." }
+      ],
+      "sv": [
+        { "title": "Begäran via WhatsApp", "body": "Skicka din anhörigs namn, er släktskap, och om det är Hajj eller Umrah." },
+        { "title": "Välj rit", "body": "Hajj Badal eller Umrah Badal, och när du önskar den utförd." },
+        { "title": "Överenskommelse & bekräftelse", "body": "Vi bekräftar tjänst och pris; du får instruktioner för banköverföring." },
+        { "title": "Riterna utförs", "body": "En ställföreträdare som fullbordat sin egen Hajj utför riterna under direkt shariah-tillsyn." },
+        { "title": "Dokumentation levereras", "body": "Videor, kvitto och intyg kommer via WhatsApp inom några dagar efter fullbordan." }
+      ],
+      "nb": [
+        { "title": "Forespørsel via WhatsApp", "body": "Send din kjæres navn, deres slektskap, og om det er Hajj eller Umrah." },
+        { "title": "Velg rite", "body": "Hajj Badal eller Umrah Badal, og når du ønsker den utført." },
+        { "title": "Avtale og bekreftelse", "body": "Vi bekrefter tjeneste og pris; du mottar instruksjoner for bankoverføring." },
+        { "title": "Ritene utføres", "body": "En stedfortreder som har fullført sin egen Hajj utfører ritene under direkte shariah-tilsyn." },
+        { "title": "Dokumentasjon leveres", "body": "Videoer, kvittering og sertifikat kommer via WhatsApp innen få dager etter fullføring." }
+      ]
+    }
+  },
+
+  "finalCta": {
+    "headline": {
+      "en": "Complete the Fifth Pillar for your parents.",
+      "ar": "أريدك أن تعرف شيئاً:",
+      "sv": "Fullborda den femte pelaren för dina föräldrar.",
+      "nb": "Fullfør den femte søylen for dine foreldre."
+    },
+    "subhead": {
+      "en": "Reach out on WhatsApp — with dignity, transparency, and no pressure.",
+      "ar": "الحج هذا العام بعد أقل من شهر. والنوّاب الذين أعمل معهم — جميعهم تقريباً محجوزون. إن أردت تحقيق هذه الأمانة عن والدك هذا الموسم، تواصل معي الآن. قد لا أستطيع استقبال طلبك بعد أسبوع.",
+      "sv": "Kontakta oss på WhatsApp — med värdighet, transparens, och utan press.",
+      "nb": "Ta kontakt på WhatsApp — med verdighet, åpenhet, og uten press."
+    },
+    "primaryCta": {
+      "en": "Start on WhatsApp",
+      "ar": "ابدأ الآن على واتساب",
+      "sv": "Starta på WhatsApp",
+      "nb": "Start på WhatsApp"
+    },
+    "note": {
+      "en": "Replies within hours · +1 (234) 280-0554",
+      "ar": "الرد عادةً خلال ساعات · +1 (234) 280-0554",
+      "sv": "Svar inom timmar · +1 (234) 280-0554",
+      "nb": "Svar innen timer · +1 (234) 280-0554"
+    }
+  },
+
+  "footer": {
+    "tagline": {
+      "en": "A promise kept. A pillar fulfilled.",
+      "ar": "«وفاءٌ للعهد، وإتمامٌ للرُّكن»",
+      "sv": "Ett löfte hålls. En pelare fullbordas.",
+      "nb": "Et løfte holdt. En søyle fullført."
+    },
+    "identity": {
+      "en": "Wafa Hajj · Founded 2026 · Amman ↔ Makkah",
+      "ar": "Wafa Hajj · أُسّست 2026 · عمّان ↔ مكّة المكرّمة",
+      "sv": "Wafa Hajj · Grundad 2026 · Amman ↔ Makkah",
+      "nb": "Wafa Hajj · Grunnlagt 2026 · Amman ↔ Makkah"
+    },
+    "rights": {
+      "en": "© 2026 Wafa Hajj — All rights reserved.",
+      "ar": "© 2026 Wafa Hajj — جميع الحقوق محفوظة.",
+      "sv": "© 2026 Wafa Hajj. Alla rättigheter förbehållna.",
+      "nb": "© 2026 Wafa Hajj. Alle rettigheter forbeholdt."
+    }
+  },
+
+  "whatsappPresets": {
+    "en": "Hi, I'm interested in Hajj Badal for my late parent. I found you on wafahajj.com.",
+    "ar": "السلام عليكم، أرغب في الاستفسار عن خدمة وفاء الحج.",
+    "sv": "Hej, jag är intresserad av Hajj Badal för min avlidna anhöriga. Jag hittade er på wafahajj.com.",
+    "nb": "Hei, jeg er interessert i Hajj Badal for min avdøde kjære. Jeg fant dere på wafahajj.com."
+  },
+
+  "seo": {
+    "title": {
+      "en": "Wafa Hajj — Hajj & Umrah Badal from Makkah",
+      "ar": "وفاء الحج — حجٌّ وعمرةٌ بالنيابة من مكة",
+      "sv": "Wafa Hajj — Hajj och Umrah Badal från Makkah",
+      "nb": "Wafa Hajj — Hajj og Umrah Badal fra Makkah"
+    },
+    "description": {
+      "en": "Hajj and Umrah Badal on behalf of your late parents, performed from within Makkah under full shariah supervision. Documented with video, certificate, and Hady receipt. All-inclusive $1,990.",
+      "ar": "خدمة حج البدل وعمرة البدل تحت إشراف شرعي مباشر من داخل مكة المكرمة. توثيق مصوَّر، شهادة رسمية، بلا سفر أو تأشيرة.",
+      "sv": "Hajj och Umrah Badal på dina föräldrars vägnar, från Makkah, under full shariah-tillsyn. Dokumenterat med video, intyg och Hady-kvitto. Allt inkluderat för 1 990 USD.",
+      "nb": "Hajj og Umrah Badal på dine foreldres vegne, fra Makkah, under full shariah-tilsyn. Dokumentert med video, sertifikat og Hady-kvittering. Alt inkludert for 1 990 USD."
+    }
+  }
+}

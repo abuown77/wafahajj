@@ -1,0 +1,49 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import LanguageTabs from '@components/LanguageTabs.astro';
+
+import Hero from '@components/sections/Hero.astro';
+import Problem from '@components/sections/Problem.astro';
+import Solution from '@components/sections/Solution.astro';
+import Proof from '@components/sections/Proof.astro';
+import Pricing from '@components/sections/Pricing.astro';
+import Process from '@components/sections/Process.astro';
+import FinalCTA from '@components/sections/FinalCTA.astro';
+import Footer from '@components/sections/Footer.astro';
+---
+
+<BaseLayout>
+  <div class="lang-tabs-wrapper">
+    <div class="container lang-tabs-wrapper__inner">
+      <LanguageTabs />
+    </div>
+  </div>
+
+  <main id="main">
+    <Hero />
+    <Problem />
+    <Solution />
+    <Proof />
+    <Pricing />
+    <Process />
+    <FinalCTA />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .lang-tabs-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: var(--s-2) 0;
+    background: rgba(30, 77, 43, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(200, 155, 60, 0.2);
+  }
+  .lang-tabs-wrapper__inner {
+    display: flex;
+    justify-content: center;
+  }
+</style>

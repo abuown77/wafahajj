@@ -1,0 +1,127 @@
+---
+import Logo from '@components/Logo.astro';
+import WhatsAppButton from '@components/ui/WhatsAppButton.astro';
+import { content as c } from '@lib/content';
+---
+
+<section class="hero section--dark">
+  <div class="hero__ornament-frame" aria-hidden="true">
+    <span></span><span></span>
+  </div>
+
+  <div class="container hero__inner">
+    <div class="hero__logo">
+      <Logo scale={0.9} stacked onGreen showWordmark={false} />
+    </div>
+
+    <div class="ornament" aria-hidden="true"><span class="ornament-dot"></span></div>
+
+    <p class="hero__eyebrow">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.hero.eyebrow[l]}</span>
+      ))}
+    </p>
+
+    <h1 class="hero__title display">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>
+          {c.hero.headline[l]}
+          <br />
+          <em>{c.hero.headlineAccent[l]}</em>
+        </span>
+      ))}
+    </h1>
+
+    <p class="hero__subhead lead">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.hero.subhead[l]}</span>
+      ))}
+    </p>
+
+    <div class="hero__actions">
+      <WhatsAppButton messages={c.whatsappPresets} variant="whatsapp" size="lg" />
+      <a class="btn btn--ghost" href="#pricing">
+        {(['en','ar','sv','nb'] as const).map((l) => (
+          <span data-lang={l}>{c.hero.secondaryCta[l]}</span>
+        ))}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding-block: clamp(var(--s-6), 10vw, var(--s-8));
+    text-align: center;
+  }
+
+  .hero__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__logo { margin-bottom: var(--s-3); }
+
+  .hero__eyebrow {
+    font-family: var(--ff-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--c-gold-300);
+    margin: 0 0 var(--s-3);
+    opacity: 0.85;
+  }
+
+  .hero__title {
+    margin: 0 auto var(--s-4);
+    color: #fff;
+    max-width: 18ch;
+    font-size: clamp(2rem, 4.5vw + 1rem, 4.25rem);
+  }
+  .hero__title em {
+    color: var(--c-gold-300);
+    font-style: italic;
+    display: inline-block;
+    margin-top: 0.1em;
+  }
+  :global(html[lang="ar"]) .hero__title em { font-style: normal; }
+
+  .hero__subhead {
+    max-width: 52ch;
+    margin: 0 auto var(--s-5);
+    text-align: center;
+    color: rgba(245, 241, 232, 0.82);
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* gold frame decoration (inset borders from handoff) */
+  .hero__ornament-frame {
+    position: absolute;
+    inset: 14px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .hero__ornament-frame span {
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--c-gold-300);
+    opacity: 0.22;
+  }
+  .hero__ornament-frame span:last-child {
+    inset: 8px;
+    border-width: 0.5px;
+    opacity: 0.14;
+  }
+</style>

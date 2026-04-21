@@ -1,0 +1,74 @@
+---
+import { PRICING } from '@config/site';
+import { content as c } from '@lib/content';
+---
+
+<section class="section" id="pricing">
+  <div class="container">
+    <h2 style="text-align: center;">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.pricing.headline[l]}</span>
+      ))}
+    </h2>
+    <div class="ornament" aria-hidden="true"><span class="ornament-dot"></span></div>
+
+    <div class="pricing">
+      <div class="pricing-row">
+        <div>
+          <div class="pricing-label">
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.pricing.hajjLabel[l]}</span>
+            ))}
+          </div>
+          <div class="pricing-sub">
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.pricing.hajjSubtitle[l]}</span>
+            ))}
+          </div>
+        </div>
+        <div class="pricing-value">${PRICING.hajjBadal.toLocaleString()}</div>
+      </div>
+
+      <div class="pricing-row">
+        <div>
+          <div class="pricing-label">
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.pricing.umrahLabel[l]}</span>
+            ))}
+          </div>
+          <div class="pricing-sub">
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.pricing.umrahSubtitle[l]}</span>
+            ))}
+          </div>
+        </div>
+        <div class="pricing-value">${PRICING.umrahBadal}</div>
+      </div>
+    </div>
+
+    {/* Pledge — standalone, surrounded by generous whitespace */}
+    <p class="pledge">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.pricing.pledge[l]}</span>
+      ))}
+    </p>
+
+    <p class="pricing-footnote">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.pricing.footnote[l]}</span>
+      ))}
+    </p>
+  </div>
+</section>
+
+<style>
+  .pricing-footnote {
+    text-align: center;
+    margin-top: var(--s-4);
+    font-size: var(--fs-sm);
+    color: var(--c-text-soft);
+    max-width: 60ch;
+    margin-inline: auto;
+    line-height: var(--lh-loose);
+  }
+</style>

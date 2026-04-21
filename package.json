@@ -1,0 +1,21 @@
+{
+  "name": "wafahajj",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Wafa Hajj — single-page multilingual landing for Hajj and Umrah Badal service.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "@astrojs/sitemap": "^3.2.0",
+    "@astrojs/check": "^0.9.0",
+    "typescript": "^5.6.0"
+  }
+}

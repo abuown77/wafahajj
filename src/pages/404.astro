@@ -1,0 +1,50 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Logo from '@components/Logo.astro';
+---
+
+<BaseLayout>
+  <section class="section section--dark notfound">
+    <div class="container notfound__inner">
+      <Logo scale={0.8} stacked onGreen showWordmark={false} />
+
+      <p class="notfound__code">404</p>
+
+      <h1 class="display notfound__title">
+        <span data-lang="en">Page not found.</span>
+        <span data-lang="ar">الصفحة غير موجودة.</span>
+        <span data-lang="sv">Sidan hittades inte.</span>
+        <span data-lang="nb">Siden ble ikke funnet.</span>
+      </h1>
+
+      <p class="lead notfound__body">
+        <span data-lang="en">The page you requested does not exist. Head back home to continue.</span>
+        <span data-lang="ar">الصفحة التي طلبتها غير موجودة. عُد إلى الرئيسية للمتابعة.</span>
+        <span data-lang="sv">Sidan du begärde finns inte. Gå tillbaka till startsidan.</span>
+        <span data-lang="nb">Siden du ba om finnes ikke. Gå tilbake til forsiden.</span>
+      </p>
+
+      <a class="btn btn--gold" href="/">
+        <span data-lang="en">Home</span>
+        <span data-lang="ar">الرئيسية</span>
+        <span data-lang="sv">Hem</span>
+        <span data-lang="nb">Hjem</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .notfound { min-height: 100vh; display: grid; place-items: center; }
+  .notfound__inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--s-3); }
+  .notfound__code {
+    font-family: var(--ff-display);
+    font-style: italic;
+    font-size: 6rem;
+    color: var(--c-gold-500);
+    margin: var(--s-4) 0 var(--s-2);
+    line-height: 1;
+  }
+  .notfound__title { color: #fff; }
+  .notfound__body { color: rgba(245, 241, 232, 0.8); margin-bottom: var(--s-4); max-width: 42ch; }
+</style>

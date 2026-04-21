@@ -1,0 +1,163 @@
+---
+/**
+ * Wafa Hajj — Badr Logo
+ * Recreated as pure SVG from Claude Design handoff.
+ * No Kaaba, no dome. The full moon = completion of the five pillars.
+ */
+interface Props {
+  scale?: number;          // visual scale multiplier
+  stacked?: boolean;       // true = mark + wordmark stacked vertically
+  onGreen?: boolean;       // adjusts colors for dark green backgrounds
+  showWordmark?: boolean;  // show "Wafa Hajj" text beside/under the mark
+  ariaLabel?: string;
+}
+
+const {
+  scale = 1,
+  stacked = false,
+  onGreen = false,
+  showWordmark = true,
+  ariaLabel = 'Wafa Hajj',
+} = Astro.props;
+
+const markSize = 180 * scale;
+const inscribeColor = '#1E4D2B';
+const rayColor = onGreen ? 'rgba(255,255,255,0.20)' : 'rgba(200,155,60,0.28)';
+const haloStart = onGreen ? 0.55 : 0.55;
+---
+
+<div
+  class:list={['wh-logo', { 'wh-logo--stacked': stacked, 'wh-logo--on-green': onGreen }]}
+  role="img"
+  aria-label={ariaLabel}
+  style={`--wh-logo-scale: ${scale};`}
+>
+  <svg
+    class="wh-logo__mark"
+    width={markSize}
+    height={markSize}
+    viewBox="0 0 180 180"
+    aria-hidden="true"
+  >
+    <defs>
+      <radialGradient id="wh-halo" cx="50%" cy="50%" r="50%">
+        <stop offset="25%" stop-color="#FFFFFF" stop-opacity="1" />
+        <stop offset="48%" stop-color="#FFFFFF" stop-opacity={haloStart} />
+        <stop offset="72%" stop-color="#FFFFFF" stop-opacity="0.18" />
+        <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+
+    {/* 24 light rays */}
+    {Array.from({ length: 24 }).map((_, i) => {
+      const angle = (i * 360) / 24;
+      const long = i % 3 === 0;
+      const r1 = long ? 62 : 58;
+      const r2 = long ? 82 : 74;
+      return (
+        <line
+          x1="90" y1={90 - r1}
+          x2="90" y2={90 - r2}
+          stroke={rayColor}
+          stroke-width={long ? 1.2 : 0.8}
+          stroke-linecap="round"
+          transform={`rotate(${angle} 90 90)`}
+        />
+      );
+    })}
+
+    {/* soft halo */}
+    <circle cx="90" cy="90" r="78" fill="url(#wh-halo)" />
+    <circle cx="90" cy="90" r="60" fill="url(#wh-halo)" />
+
+    {/* pure white moon */}
+    <circle cx="90" cy="90" r="48" fill="#FFFFFF" />
+    <circle
+      cx="90" cy="90" r="48"
+      fill="none"
+      stroke={onGreen ? 'rgba(255,255,255,0.25)' : 'rgba(30,77,43,0.08)'}
+      stroke-width="0.5"
+    />
+
+    {/* Wafa (inscribed) */}
+    <text
+      x="90" y="86"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      font-family="Playfair Display, serif"
+      font-style="italic"
+      font-size="15"
+      font-weight="500"
+      fill={inscribeColor}
+      letter-spacing="0.2"
+    >Wafa</text>
+
+    {/* Hajj (inscribed) */}
+    <text
+      x="90" y="103"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      font-family="Playfair Display, serif"
+      font-style="italic"
+      font-size="15"
+      font-weight="500"
+      fill={inscribeColor}
+      letter-spacing="0.2"
+    >Hajj</text>
+
+    {/* ornament dot */}
+    <circle cx="90" cy="117" r="0.8" fill={inscribeColor} opacity="0.5" />
+  </svg>
+
+  {showWordmark && (
+    <div class="wh-logo__wordmark">
+      <span class="wh-logo__name">Wafa Hajj</span>
+      <span class="wh-logo__nameAr">وفاء الحج</span>
+    </div>
+  )}
+</div>
+
+<style>
+  .wh-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(14px * var(--wh-logo-scale));
+    line-height: 1;
+  }
+  .wh-logo--stacked {
+    flex-direction: column;
+    gap: calc(12px * var(--wh-logo-scale));
+  }
+
+  .wh-logo__mark { display: block; flex-shrink: 0; }
+
+  .wh-logo__wordmark {
+    display: flex;
+    flex-direction: column;
+    gap: calc(3px * var(--wh-logo-scale));
+    line-height: 1;
+  }
+  .wh-logo--stacked .wh-logo__wordmark {
+    align-items: center;
+  }
+
+  .wh-logo__name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: calc(26px * var(--wh-logo-scale));
+    letter-spacing: -0.01em;
+    color: var(--c-secondary);
+  }
+  .wh-logo--on-green .wh-logo__name { color: #ffffff; }
+
+  .wh-logo__nameAr {
+    font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: calc(11px * var(--wh-logo-scale));
+    letter-spacing: 0.3em;
+    color: var(--c-ink-soft);
+    direction: rtl;
+  }
+  .wh-logo--on-green .wh-logo__nameAr { color: rgba(228, 197, 130, 0.7); }
+</style>

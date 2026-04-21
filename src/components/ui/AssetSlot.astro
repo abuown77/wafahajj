@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+  filename: string;
+}
+const { title, filename } = Astro.props;
+---
+
+<div class="asset-slot" role="img" aria-label={title}>
+  <div>
+    <strong>{title}</strong>
+    <code style="font-size: 0.7rem; opacity: 0.6;">{filename}</code>
+  </div>
+</div>
