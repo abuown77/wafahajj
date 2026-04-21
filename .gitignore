@@ -26,3 +26,7 @@ yarn-debug.log*
 
 # Cache
 .cache/
+
+# Internal strategy docs & briefs — not for public repo
+docs/
+
