@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Logo from '@components/Logo.astro';
+
+const BASE = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : import.meta.env.BASE_URL + '/';
 ---
 
 <BaseLayout>
@@ -24,7 +28,7 @@ import Logo from '@components/Logo.astro';
         <span data-lang="nb">Siden du ba om finnes ikke. Gå tilbake til forsiden.</span>
       </p>
 
-      <a class="btn btn--gold" href="/">
+      <a class="btn btn--gold" href={BASE}>
         <span data-lang="en">Home</span>
         <span data-lang="ar">الرئيسية</span>
         <span data-lang="sv">Hem</span>

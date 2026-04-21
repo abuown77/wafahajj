@@ -9,6 +9,11 @@ interface Props {
 const { bodyClass = '' } = Astro.props;
 
 const GA4_ID = import.meta.env.PUBLIC_GA4_ID;
+
+// Normalise base so it always ends with a single "/"
+const BASE = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : import.meta.env.BASE_URL + '/';
 ---
 
 <!doctype html>
@@ -16,8 +21,8 @@ const GA4_ID = import.meta.env.PUBLIC_GA4_ID;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href={`${BASE}favicon.svg`} />
+    <link rel="apple-touch-icon" href={`${BASE}apple-touch-icon.png`} />
 
     <!-- Fonts: 3 families only (Playfair Display + IBM Plex Sans + IBM Plex Sans Arabic) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

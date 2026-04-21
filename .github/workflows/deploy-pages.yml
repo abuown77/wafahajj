@@ -1,0 +1,62 @@
+name: Deploy preview to GitHub Pages
+
+# Builds the Astro site with base=/wafahajj and publishes to GitHub Pages
+# for internal review at https://abuown77.github.io/wafahajj/
+#
+# Production deploys to Cloudflare Pages are handled separately
+# (Cloudflare auto-builds on push — no Actions workflow needed there).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Allow one concurrent deployment; cancel in-progress runs on new pushes
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+# Permissions required by actions/deploy-pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro site (GitHub Pages base)
+        env:
+          DEPLOY_TARGET: gh-pages
+          PUBLIC_WHATSAPP_NUMBER: "12342800554"
+          PUBLIC_SITE_URL: https://abuown77.github.io/wafahajj
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
