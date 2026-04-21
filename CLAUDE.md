@@ -2,7 +2,7 @@
 
 > هذا الملف يُقرأ في بداية كل محادثة جديدة.
 > يُحدّث باستمرار مع تقدم العمل.
-> **آخر تحديث**: 21 أبريل 2026 — توحيد المسار
+> **آخر تحديث**: 21 أبريل 2026 — شراء النطاق + اعتماد Astro و Cloudflare Pages
 
 ---
 
@@ -16,7 +16,13 @@
 
 ### التواصل
 - **WhatsApp**: `+1 (234) 280-0554` → `https://wa.me/12342800554`
-- **Domain**: wafahajj.com (لم يُربط بعد)
+- **Domain**: `wafahajj.com` — ✅ مسجَّل في Cloudflare Registrar (21 أبريل 2026)
+  - انتهاء: **21 أبريل 2027**
+  - Nameservers: `LARA.NS.CLOUDFLARE.COM`, `REMY.NS.CLOUDFLARE.COM` (نشطة)
+  - DNSSEC: غير مفعّل (سنفعّله لاحقاً)
+- **Registrar Owner Email**: `abuown@gmail.com`
+- **الاستضافة المختارة**: Cloudflare Pages (لم يُربط بعد — بانتظار أول build)
+- **البريد الموحَّد المخطَّط**: `info@wafahajj.com` عبر Cloudflare Email Routing → Gmail
 - **القناة الأساسية**: WhatsApp حصراً (لا نماذج دفع، لا chatbot، لا تسجيل دخول)
 
 ### الأسعار (لا تُخفَّض)
@@ -72,6 +78,8 @@
 - [x] كتابة README.md + .gitignore
 - [x] إنشاء Git repo ودفعه إلى GitHub (`abuown77/wafahajj`) — public
 - [x] توحيد المجلد في `C:\Users\mubar\wafahajj\` وحذف المجلد العربي القديم
+- [x] شراء نطاق `wafahajj.com` من Cloudflare Registrar (21 أبريل 2026، سنة كاملة)
+- [x] اعتماد Cloudflare Pages كمنصة استضافة
 
 ---
 
@@ -83,9 +91,10 @@
   - `arafa-thumb.jpg` (ثمبنيل فيديو عرفة)
 - [ ] **Handoff من Claude Design** (هوية، شعار، تصميم نهائي)
 - [ ] **الترجمات من Claude Cowork**: EN / SE / NO
-- [ ] تأكيد اختيار الـ Stack النهائي (Astro أم HTML خالص)
-- [ ] تأكيد منصة الاستضافة (Cloudflare Pages أم Vercel)
-- [ ] إعدادات DNS لربط wafahajj.com
+- [ ] ربط Cloudflare Pages بمستودع GitHub (بعد أول build)
+- [ ] ربط النطاق `wafahajj.com` بمشروع Pages + شهادة SSL
+- [ ] تفعيل Cloudflare Email Routing لـ `info@wafahajj.com`
+- [ ] تفعيل DNSSEC (أمان إضافي)
 
 ---
 
@@ -151,6 +160,9 @@
 | 2026-04-21 | صفحة `index.html` مختصرة بشاشة واحدة | طلب المالك: لا أقسام، CTA واحد لواتساب |
 | 2026-04-21 | توحيد المجلد في `C:\Users\mubar\wafahajj\` + حذف `D:\نيابة\وفاء للحج\` | طلب المالك: مصدر واحد للحقيقة، لا ازدواج |
 | 2026-04-21 | الـ Briefs في `docs/` محلياً فقط (في `.gitignore`) | الـ repo عام — الـ Briefs تحوي معلومات مالية/استراتيجية |
+| 2026-04-21 | اعتماد Astro كـ stack نهائي | i18n نظيف + type-safe content + 0 JS افتراضياً |
+| 2026-04-21 | شراء `wafahajj.com` من Cloudflare Registrar ($10.44/سنة at-cost) | أرخص سعر ثابت + DNS + CDN + email في لوحة واحدة |
+| 2026-04-21 | Cloudflare Pages كمنصة استضافة | أداء CDN متفوق في US/CA/SE/NO + مجاني + تكامل مع النطاق |
 
 ---
 
