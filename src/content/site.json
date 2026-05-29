@@ -3,10 +3,10 @@
 
   "nav": {
     "cta": {
-      "en": "WhatsApp",
-      "ar": "واتساب",
-      "sv": "WhatsApp",
-      "nb": "WhatsApp"
+      "en": "Telegram",
+      "ar": "تلجرام",
+      "sv": "Telegram",
+      "nb": "Telegram"
     }
   },
 
@@ -24,64 +24,50 @@
       "nb": "Et løfte holdt."
     },
     "headlineAccent": {
-      "en": "A pillar fulfilled.",
-      "ar": "وإتمامٌ للرُّكن",
-      "sv": "En pelare fullbordas.",
-      "nb": "En søyle fullført."
+      "en": "An Umrah in their name.",
+      "ar": "وعمرةٌ باسمهما",
+      "sv": "En Umrah i deras namn.",
+      "nb": "En Umrah i deres navn."
     },
     "subhead": {
-      "en": "Hajj and Umrah Badal on behalf of your late parents — performed from within Makkah, under full shariah supervision, documented with video and certificate.",
-      "ar": "توفّي والدك — رحمه الله — وفي قلبه أمنيةٌ لم تكتمل: أن يُتمّ الركن الخامس من الإسلام. رحلت والدتك، وبقيَ حجّها أمنيةً تتمنى تحقيقها. أنت من حمل الأمانة بعدهم.",
-      "sv": "Hajj och Umrah badal på dina föräldrars vägnar — utförd från Makkah, under full shariah-tillsyn, dokumenterad med video och intyg.",
-      "nb": "Hajj og Umrah badal på dine foreldres vegne — utført fra Makkah, under full shariah-tilsyn, dokumentert med video og sertifikat."
+      "en": "Umrah Badal — and Hajj Badal — on behalf of your late parents, performed from within Makkah, under full shariah supervision, documented with a video in their name.",
+      "ar": "توفّي والدك — رحمه الله — وفي قلبه أمنيةٌ لم تكتمل: أن يعتمر ويطوف بالبيت العتيق. رحلت والدتك، وبقيت عمرتها أمنيةً تتمنى تحقيقها. أنت من حمل الأمانة بعدهم.",
+      "sv": "Umrah Badal — och Hajj Badal — på dina föräldrars vägnar, utförd från Makkah, under full shariah-tillsyn, dokumenterad med en video i deras namn.",
+      "nb": "Umrah Badal — og Hajj Badal — på dine foreldres vegne, utført fra Makkah, under full shariah-tilsyn, dokumentert med en video i deres navn."
     },
     "primaryCta": {
-      "en": "Start on WhatsApp",
-      "ar": "ابدأ على واتساب",
-      "sv": "Starta på WhatsApp",
-      "nb": "Start på WhatsApp"
+      "en": "Message us on Telegram",
+      "ar": "تواصل معنا عبر تلجرام",
+      "sv": "Kontakta oss på Telegram",
+      "nb": "Kontakt oss på Telegram"
     },
     "secondaryCta": {
-      "en": "See full transparency",
-      "ar": "+1 (234) 280-0554",
-      "sv": "Se full transparens",
-      "nb": "Se full åpenhet"
+      "en": "See the price — $199",
+      "ar": "اطّلع على السعر — $199",
+      "sv": "Se priset — $199",
+      "nb": "Se prisen — $199"
     }
   },
 
   "problem": {
-    "eyebrow": {
-      "en": "From far away, how can you be sure?",
-      "ar": "",
-      "sv": "Från långt borta — hur kan man vara säker?",
-      "nb": "Fra langt borte — hvordan kan man være trygg?"
-    },
-    "headline": {
-      "en": "From lands far from Makkah, fulfilling this trust is not easy.",
-      "ar": "فريضةٌ لا تتكرّر. موسمٌ لا ينتظر. فرصةٌ لا تُؤجَّل.",
-      "sv": "Från länder långt från Makkah är det inte enkelt att fullfölja detta förtroende.",
-      "nb": "Fra land langt fra Makkah er det ikke enkelt å fullføre dette ansvaret."
-    },
+    "eyebrow": { "en": "", "ar": "", "sv": "", "nb": "" },
+    "headline": { "en": "", "ar": "", "sv": "", "nb": "" },
     "questions": {
       "en": [
-        "Whom can you trust?",
-        "Who will actually perform it?",
-        "How do you know it was done in your parent's name — at the miqat, at Arafah, at every rite?"
+        "Your parents have passed.",
+        "An Umrah in their name — a gift after farewell."
       ],
       "ar": [
-        "فريضةٌ لا تتكرّر.",
-        "موسمٌ لا ينتظر.",
-        "فرصةٌ لا تُؤجَّل."
+        "رحل والداك،",
+        "عمرةٌ باسمهما — برٌّ بعد الرحيل."
       ],
       "sv": [
-        "Vem kan du lita på?",
-        "Vem utför den egentligen?",
-        "Hur vet du att den utfördes i din anhörigs namn — vid miqāt, vid Arafat, vid varje rit?"
+        "Dina föräldrar har gått bort.",
+        "En Umrah i deras namn — en gåva efter avskedet."
       ],
       "nb": [
-        "Hvem kan du stole på?",
-        "Hvem utfører den egentlig?",
-        "Hvordan vet du at den ble utført i din kjæres navn — ved miqāt, ved Arafat, ved hver rite?"
+        "Dine foreldre har gått bort.",
+        "En Umrah i deres navn — en gave etter avskjeden."
       ]
     }
   },
@@ -100,16 +86,16 @@
       "nb": "Wafa Hajj"
     },
     "lead": {
-      "en": "Run by a brother with shariah background who has performed Hajj Badal himself, and who supervises every case under full shariah oversight.",
-      "ar": "خدمة يديرها أخٌ لكم ذو خلفية شرعية، أدّى حج البدل بنفسه، ويشرف على كل عملية بإشراف شرعي كامل لضمان أداء الفريضة على الوجه الصحيح.",
-      "sv": "Drivs av en bror med shariah-utbildning som själv utfört Hajj Badal och övervakar varje fall med full shariah-tillsyn.",
-      "nb": "Drevet av en bror med shariah-bakgrunn som selv har utført Hajj Badal og som overvåker hvert tilfelle med full shariah-tilsyn."
+      "en": "Run by a brother with a shariah background who performs Badal himself — Umrah and Hajj alike — and supervises every case under full shariah oversight.",
+      "ar": "خدمة يديرها أخٌ لكم ذو خلفية شرعية، يؤدّي البدل بنفسه — عمرةً وحجّاً — ويشرف على كل عملية بإشراف شرعي كامل لضمان أدائها على الوجه الصحيح.",
+      "sv": "Drivs av en bror med shariah-utbildning som själv utför Badal — både Umrah och Hajj — och övervakar varje fall med full shariah-tillsyn.",
+      "nb": "Drevet av en bror med shariah-bakgrunn som selv utfører Badal — både Umrah og Hajj — og overvåker hvert tilfelle med full shariah-tilsyn."
     },
     "body": {
-      "en": "From within Makkah directly, the rite is performed by a substitute who has already completed his own Hajj of Islam — in compliance with the Prophet's ﷺ ruling in the Shubrumah narration:",
-      "ar": "من داخل مكة المكرّمة مباشرةً، يقوم بأدائها نائبٌ قد قضى حجّ الإسلام عن نفسه أوّلاً — التزاماً بقول النبي ﷺ في حديث شُبرُمة:",
-      "sv": "Från Makkah direkt utförs riten av en ställföreträdare som redan fullbordat sin egen Hajj al-Islam — i enlighet med Profetens ﷺ avgörande i Shubrumah-narrationen:",
-      "nb": "Fra Makkah direkte utføres riten av en stedfortreder som allerede har fullført sin egen Hajj al-Islam — i tråd med Profetens ﷺ avgjørelse i Shubrumah-narrasjonen:"
+      "en": "From within Makkah directly, the Umrah is performed by a substitute who has already completed his own Umrah first — following the same principle the Prophet ﷺ established in the Shubrumah narration:",
+      "ar": "من داخل مكة المكرّمة مباشرةً، يؤدّي العمرةَ نائبٌ قد اعتمر عن نفسه أوّلاً — على نهج ما أصّله النبي ﷺ في حديث شُبرُمة:",
+      "sv": "Från Makkah direkt utförs Umrah av en ställföreträdare som redan fullbordat sin egen Umrah först — enligt samma princip som Profeten ﷺ fastställde i Shubrumah-narrationen:",
+      "nb": "Fra Makkah direkte utføres Umrah av en stedfortreder som allerede har fullført sin egen Umrah først — etter samme prinsipp som Profeten ﷺ fastslo i Shubrumah-narrasjonen:"
     },
     "afterHadith": {
       "en": "This is not a preference — it is a shariah condition with no exception.",
@@ -121,68 +107,58 @@
       "en": [
         { "title": "Direct Shariah Oversight", "body": "The founder supervises every file; pilgrims are students of knowledge in Makkah." },
         { "title": "Documented Niyābah", "body": "Every rite performed in the name of its principal, witnessed with documents and video." },
-        { "title": "Full Price Transparency", "body": "One flat all-inclusive price. No hidden fees. No surprises." },
-        { "title": "One Clear Channel", "body": "All communication through WhatsApp — no long forms, no confusing platforms." }
+        { "title": "One Clear Channel", "body": "Request on the site, or reach us on Telegram — no long forms, no confusing platforms." }
       ],
       "ar": [
         { "title": "إشراف شرعي مباشر", "body": "أنا شخصياً أشرف على كل عملية، لست وسيطاً." },
         { "title": "توثيق مصوَّر", "body": "كل نسك يُؤدّى باسم والدك، مُوثَّقاً بصوت وصورة." },
-        { "title": "قناة واحدة واضحة", "body": "كل التواصل عبر واتساب، بلا نماذج أو منصات معقّدة." },
-        { "title": "نيابةٌ موثقة", "body": "كلُّ عملية باسم موكّلها، ومشهودٌ لها بالوثائق والفيديو." }
+        { "title": "قناة واحدة واضحة", "body": "اطلب من الموقع مباشرة، أو تواصل عبر تلجرام — بلا نماذج طويلة أو منصات معقّدة." }
       ],
       "sv": [
         { "title": "Direkt shariah-tillsyn", "body": "Grundaren följer varje ärende; pilgrimerna är kunskapsstudenter i Makkah." },
         { "title": "Dokumenterad niyābah", "body": "Varje rit utförs i huvudmannens namn, styrkt med dokument och video." },
-        { "title": "Full pris-transparens", "body": "Ett enda pris, allt inkluderat. Inga dolda avgifter. Inga överraskningar." },
-        { "title": "En tydlig kanal", "body": "All kommunikation via WhatsApp — inga långa formulär, inga förvirrande plattformar." }
+        { "title": "En tydlig kanal", "body": "Begär på webbplatsen, eller nå oss på Telegram — inga långa formulär, inga förvirrande plattformar." }
       ],
       "nb": [
         { "title": "Direkte shariah-tilsyn", "body": "Grunnleggeren følger hver sak; pilegrimene er kunnskapsstudenter i Makkah." },
         { "title": "Dokumentert niyābah", "body": "Hver rite utføres i hovedmannens navn, bekreftet med dokumenter og video." },
-        { "title": "Full pris-åpenhet", "body": "Én fast pris, alt inkludert. Ingen skjulte avgifter. Ingen overraskelser." },
-        { "title": "Én tydelig kanal", "body": "All kommunikasjon via WhatsApp — ingen lange skjemaer, ingen forvirrende plattformer." }
+        { "title": "Én tydelig kanal", "body": "Be om det på nettstedet, eller kontakt oss på Telegram — ingen lange skjemaer, ingen forvirrende plattformer." }
       ]
     }
   },
 
   "proof": {
     "eyebrow": {
-      "en": "Complete Proof Package",
-      "ar": "حزمة الإثبات — كما تصل إليك",
-      "sv": "Komplett bevispaket",
-      "nb": "Komplett bevispakke"
+      "en": "Complete Documentation",
+      "ar": "توثيقٌ كامل — كما يصلك",
+      "sv": "Komplett dokumentation",
+      "nb": "Komplett dokumentasjon"
     },
     "headline": {
-      "en": "When the rites are complete, you receive via WhatsApp within days:",
-      "ar": "حين تكتمل المناسك، تستلم عبر واتساب:",
-      "sv": "När riterna är fullbordade får du via WhatsApp inom några dagar:",
-      "nb": "Når ritene er fullført, mottar du via WhatsApp innen få dager:"
+      "en": "When the Umrah is complete, you receive within days:",
+      "ar": "حين تكتمل العمرة، يصلك خلال أيام:",
+      "sv": "När Umrah är fullbordad får du inom några dagar:",
+      "nb": "Når Umrah er fullført, mottar du innen få dager:"
     },
     "items": {
       "en": [
-        { "label": "Video from Arafah", "detail": "the substitute calls your parent's name clearly" },
-        { "label": "Video from Hady slaughter", "detail": "inside the sanctuary" },
-        { "label": "Official Hady Receipt", "detail": "stamped by the accredited institution" },
-        { "label": "Formal Hajj Badal Certificate", "detail": "preserved as a family heirloom" }
+        { "label": "Video of the intention", "detail": "the substitute pronounces the niyyah clearly in your late parent's name" }
       ],
       "ar": [
-        { "label": "فيديو من عرفة", "detail": "النائب ينطق اسم والدك بوضوح" },
-        { "label": "فيديو من ذبح الهدي", "detail": "داخل الحرم" },
-        { "label": "صك الهدي الرسمي", "detail": "بختم المؤسسة المعتمدة" },
-        { "label": "شهادة رسمية لأداء حج البدل", "detail": "تحفظها إرثاً لعائلتك" }
+        { "label": "فيديو النية", "detail": "النائب ينطق النية بوضوح باسم والدك المتوفّى" }
       ],
       "sv": [
-        { "label": "Video från Arafat", "detail": "ställföreträdaren säger din anhörigs namn tydligt" },
-        { "label": "Video från Hady-offret", "detail": "inom det heliga området" },
-        { "label": "Officiellt Hady-kvitto", "detail": "stämplat av den auktoriserade institutionen" },
-        { "label": "Formellt Hajj Badal-intyg", "detail": "bevarat som familjearvedel" }
+        { "label": "Video av avsikten (niyyah)", "detail": "ställföreträdaren uttalar avsikten tydligt i din avlidna anhörigs namn" }
       ],
       "nb": [
-        { "label": "Video fra Arafat", "detail": "stedfortrederen sier din kjæres navn tydelig" },
-        { "label": "Video fra Hady-ofringen", "detail": "innenfor det hellige området" },
-        { "label": "Offisiell Hady-kvittering", "detail": "stemplet av den autoriserte institusjonen" },
-        { "label": "Formelt Hajj Badal-sertifikat", "detail": "bevart som familiearv" }
+        { "label": "Video av intensjonen (niyyah)", "detail": "stedfortrederen uttaler intensjonen tydelig i din avdøde kjæres navn" }
       ]
+    },
+    "galleryHeading": {
+      "en": "Proof of our work — documentation from a Hajj Badal we completed:",
+      "ar": "دليلُ عملنا — من توثيق حجِّ بدلٍ أدّيناه:",
+      "sv": "Bevis på vårt arbete — dokumentation från en Hajj Badal vi utfört:",
+      "nb": "Bevis på vårt arbeid — dokumentasjon fra en Hajj Badal vi utførte:"
     },
     "galleryCaptions": {
       "certificate": {
@@ -209,7 +185,7 @@
   "pricing": {
     "eyebrow": {
       "en": "With Full Transparency",
-      "ar": "",
+      "ar": "بشفافيةٍ كاملة",
       "sv": "Med full transparens",
       "nb": "Med full åpenhet"
     },
@@ -232,10 +208,10 @@
       "nb": "$1,990"
     },
     "hajjSubtitle": {
-      "en": "Full rites + complete documentation package",
-      "ar": "كامل المناسك + الحزمة الموثَّقة",
-      "sv": "Alla riter + komplett dokumentationspaket",
-      "nb": "Alle riter + komplett dokumentasjonspakke"
+      "en": "Full rites + documentation · for the coming season",
+      "ar": "كامل المناسك + الحزمة الموثَّقة · للموسم القادم",
+      "sv": "Alla riter + dokumentation · för kommande säsong",
+      "nb": "Alle riter + dokumentasjon · for kommende sesong"
     },
     "umrahLabel": {
       "en": "Umrah Badal",
@@ -244,25 +220,25 @@
       "nb": "Umrah Badal"
     },
     "umrahPrice": {
-      "en": "$150",
-      "ar": "$150",
-      "sv": "$150",
-      "nb": "$150"
+      "en": "$199",
+      "ar": "$199",
+      "sv": "$199",
+      "nb": "$199"
     },
     "umrahSubtitle": {
-      "en": "Full Umrah + certificate",
-      "ar": "كاملة + شهادة",
-      "sv": "Full Umrah + intyg",
-      "nb": "Full Umrah + sertifikat"
+      "en": "Full Umrah, documented · available year-round",
+      "ar": "عمرة كاملة موثَّقة · متاحة على مدار العام",
+      "sv": "Full Umrah, dokumenterad · tillgänglig året runt",
+      "nb": "Full Umrah, dokumentert · tilgjengelig hele året"
     },
     "pledge": {
-      "en": "Your Hajj is our trust before Allah.",
-      "ar": "حَجُّكَ أمانتُنا أمام الله.",
-      "sv": "Your Hajj is our trust before Allah.",
-      "nb": "Your Hajj is our trust before Allah."
+      "en": "Their Umrah is our trust before Allah.",
+      "ar": "عمرتُهما أمانتُنا أمام الله.",
+      "sv": "Deras Umrah är vårt förtroende inför Allah.",
+      "nb": "Deres Umrah er vårt ansvar innfor Allah."
     },
     "footnote": {
-      "en": "No hidden fees. No visa. No Nusuk platform. No travel required from you.",
+      "en": "Payment by bank transfer. Your bank's transfer fees are paid by you.",
       "ar": "الدفع بالتحويل البنكي. رسوم التحويل من بنكك تُدفع منك. نساعدك في اختيار الطريقة الأقل كلفة.",
       "sv": "Inga dolda avgifter. Ingen visum. Ingen Nusuk-plattform. Ingen resa för dig.",
       "nb": "Ingen skjulte avgifter. Ingen visum. Ingen Nusuk-plattform. Ingen reise for deg."
@@ -278,66 +254,111 @@
     },
     "headline": {
       "en": "Four clear steps.",
-      "ar": "خمس خطوات واضحة",
+      "ar": "أربع خطوات واضحة",
       "sv": "Fyra tydliga steg.",
       "nb": "Fire tydelige steg."
     },
     "steps": {
       "en": [
-        { "title": "Request via WhatsApp", "body": "Send your parent's name, your relationship, and whether Hajj or Umrah." },
-        { "title": "Choose the Rite", "body": "Hajj Badal or Umrah Badal, and when you want it performed." },
-        { "title": "Agreement & Confirmation", "body": "We confirm service and price; you receive bank transfer instructions." },
-        { "title": "Rites Performed", "body": "A substitute who has completed his own Hajj performs the rites under direct shariah supervision." },
-        { "title": "Documentation Delivered", "body": "Videos, receipt, and certificate arrive via WhatsApp within days of completion." }
+        { "title": "Submit the Request", "body": "On the site, enter your late parent's name and a short voice recording pronouncing it — so it is said correctly." },
+        { "title": "Pay Securely", "body": "Pay the $199 by card on the site; for any question you can reach us on Telegram." },
+        { "title": "Umrah Performed", "body": "A substitute who has completed his own Umrah performs it in your parent's name, from within Makkah, under direct shariah supervision." },
+        { "title": "Documentation Delivered", "body": "A video of the intention pronounced in your parent's name arrives within days of the Umrah." }
       ],
       "ar": [
-        { "title": "تواصل عبر واتساب", "body": "أرسل اسم والدك أو والدتك، وحالته (متوفى أم حي)، وتسجيل صوتي قصير بنطق الاسم — لضمان أدائه بالصيغة الصحيحة." },
-        { "title": "تحديد النسك", "body": "حج بدل أم عمرة بدل؟ ومتى تريد أداءها." },
-        { "title": "اتفاق وتأكيد", "body": "نؤكد الخدمة والسعر، وتستلم تعليمات الدفع البنكي." },
-        { "title": "أداء المناسك", "body": "النائب الذي قضى حجّه عن نفسه يؤدّي المناسك باسم والدك، تحت إشرافي الشرعي المباشر." },
-        { "title": "تسليم التوثيق", "body": "بعد اكتمال الفريضة، تصلك الفيديوهات والصكوك والشهادة عبر واتساب." }
+        { "title": "أرسل الطلب", "body": "من الموقع، أدخِل اسم والدك أو والدتك المتوفّى، وتسجيلاً صوتياً قصيراً بنطق الاسم — ليُؤدّى بالصيغة الصحيحة." },
+        { "title": "ادفع بأمان", "body": "ادفع الـ$199 بالبطاقة عبر الموقع، ولأي استفسار تواصل معنا عبر تلجرام." },
+        { "title": "أداء العمرة", "body": "نائبٌ قد اعتمر عن نفسه يؤدّي العمرة باسم والدك، من داخل مكّة المكرّمة، تحت إشرافٍ شرعيٍّ مباشر." },
+        { "title": "تسليم التوثيق", "body": "يصلك خلال أيام: فيديو النية مَنطوقةً بوضوح باسم والدك." }
       ],
       "sv": [
-        { "title": "Begäran via WhatsApp", "body": "Skicka din anhörigs namn, er släktskap, och om det är Hajj eller Umrah." },
-        { "title": "Välj rit", "body": "Hajj Badal eller Umrah Badal, och när du önskar den utförd." },
-        { "title": "Överenskommelse & bekräftelse", "body": "Vi bekräftar tjänst och pris; du får instruktioner för banköverföring." },
-        { "title": "Riterna utförs", "body": "En ställföreträdare som fullbordat sin egen Hajj utför riterna under direkt shariah-tillsyn." },
-        { "title": "Dokumentation levereras", "body": "Videor, kvitto och intyg kommer via WhatsApp inom några dagar efter fullbordan." }
+        { "title": "Skicka begäran", "body": "På webbplatsen anger du din avlidna anhörigs namn och ett kort röstmeddelande som uttalar det — så att det sägs korrekt." },
+        { "title": "Betala säkert", "body": "Betala 199 USD med kort på webbplatsen; vid frågor når du oss på Telegram." },
+        { "title": "Umrah utförs", "body": "En ställföreträdare som fullbordat sin egen Umrah utför den i din anhörigs namn, från Makkah, under direkt shariah-tillsyn." },
+        { "title": "Dokumentation levereras", "body": "En video av avsikten uttalad i din anhörigs namn kommer inom några dagar efter Umrah." }
       ],
       "nb": [
-        { "title": "Forespørsel via WhatsApp", "body": "Send din kjæres navn, deres slektskap, og om det er Hajj eller Umrah." },
-        { "title": "Velg rite", "body": "Hajj Badal eller Umrah Badal, og når du ønsker den utført." },
-        { "title": "Avtale og bekreftelse", "body": "Vi bekrefter tjeneste og pris; du mottar instruksjoner for bankoverføring." },
-        { "title": "Ritene utføres", "body": "En stedfortreder som har fullført sin egen Hajj utfører ritene under direkte shariah-tilsyn." },
-        { "title": "Dokumentasjon leveres", "body": "Videoer, kvittering og sertifikat kommer via WhatsApp innen få dager etter fullføring." }
+        { "title": "Send forespørselen", "body": "På nettstedet oppgir du din avdøde kjæres navn og en kort talemelding som uttaler det — så det sies riktig." },
+        { "title": "Betal trygt", "body": "Betal 199 USD med kort på nettstedet; ved spørsmål når du oss på Telegram." },
+        { "title": "Umrah utføres", "body": "En stedfortreder som har fullført sin egen Umrah utfører den i din kjæres navn, fra Makkah, under direkte shariah-tilsyn." },
+        { "title": "Dokumentasjon leveres", "body": "En video av intensjonen uttalt i din kjæres navn kommer innen få dager etter Umrah." }
+      ]
+    }
+  },
+
+  "faq": {
+    "eyebrow": {
+      "en": "Common Questions",
+      "ar": "أسئلة شائعة",
+      "sv": "Vanliga frågor",
+      "nb": "Vanlige spørsmål"
+    },
+    "headline": {
+      "en": "What you may be asking",
+      "ar": "ما قد يدور في خاطرك",
+      "sv": "Det du kanske undrar",
+      "nb": "Det du kanskje lurer på"
+    },
+    "items": {
+      "en": [
+        { "q": "Is Umrah on behalf of a deceased parent permissible?", "a": "Yes. It is established in the Sunnah — the Prophet ﷺ instructed a man to perform Hajj and Umrah on behalf of his father, and the scholars apply the same to the mother." },
+        { "q": "Do I need anyone's permission?", "a": "For a deceased parent, no permission is required. You may arrange the Umrah for them directly." },
+        { "q": "Who actually performs the Umrah?", "a": "A trustworthy student of knowledge in Makkah who has already completed his own Umrah, performing it in your parent's name under direct shariah supervision." },
+        { "q": "When will the Umrah be performed?", "a": "The date is set according to the substitutes' availability, and we notify you of it once your payment is complete." },
+        { "q": "How do I know it was truly done?", "a": "You receive a video in which the intention is pronounced clearly in your parent's name — within days." },
+        { "q": "How do I pay?", "a": "Securely by card (Visa/Mastercard) on the site. One flat price of $199, no hidden fees." }
+      ],
+      "ar": [
+        { "q": "هل تجوز العمرة عن الوالد المتوفّى؟", "a": "نعم، وهي ثابتةٌ بالسنّة — أمر النبيُّ ﷺ رجلاً أن يحجّ ويعتمر عن أبيه، وألحق العلماءُ الأمَّ بذلك." },
+        { "q": "هل أحتاج إذناً من أحد؟", "a": "للوالد المتوفّى لا يلزم إذن. يمكنك ترتيب العمرة عنه مباشرةً." },
+        { "q": "من الذي يؤدّي العمرة فعلاً؟", "a": "طالب علمٍ ثقةٌ في مكّة قد اعتمر عن نفسه أوّلاً، يؤدّيها باسم والدك تحت إشرافٍ شرعيٍّ مباشر." },
+        { "q": "متى ستُؤدّى العمرة؟", "a": "يُحدَّد الموعد بحسب المتاح من النوّاب، ونُبلغك به بعد إتمام عملية الدفع." },
+        { "q": "كيف أتأكّد أنّها أُدّيت حقّاً؟", "a": "يصلك فيديو تُنطَق فيه النية بوضوح باسم والدك — خلال أيام." },
+        { "q": "كيف أدفع؟", "a": "بأمان بالبطاقة (فيزا/ماستركارد) عبر الموقع. سعرٌ واحد شامل $199، بلا رسوم خفية." }
+      ],
+      "sv": [
+        { "q": "Är Umrah på en avliden förälders vägnar tillåten?", "a": "Ja. Den är grundad i Sunnah — Profeten ﷺ uppmanade en man att utföra Hajj och Umrah för sin far, och de lärde tillämpar detsamma på modern." },
+        { "q": "Behöver jag någons tillstånd?", "a": "För en avliden förälder krävs inget tillstånd. Du kan ordna Umrah för dem direkt." },
+        { "q": "Vem utför egentligen Umrah?", "a": "En pålitlig kunskapsstudent i Makkah som redan fullbordat sin egen Umrah, och utför den i din anhörigs namn under direkt shariah-tillsyn." },
+        { "q": "När utförs Umrah?", "a": "Datumet bestäms utifrån ställföreträdarnas tillgänglighet, och vi meddelar dig det när din betalning är genomförd." },
+        { "q": "Hur vet jag att den verkligen utfördes?", "a": "Du får en video där avsikten uttalas tydligt i din anhörigs namn — inom några dagar." },
+        { "q": "Hur betalar jag?", "a": "Säkert med kort (Visa/Mastercard) på webbplatsen. Ett fast pris på 199 USD, inga dolda avgifter." }
+      ],
+      "nb": [
+        { "q": "Er Umrah på vegne av en avdød forelder tillatt?", "a": "Ja. Det er grunnfestet i Sunnah — Profeten ﷺ ba en mann utføre Hajj og Umrah for sin far, og de lærde anvender det samme på moren." },
+        { "q": "Trenger jeg noens tillatelse?", "a": "For en avdød forelder kreves ingen tillatelse. Du kan ordne Umrah for dem direkte." },
+        { "q": "Hvem utfører egentlig Umrah?", "a": "En pålitelig kunnskapsstudent i Makkah som allerede har fullført sin egen Umrah, og utfører den i din kjæres navn under direkte shariah-tilsyn." },
+        { "q": "Når utføres Umrah?", "a": "Datoen fastsettes etter stedfortredernes tilgjengelighet, og vi gir deg beskjed når betalingen din er fullført." },
+        { "q": "Hvordan vet jeg at den virkelig ble utført?", "a": "Du mottar en video der intensjonen uttales tydelig i din kjæres navn — innen få dager." },
+        { "q": "Hvordan betaler jeg?", "a": "Trygt med kort (Visa/Mastercard) på nettstedet. Én fast pris på 199 USD, ingen skjulte avgifter." }
       ]
     }
   },
 
   "finalCta": {
     "headline": {
-      "en": "Complete the Fifth Pillar for your parents.",
+      "en": "Here is something you should know:",
       "ar": "أريدك أن تعرف شيئاً:",
-      "sv": "Fullborda den femte pelaren för dina föräldrar.",
-      "nb": "Fullfør den femte søylen for dine foreldre."
+      "sv": "Här är något du bör veta:",
+      "nb": "Her er noe du bør vite:"
     },
     "subhead": {
-      "en": "Reach out on WhatsApp — with dignity, transparency, and no pressure.",
-      "ar": "الحج هذا العام بعد أقل من شهر. والنوّاب الذين أعمل معهم — جميعهم تقريباً محجوزون. إن أردت تحقيق هذه الأمانة عن والدك هذا الموسم، تواصل معي الآن. قد لا أستطيع استقبال طلبك بعد أسبوع.",
-      "sv": "Kontakta oss på WhatsApp — med värdighet, transparens, och utan press.",
-      "nb": "Ta kontakt på WhatsApp — med verdighet, åpenhet, og uten press."
+      "en": "Umrah Badal for your late parents — performed from within Makkah, all year round, with no season to wait for. An affordable, fully documented service. Begin on the site, or reach out on Telegram.",
+      "ar": "عمرة البدل عن والديك المتوفّين — تُؤدّى من داخل مكّة المكرّمة على مدار العام، لا تنتظر موسماً. مبلغٌ ميسور وتوثيقٌ كامل يصلك. ابدأ من الموقع، أو تواصل معنا عبر تلجرام.",
+      "sv": "Umrah Badal för dina avlidna föräldrar — utförd från Makkah, året runt, utan att vänta på en säsong. En prisvärd tjänst med full dokumentation. Börja på webbplatsen, eller kontakta oss på Telegram.",
+      "nb": "Umrah Badal for dine avdøde foreldre — utført fra Makkah, hele året, uten å vente på en sesong. En rimelig tjeneste med full dokumentasjon. Begynn på nettstedet, eller ta kontakt på Telegram."
     },
     "primaryCta": {
-      "en": "Start on WhatsApp",
-      "ar": "ابدأ الآن على واتساب",
-      "sv": "Starta på WhatsApp",
-      "nb": "Start på WhatsApp"
+      "en": "Message us on Telegram",
+      "ar": "تواصل معنا عبر تلجرام",
+      "sv": "Kontakta oss på Telegram",
+      "nb": "Kontakt oss på Telegram"
     },
     "note": {
-      "en": "Replies within hours · +1 (234) 280-0554",
-      "ar": "الرد عادةً خلال ساعات · +1 (234) 280-0554",
-      "sv": "Svar inom timmar · +1 (234) 280-0554",
-      "nb": "Svar innen timer · +1 (234) 280-0554"
+      "en": "Replies within hours · @wafahajj on Telegram",
+      "ar": "الرد عادةً خلال ساعات · تلجرام @wafahajj",
+      "sv": "Svar inom timmar · @wafahajj på Telegram",
+      "nb": "Svar innen timer · @wafahajj på Telegram"
     }
   },
 
@@ -362,25 +383,18 @@
     }
   },
 
-  "whatsappPresets": {
-    "en": "Hi, I'm interested in Hajj Badal for my late parent. I found you on wafahajj.com.",
-    "ar": "السلام عليكم، أرغب في الاستفسار عن خدمة وفاء الحج.",
-    "sv": "Hej, jag är intresserad av Hajj Badal för min avlidna anhöriga. Jag hittade er på wafahajj.com.",
-    "nb": "Hei, jeg er interessert i Hajj Badal for min avdøde kjære. Jeg fant dere på wafahajj.com."
-  },
-
   "seo": {
     "title": {
-      "en": "Wafa Hajj — Hajj & Umrah Badal from Makkah",
-      "ar": "وفاء الحج — حجٌّ وعمرةٌ بالنيابة من مكة",
-      "sv": "Wafa Hajj — Hajj och Umrah Badal från Makkah",
-      "nb": "Wafa Hajj — Hajj og Umrah Badal fra Makkah"
+      "en": "Wafa Hajj — Umrah & Hajj Badal from Makkah",
+      "ar": "وفاء الحج — عمرةٌ وحجٌّ بالنيابة من مكة",
+      "sv": "Wafa Hajj — Umrah och Hajj Badal från Makkah",
+      "nb": "Wafa Hajj — Umrah og Hajj Badal fra Makkah"
     },
     "description": {
-      "en": "Hajj and Umrah Badal on behalf of your late parents, performed from within Makkah under full shariah supervision. Documented with video, certificate, and Hady receipt. All-inclusive $1,990.",
-      "ar": "خدمة حج البدل وعمرة البدل تحت إشراف شرعي مباشر من داخل مكة المكرمة. توثيق مصوَّر، شهادة رسمية، بلا سفر أو تأشيرة.",
-      "sv": "Hajj och Umrah Badal på dina föräldrars vägnar, från Makkah, under full shariah-tillsyn. Dokumenterat med video, intyg och Hady-kvitto. Allt inkluderat för 1 990 USD.",
-      "nb": "Hajj og Umrah Badal på dine foreldres vegne, fra Makkah, under full shariah-tilsyn. Dokumentert med video, sertifikat og Hady-kvittering. Alt inkludert for 1 990 USD."
+      "en": "Umrah Badal on behalf of your late parents from $199, performed from within Makkah under full shariah supervision. Documented with a video in their name. Hajj Badal also available.",
+      "ar": "عمرة البدل عن والديك المتوفّين من $199، تحت إشراف شرعي مباشر من داخل مكة المكرمة، موثّقة بفيديو باسمهما. وحج البدل متاح أيضاً.",
+      "sv": "Umrah Badal på dina föräldrars vägnar från 199 USD, från Makkah, under full shariah-tillsyn. Dokumenterat med en video i deras namn. Hajj Badal finns också.",
+      "nb": "Umrah Badal på dine foreldres vegne fra 199 USD, fra Makkah, under full shariah-tilsyn. Dokumentert med en video i deres namn. Hajj Badal er også tilgjengelig."
     }
   }
 }

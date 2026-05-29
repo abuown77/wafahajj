@@ -1,0 +1,66 @@
+---
+import { content as c } from '@lib/content';
+---
+
+<section class="section" id="faq">
+  <div class="container">
+    <p class="eyebrow">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.faq.eyebrow[l]}</span>
+      ))}
+    </p>
+    <h2>
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.faq.headline[l]}</span>
+      ))}
+    </h2>
+    <div class="ornament" aria-hidden="true"><span class="ornament-dot"></span></div>
+
+    <div class="faq-list">
+      {c.faq.items.en.map((_, i) => (
+        <details class="faq-item">
+          <summary>
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.faq.items[l][i]!.q}</span>
+            ))}
+          </summary>
+          <p>
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.faq.items[l][i]!.a}</span>
+            ))}
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-list {
+    max-width: 56ch;
+    margin: var(--s-5) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+  .faq-item {
+    border: 1px solid rgba(200, 155, 60, 0.25);
+    border-radius: var(--radius-md);
+    padding: var(--s-3) var(--s-4);
+    background: #fff;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--c-secondary);
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item[open] summary { margin-bottom: var(--s-2); }
+  .faq-item p {
+    margin: 0;
+    color: var(--c-text-soft);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-loose);
+  }
+</style>

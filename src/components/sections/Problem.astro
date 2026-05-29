@@ -2,23 +2,12 @@
 import { content as c } from '@lib/content';
 ---
 
-<section class="section section--cream">
-  <div class="container">
-    <p class="eyebrow">
-      {(['en','ar','sv','nb'] as const).map((l) => (
-        <span data-lang={l}>{c.problem.eyebrow[l]}</span>
-      ))}
-    </p>
-    <h2>
-      {(['en','ar','sv','nb'] as const).map((l) => (
-        <span data-lang={l}>{c.problem.headline[l]}</span>
-      ))}
-    </h2>
-
+<section class="section section--cream problem">
+  <div class="container problem__inner">
     <div class="ornament" aria-hidden="true"><span class="ornament-dot"></span></div>
 
     <ul class="problem-list">
-      {[0, 1, 2].map((idx) => (
+      {c.problem.questions.en.map((_, idx) => (
         <li class="problem-item">
           {(['en','ar','sv','nb'] as const).map((l) => (
             <span data-lang={l}>{c.problem.questions[l][idx]}</span>
@@ -30,28 +19,34 @@ import { content as c } from '@lib/content';
 </section>
 
 <style>
+  .problem { text-align: center; }
+  .problem__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--s-4);
+  }
   .problem-list {
     list-style: none;
     padding: 0;
-    margin: var(--s-5) auto 0;
-    display: grid;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
     gap: var(--s-3);
-    max-width: 720px;
+    max-width: 32ch;
   }
   .problem-item {
-    background: #fff;
-    padding: var(--s-4) var(--s-5);
-    border-inline-start: 3px solid var(--c-gold-500);
-    border-radius: 4px;
     font-family: var(--ff-display);
     font-style: italic;
-    font-size: var(--fs-lg);
+    font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem);
+    line-height: 1.25;
     color: var(--c-secondary);
-    box-shadow: var(--shadow-card);
+    letter-spacing: -0.01em;
   }
   :global(html[lang="ar"]) .problem-item {
     font-family: var(--ff-arabic);
     font-style: normal;
     font-weight: 500;
+    font-size: clamp(1.4rem, 3vw + 0.4rem, 2.25rem);
   }
 </style>

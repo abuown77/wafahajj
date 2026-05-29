@@ -11,14 +11,20 @@ export const SITE = {
   taglineAr: 'وفاءٌ للعهد، وإتمامٌ للركن.',
 } as const;
 
-export const WHATSAPP = {
-  number: import.meta.env.PUBLIC_WHATSAPP_NUMBER ?? '12342800554',
-  display: '+1 (234) 280-0554',
+export const TELEGRAM = {
+  username: import.meta.env.PUBLIC_TELEGRAM_USERNAME ?? 'wafahajj',
+  url: `https://t.me/${import.meta.env.PUBLIC_TELEGRAM_USERNAME ?? 'wafahajj'}`,
+  display: '@wafahajj',
+} as const;
+
+export const CHECKOUT = {
+  umrahUrl: import.meta.env.PUBLIC_CHECKOUT_UMRAH_URL
+    ?? 'https://wafahajj-shop.fourthwall.com/products/umrah-badal-proxy-umrah-for-a-deceased-parent',
 } as const;
 
 export const PRICING = {
   hajjBadal: 1990,
-  umrahBadal: 150,
+  umrahBadal: 199,
   currency: 'USD',
 } as const;
 

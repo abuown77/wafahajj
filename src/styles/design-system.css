@@ -30,8 +30,8 @@
   --c-text-soft:   var(--c-ink-soft);
   --c-line:        var(--c-beige-deep);
 
-  /* WhatsApp brand */
-  --c-whatsapp:    #25D366;
+  /* Telegram brand */
+  --c-telegram:    #229ED9;
 
   /* ───── Typography — 3 families only ───── */
   --ff-display:    'Playfair Display', Georgia, serif;
@@ -153,12 +153,17 @@ html[lang="ar"] h3 {
 
 /* ─────────────────────────────────────────────────────────
    I18N DISPLAY — show only active language
+   NOTE: :lang() pseudo-class is used instead of html[lang="xx"]
+   descendant selector, because some CSS minifiers strip the
+   ancestor "html[lang=en]" as redundant (treating "en" as default),
+   which causes English to leak through in all other locales.
+   :lang() is semantically tied to inheritance and cannot be folded.
    ───────────────────────────────────────────────────────── */
 [data-lang] { display: none; }
-html[lang="en"] [data-lang="en"],
-html[lang="ar"] [data-lang="ar"],
-html[lang="sv"] [data-lang="sv"],
-html[lang="nb"] [data-lang="nb"] {
+[data-lang="en"]:lang(en),
+[data-lang="ar"]:lang(ar),
+[data-lang="sv"]:lang(sv),
+[data-lang="nb"]:lang(nb) {
   display: revert;
 }
 
@@ -289,15 +294,17 @@ html[lang="ar"] .btn { font-family: var(--ff-arabic); }
 
 .btn:hover { transform: translateY(-2px); }
 
-.btn--whatsapp {
-  background: var(--c-whatsapp);
+.btn--telegram {
+  background: var(--c-telegram);
   color: #fff;
-  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.28);
+  box-shadow: 0 10px 30px rgba(34, 158, 217, 0.28);
 }
-.btn--whatsapp:hover {
-  box-shadow: 0 14px 40px rgba(37, 211, 102, 0.38);
+.btn--telegram:hover {
+  box-shadow: 0 14px 40px rgba(34, 158, 217, 0.38);
 }
-.btn--whatsapp svg { width: 22px; height: 22px; fill: currentColor; }
+.btn--telegram svg { width: 22px; height: 22px; fill: currentColor; }
+.btn--gold svg,
+.btn--ghost svg { width: 22px; height: 22px; fill: currentColor; }
 
 .btn--gold {
   background: var(--c-gold-500);

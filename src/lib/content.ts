@@ -25,6 +25,7 @@ export interface I18nArray<T> {
 export interface FeatureItem { title: string; body: string; }
 export interface ProofItem { label: string; detail: string; }
 export interface StepItem { title: string; body: string; }
+export interface FaqItem { q: string; a: string; }
 
 export interface SiteContent {
   id: string;
@@ -54,6 +55,7 @@ export interface SiteContent {
     eyebrow: I18nString;
     headline: I18nString;
     items: I18nArray<ProofItem>;
+    galleryHeading: I18nString;
     galleryCaptions: {
       certificate: I18nString;
       hadyReceipt: I18nString;
@@ -77,6 +79,11 @@ export interface SiteContent {
     headline: I18nString;
     steps: I18nArray<StepItem>;
   };
+  faq: {
+    eyebrow: I18nString;
+    headline: I18nString;
+    items: I18nArray<FaqItem>;
+  };
   finalCta: {
     headline: I18nString;
     subhead: I18nString;
@@ -84,7 +91,6 @@ export interface SiteContent {
     note: I18nString;
   };
   footer: { tagline: I18nString; identity: I18nString; rights: I18nString };
-  whatsappPresets: { en: string; ar: string; sv: string; nb: string };
   seo: { title: I18nString; description: I18nString };
 }
 

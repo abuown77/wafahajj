@@ -18,7 +18,7 @@ import { content as c } from '@lib/content';
     <div class="ornament" aria-hidden="true"><span class="ornament-dot"></span></div>
 
     <ul class="proof-list">
-      {[0, 1, 2, 3].map((i) => (
+      {c.proof.items.en.map((_, i) => (
         <li>
           <strong>
             {(['en','ar','sv','nb'] as const).map((l) => (
@@ -34,6 +34,12 @@ import { content as c } from '@lib/content';
         </li>
       ))}
     </ul>
+
+    <p class="proof-gallery-heading">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.proof.galleryHeading[l]}</span>
+      ))}
+    </p>
 
     <div class="proof-gallery">
       <figure>
@@ -65,6 +71,14 @@ import { content as c } from '@lib/content';
 </section>
 
 <style>
+  .proof-gallery-heading {
+    text-align: center;
+    margin-top: var(--s-6);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--c-secondary);
+    letter-spacing: 0.01em;
+  }
   .proof-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

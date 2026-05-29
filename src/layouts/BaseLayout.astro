@@ -85,13 +85,27 @@ const BASE = import.meta.env.BASE_URL.endsWith('/')
       applyLocale(initial);
       bindTabs();
 
-      // Track WhatsApp clicks
-      document.querySelectorAll('[data-wa-link]').forEach((a) => {
+      // Track Telegram clicks
+      document.querySelectorAll('[data-tg-link]').forEach((a) => {
         a.addEventListener('click', () => {
           // @ts-ignore
           if (typeof window.gtag === 'function') {
             // @ts-ignore
-            window.gtag('event', 'whatsapp_click', {
+            window.gtag('event', 'telegram_click', {
+              event_category: 'cta',
+              event_label: document.documentElement.lang,
+            });
+          }
+        });
+      });
+
+      // Track card-payment clicks
+      document.querySelectorAll('[data-pay-link]').forEach((a) => {
+        a.addEventListener('click', () => {
+          // @ts-ignore
+          if (typeof window.gtag === 'function') {
+            // @ts-ignore
+            window.gtag('event', 'pay_click', {
               event_category: 'cta',
               event_label: document.documentElement.lang,
             });

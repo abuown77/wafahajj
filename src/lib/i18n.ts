@@ -53,14 +53,6 @@ export function applyLocale(locale: Locale): void {
     btn.classList.toggle('is-active', isActive);
   });
 
-  // Update dynamic WhatsApp CTA messages
-  document.querySelectorAll<HTMLAnchorElement>('[data-wa-link]').forEach((a) => {
-    const msg = a.dataset[`waMsg${locale.charAt(0).toUpperCase() + locale.slice(1)}` as keyof DOMStringMap] as string | undefined;
-    const number = a.dataset.waNumber ?? '';
-    if (msg && number) {
-      a.href = `https://wa.me/${number}?text=${encodeURIComponent(msg)}`;
-    }
-  });
 }
 
 export function setLocale(locale: Locale): void {

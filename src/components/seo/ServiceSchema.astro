@@ -1,5 +1,5 @@
 ---
-import { SITE, PRICING, WHATSAPP } from '@config/site';
+import { SITE, PRICING, TELEGRAM } from '@config/site';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -29,8 +29,7 @@ const schema = {
   serviceType: 'Proxy Hajj / Umrah',
   availableChannel: {
     '@type': 'ServiceChannel',
-    serviceUrl: `https://wa.me/${WHATSAPP.number}`,
-    serviceSmsNumber: WHATSAPP.display,
+    serviceUrl: TELEGRAM.url,
   },
 };
 ---

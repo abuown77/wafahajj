@@ -1,5 +1,6 @@
 ---
-import WhatsAppButton from '@components/ui/WhatsAppButton.astro';
+import TelegramButton from '@components/ui/TelegramButton.astro';
+import PayButton from '@components/ui/PayButton.astro';
 import { content as c } from '@lib/content';
 ---
 
@@ -17,7 +18,8 @@ import { content as c } from '@lib/content';
     </p>
 
     <div class="final-cta__action">
-      <WhatsAppButton messages={c.whatsappPresets} variant="gold" size="lg" />
+      <PayButton variant="gold" size="lg" />
+      <TelegramButton variant="ghost" size="lg" />
     </div>
 
     <p class="final-cta__note">
@@ -43,7 +45,14 @@ import { content as c } from '@lib/content';
     margin: 0 auto var(--s-5);
     color: rgba(245, 241, 232, 0.82);
   }
-  .final-cta__action { margin: var(--s-4) 0; }
+  .final-cta__action {
+    margin: var(--s-4) 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    justify-content: center;
+    align-items: center;
+  }
   .final-cta__note {
     margin-top: var(--s-4);
     font-size: var(--fs-sm);
