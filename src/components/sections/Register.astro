@@ -354,6 +354,7 @@
 
     let mediaRecorder: MediaRecorder | null = null;
     let chunks: BlobPart[] = [];
+    let voiceBlob: Blob | null = null;
     let timer = 0;
     let tick: number | undefined;
 
@@ -390,6 +391,7 @@
         mediaRecorder.onstop = () => {
           stream.getTracks().forEach((t) => t.stop());
           const blob = new Blob(chunks, { type: mediaRecorder?.mimeType || 'audio/webm' });
+          voiceBlob = blob;
           audioEl.src = URL.createObjectURL(blob);
           audioEl.hidden = false;
           const reader = new FileReader();
@@ -432,7 +434,25 @@
       if (!terms.checked && ok) { terms.focus(); ok = false; }
       if (!ok) return;
       if (recorderEl.classList.contains('is-recording')) stop();
-      // Delivery is wired in the next step; for now confirm capture.
+
+      const fd = new FormData();
+      fd.append('name', (document.getElementById('rf-name') as HTMLInputElement).value.trim());
+      fd.append('contact', (document.getElementById('rf-contact') as HTMLInputElement).value.trim());
+      fd.append('deceased', (document.getElementById('rf-deceased') as HTMLInputElement).value.trim());
+      if (voiceBlob) {
+        const ext = (voiceBlob.type.split('/')[1] || 'webm').split(';')[0];
+        fd.append('voice', voiceBlob, `voice-${Date.now()}.${ext}`);
+      }
+      fd.append('_subject', 'New proxy Umrah request — Wafa Hajj');
+      fd.append('_template', 'table');
+      fd.append('_captcha', 'false');
+
+      fetch('https://formsubmit.co/info@wafahajj.com', {
+        method: 'POST',
+        body: fd,
+        mode: 'no-cors',
+      }).catch(() => {});
+
       form.hidden = true;
       doneEl.hidden = false;
       doneEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
