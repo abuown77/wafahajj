@@ -62,8 +62,9 @@ import { content as c } from '@lib/content';
         </figcaption>
       </figure>
       <figure>
-        <button type="button" class="proof-thumb" data-zoom-src="/proof/hajj-video.jpg" aria-label="Enlarge Hajj video frame">
+        <button type="button" class="proof-thumb is-video" data-zoom-video="/proof/hajj-video.mp4" aria-label="Play documented Hajj video">
           <img src="/proof/hajj-video.jpg" alt="Frame from the documented Hajj video" width="640" height="800" loading="lazy" decoding="async" />
+          <span class="proof-play" aria-hidden="true"></span>
         </button>
         <figcaption>
           {(['en','ar','sv','nb'] as const).map((l) => (
@@ -84,6 +85,7 @@ import { content as c } from '@lib/content';
   <div class="proof-lightbox" id="proof-lightbox" hidden role="dialog" aria-modal="true">
     <button type="button" class="proof-lightbox__close" aria-label="Close">&times;</button>
     <img class="proof-lightbox__img" src="" alt="" />
+    <video class="proof-lightbox__video" controls playsinline hidden></video>
   </div>
 </section>
 
@@ -92,12 +94,26 @@ import { content as c } from '@lib/content';
     const box = document.getElementById('proof-lightbox');
     if (!box) return;
     const img = box.querySelector('.proof-lightbox__img') as HTMLImageElement;
+    const video = box.querySelector('.proof-lightbox__video') as HTMLVideoElement;
     const closeBtn = box.querySelector('.proof-lightbox__close') as HTMLElement;
     let last: HTMLElement | null = null;
 
-    const open = (src: string, trigger: HTMLElement) => {
-      img.src = src;
-      img.classList.remove('is-zoomed');
+    const open = (trigger: HTMLElement) => {
+      const vsrc = trigger.dataset.zoomVideo;
+      if (vsrc) {
+        img.hidden = true;
+        img.src = '';
+        video.hidden = false;
+        video.src = vsrc;
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      } else {
+        video.hidden = true;
+        video.removeAttribute('src');
+        img.hidden = false;
+        img.src = trigger.dataset.zoomSrc || '';
+        img.classList.remove('is-zoomed');
+      }
       box.hidden = false;
       document.body.style.overflow = 'hidden';
       last = trigger;
@@ -105,13 +121,15 @@ import { content as c } from '@lib/content';
     };
     const close = () => {
       box.hidden = true;
+      video.pause();
+      video.removeAttribute('src');
       img.src = '';
       document.body.style.overflow = '';
       if (last) last.focus();
     };
 
     document.querySelectorAll<HTMLElement>('.proof-thumb').forEach((b) => {
-      b.addEventListener('click', () => open(b.dataset.zoomSrc || '', b));
+      b.addEventListener('click', () => open(b));
     });
     img.addEventListener('click', (e) => { e.stopPropagation(); img.classList.toggle('is-zoomed'); });
     closeBtn.addEventListener('click', close);
@@ -204,6 +222,42 @@ import { content as c } from '@lib/content';
   .proof-lightbox__img.is-zoomed {
     transform: scale(1.9);
     cursor: zoom-out;
+  }
+  .proof-lightbox__video {
+    max-width: 95vw;
+    max-height: 90vh;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    background: #000;
+  }
+  .proof-lightbox__video[hidden] { display: none; }
+  .proof-thumb { position: relative; }
+  .proof-play {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(139, 45, 45, 0.85);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  .proof-play::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: 15px 0 15px 26px;
+    border-color: transparent transparent transparent #fff;
+  }
+  .is-video:hover .proof-play,
+  .is-video:focus-visible .proof-play {
+    transform: scale(1.12);
+    background: rgba(139, 45, 45, 0.95);
   }
   .proof-lightbox__close {
     position: absolute;
