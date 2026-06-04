@@ -61,6 +61,10 @@ export interface SiteContent {
       umrahVideo: I18nString;
       arafaThumb: I18nString;
     };
+    galleryLabels: {
+      umrah: I18nString;
+      hajj: I18nString;
+    };
     privacyNote: I18nString;
   };
   pricing: {

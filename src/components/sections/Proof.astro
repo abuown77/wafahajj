@@ -54,6 +54,11 @@ import { content as c } from '@lib/content';
       <figure>
         <button type="button" class="proof-thumb is-video" data-zoom-video="/proof/umrah-video.mp4" aria-label="Play documented Umrah video">
           <img src="/proof/umrah-video.jpg" alt="Frame from the documented Umrah video — Tawaf at the Kaaba" width="720" height="1280" loading="lazy" decoding="async" />
+          <span class="proof-badge" data-badge>
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.proof.galleryLabels.umrah[l]}</span>
+            ))}
+          </span>
           <span class="proof-play" aria-hidden="true"></span>
         </button>
         <figcaption>
@@ -65,6 +70,11 @@ import { content as c } from '@lib/content';
       <figure>
         <button type="button" class="proof-thumb is-video" data-zoom-video="/proof/hajj-video.mp4" aria-label="Play documented Hajj video">
           <img src="/proof/hajj-video.jpg" alt="Frame from the documented Hajj video" width="640" height="800" loading="lazy" decoding="async" />
+          <span class="proof-badge" data-badge>
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.proof.galleryLabels.hajj[l]}</span>
+            ))}
+          </span>
           <span class="proof-play" aria-hidden="true"></span>
         </button>
         <figcaption>
@@ -85,6 +95,7 @@ import { content as c } from '@lib/content';
 
   <div class="proof-lightbox" id="proof-lightbox" hidden role="dialog" aria-modal="true">
     <button type="button" class="proof-lightbox__close" aria-label="Close">&times;</button>
+    <span class="proof-lightbox__label" hidden></span>
     <img class="proof-lightbox__img" src="" alt="" />
     <video class="proof-lightbox__video" controls playsinline hidden></video>
   </div>
@@ -97,10 +108,19 @@ import { content as c } from '@lib/content';
     const img = box.querySelector('.proof-lightbox__img') as HTMLImageElement;
     const video = box.querySelector('.proof-lightbox__video') as HTMLVideoElement;
     const closeBtn = box.querySelector('.proof-lightbox__close') as HTMLElement;
+    const label = box.querySelector('.proof-lightbox__label') as HTMLElement;
     let last: HTMLElement | null = null;
 
     const open = (trigger: HTMLElement) => {
       const vsrc = trigger.dataset.zoomVideo;
+      const badge = trigger.querySelector('[data-badge]');
+      if (badge) {
+        label.innerHTML = badge.innerHTML;
+        label.hidden = false;
+      } else {
+        label.innerHTML = '';
+        label.hidden = true;
+      }
       if (vsrc) {
         img.hidden = true;
         img.src = '';
@@ -225,6 +245,38 @@ import { content as c } from '@lib/content';
   }
   .proof-lightbox__video[hidden] { display: none; }
   .proof-thumb { position: relative; }
+  .proof-badge {
+    position: absolute;
+    top: var(--s-3);
+    left: var(--s-3);
+    z-index: 2;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--c-primary, #c89b3c);
+    color: var(--c-secondary, #1e4d2b);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+  }
+  .proof-lightbox__label {
+    position: absolute;
+    top: var(--s-4);
+    left: var(--s-4);
+    z-index: 210;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: var(--c-primary, #c89b3c);
+    color: var(--c-secondary, #1e4d2b);
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  }
+  .proof-lightbox__label[hidden] { display: none; }
   .proof-play {
     position: absolute;
     inset: 0;
