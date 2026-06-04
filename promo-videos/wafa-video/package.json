@@ -1,0 +1,16 @@
+{
+  "name": "wafa-video",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "render": "remotion render src/index.ts Explainer out/wafa-umrah-explainer.mp4",
+    "studio": "remotion studio src/index.ts"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.250",
+    "@remotion/google-fonts": "4.0.250",
+    "remotion": "4.0.250",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  }
+}
