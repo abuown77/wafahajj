@@ -61,6 +61,7 @@ export interface SiteContent {
       hadyReceipt: I18nString;
       arafaThumb: I18nString;
     };
+    privacyNote: I18nString;
   };
   pricing: {
     eyebrow: I18nString;

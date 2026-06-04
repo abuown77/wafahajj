@@ -174,11 +174,17 @@
         "nb": "Offisielt stemplet Hady-kvittering"
       },
       "arafaThumb": {
-        "en": "Frame from the Day of Arafah video",
-        "ar": "لقطة من فيديو يوم عرفة",
-        "sv": "Stillbild från Arafat-dagens video",
-        "nb": "Stillbilde fra Arafat-dagens video"
+        "en": "Frame from the documented Hajj video",
+        "ar": "لقطة من فيديو توثيق الحج",
+        "sv": "Stillbild från den dokumenterade Hajj-videon",
+        "nb": "Stillbilde fra den dokumenterte Hajj-videoen"
       }
+    },
+    "privacyNote": {
+      "en": "The name of the deceased is hidden out of respect for the family's privacy.",
+      "ar": "اسم المتوفّى مُغطّى حفاظاً على خصوصية العائلة.",
+      "sv": "Den avlidnes namn är dolt av hänsyn till familjens integritet.",
+      "nb": "Avdødes navn er skjult av hensyn til familiens personvern."
     }
   },
 

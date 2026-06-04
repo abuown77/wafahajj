@@ -34,5 +34,88 @@ import { content as c } from '@lib/content';
       ))}
     </ul>
 
+    <p class="proof-gallery-heading">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.proof.galleryHeading[l]}</span>
+      ))}
+    </p>
+
+    <div class="proof-gallery">
+      <figure>
+        <img src="/proof/certificate.jpg" alt="Official Hajj Badal certificate" width="560" height="792" loading="lazy" decoding="async" />
+        <figcaption>
+          {(['en','ar','sv','nb'] as const).map((l) => (
+            <span data-lang={l}>{c.proof.galleryCaptions.certificate[l]}</span>
+          ))}
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="/proof/hady-receipt.jpg" alt="Official stamped Hady receipt" width="720" height="393" loading="lazy" decoding="async" />
+        <figcaption>
+          {(['en','ar','sv','nb'] as const).map((l) => (
+            <span data-lang={l}>{c.proof.galleryCaptions.hadyReceipt[l]}</span>
+          ))}
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="/proof/hajj-video.jpg" alt="Frame from the documented Hajj video" width="640" height="800" loading="lazy" decoding="async" />
+        <figcaption>
+          {(['en','ar','sv','nb'] as const).map((l) => (
+            <span data-lang={l}>{c.proof.galleryCaptions.arafaThumb[l]}</span>
+          ))}
+        </figcaption>
+      </figure>
+    </div>
+
+    <p class="proof-privacy">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.proof.privacyNote[l]}</span>
+      ))}
+    </p>
+
   </div>
 </section>
+
+<style>
+  .proof-gallery-heading {
+    text-align: center;
+    margin-top: var(--s-6);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--c-secondary);
+    letter-spacing: 0.01em;
+  }
+  .proof-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--s-4);
+    margin-top: var(--s-5);
+    align-items: start;
+  }
+  figure {
+    margin: 0;
+    background: #fff;
+    border-radius: var(--radius-md);
+    padding: var(--s-3);
+    box-shadow: var(--shadow-card);
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: calc(var(--radius-md) - 4px);
+  }
+  figcaption {
+    text-align: center;
+    margin-top: var(--s-3);
+    font-size: var(--fs-xs);
+    color: var(--c-text-soft);
+  }
+  .proof-privacy {
+    text-align: center;
+    margin-top: var(--s-4);
+    font-size: var(--fs-xs);
+    color: var(--c-text-soft);
+    opacity: 0.85;
+  }
+</style>
