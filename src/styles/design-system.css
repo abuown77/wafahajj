@@ -150,6 +150,12 @@ html[lang="ar"] h3 {
   font-weight: 600;
   letter-spacing: 0;
 }
+/* Arabic is cursive — letter tracking breaks the joins. Never track Arabic. */
+html[lang="ar"] .eyebrow,
+html[lang="ar"] .display,
+html[lang="ar"] .pledge {
+  letter-spacing: normal;
+}
 
 /* ─────────────────────────────────────────────────────────
    I18N DISPLAY — show only active language
