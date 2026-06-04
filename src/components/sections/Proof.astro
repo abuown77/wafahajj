@@ -51,13 +51,14 @@ import { content as c } from '@lib/content';
           ))}
         </figcaption>
       </figure>
-      <figure class="is-cinematic">
-        <button type="button" class="proof-thumb" data-zoom-src="/proof/hady-receipt.jpg" aria-label="Enlarge receipt">
-          <img src="/proof/hady-receipt.jpg" alt="Official stamped Hady receipt" width="720" height="393" loading="lazy" decoding="async" />
+      <figure>
+        <button type="button" class="proof-thumb is-video" data-zoom-video="/proof/umrah-video.mp4" aria-label="Play documented Umrah video">
+          <img src="/proof/umrah-video.jpg" alt="Frame from the documented Umrah video — Tawaf at the Kaaba" width="720" height="1280" loading="lazy" decoding="async" />
+          <span class="proof-play" aria-hidden="true"></span>
         </button>
         <figcaption>
           {(['en','ar','sv','nb'] as const).map((l) => (
-            <span data-lang={l}>{c.proof.galleryCaptions.hadyReceipt[l]}</span>
+            <span data-lang={l}>{c.proof.galleryCaptions.umrahVideo[l]}</span>
           ))}
         </figcaption>
       </figure>
@@ -190,14 +191,6 @@ import { content as c } from '@lib/content';
   .proof-thumb:focus-visible img {
     transform: scale(1.08);
   }
-  .is-cinematic .proof-thumb:hover img,
-  .is-cinematic .proof-thumb:focus-visible img {
-    animation: kenburns 7s ease-in-out infinite alternate;
-  }
-  @keyframes kenburns {
-    from { transform: scale(1.04) translate(0, 0); }
-    to { transform: scale(1.32) translate(-2%, -3%); }
-  }
   .proof-lightbox {
     position: fixed;
     inset: 0;
@@ -277,9 +270,7 @@ import { content as c } from '@lib/content';
   @media (prefers-reduced-motion: reduce) {
     .proof-thumb img { transition: none; }
     .proof-thumb:hover img,
-    .proof-thumb:focus-visible img,
-    .is-cinematic .proof-thumb:hover img,
-    .is-cinematic .proof-thumb:focus-visible img {
+    .proof-thumb:focus-visible img {
       animation: none;
       transform: scale(1.04);
     }

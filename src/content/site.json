@@ -167,11 +167,11 @@
         "sv": "Officiellt Hajj Badal-intyg",
         "nb": "Offisielt Hajj Badal-sertifikat"
       },
-      "hadyReceipt": {
-        "en": "Official stamped Hady receipt",
-        "ar": "صكُّ الهدي الرسمي المختوم",
-        "sv": "Officiellt stämplat Hady-kvitto",
-        "nb": "Offisielt stemplet Hady-kvittering"
+      "umrahVideo": {
+        "en": "Documented Umrah Badal — Tawaf at the Kaaba",
+        "ar": "توثيق عمرة البدل — الطواف حول الكعبة",
+        "sv": "Dokumenterad Umrah Badal — Tawaf vid Kaba",
+        "nb": "Dokumentert Umrah Badal — Tawaf ved Kaba"
       },
       "arafaThumb": {
         "en": "Frame from the documented Hajj video",

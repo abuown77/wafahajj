@@ -58,7 +58,7 @@ export interface SiteContent {
     galleryHeading: I18nString;
     galleryCaptions: {
       certificate: I18nString;
-      hadyReceipt: I18nString;
+      umrahVideo: I18nString;
       arafaThumb: I18nString;
     };
     privacyNote: I18nString;
