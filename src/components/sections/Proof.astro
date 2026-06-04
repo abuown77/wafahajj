@@ -42,15 +42,19 @@ import { content as c } from '@lib/content';
 
     <div class="proof-gallery">
       <figure>
-        <img src="/proof/certificate.jpg" alt="Official Hajj Badal certificate" width="760" height="537" loading="lazy" decoding="async" />
+        <button type="button" class="proof-thumb" data-zoom-src="/proof/certificate.jpg" aria-label="Enlarge certificate">
+          <img src="/proof/certificate.jpg" alt="Official Hajj Badal certificate" width="760" height="537" loading="lazy" decoding="async" />
+        </button>
         <figcaption>
           {(['en','ar','sv','nb'] as const).map((l) => (
             <span data-lang={l}>{c.proof.galleryCaptions.certificate[l]}</span>
           ))}
         </figcaption>
       </figure>
-      <figure>
-        <img src="/proof/hady-receipt.jpg" alt="Official stamped Hady receipt" width="720" height="393" loading="lazy" decoding="async" />
+      <figure class="is-cinematic">
+        <button type="button" class="proof-thumb" data-zoom-src="/proof/hady-receipt.jpg" aria-label="Enlarge receipt">
+          <img src="/proof/hady-receipt.jpg" alt="Official stamped Hady receipt" width="720" height="393" loading="lazy" decoding="async" />
+        </button>
         <figcaption>
           {(['en','ar','sv','nb'] as const).map((l) => (
             <span data-lang={l}>{c.proof.galleryCaptions.hadyReceipt[l]}</span>
@@ -58,7 +62,9 @@ import { content as c } from '@lib/content';
         </figcaption>
       </figure>
       <figure>
-        <img src="/proof/hajj-video.jpg" alt="Frame from the documented Hajj video" width="640" height="800" loading="lazy" decoding="async" />
+        <button type="button" class="proof-thumb" data-zoom-src="/proof/hajj-video.jpg" aria-label="Enlarge Hajj video frame">
+          <img src="/proof/hajj-video.jpg" alt="Frame from the documented Hajj video" width="640" height="800" loading="lazy" decoding="async" />
+        </button>
         <figcaption>
           {(['en','ar','sv','nb'] as const).map((l) => (
             <span data-lang={l}>{c.proof.galleryCaptions.arafaThumb[l]}</span>
@@ -74,7 +80,45 @@ import { content as c } from '@lib/content';
     </p>
 
   </div>
+
+  <div class="proof-lightbox" id="proof-lightbox" hidden role="dialog" aria-modal="true">
+    <button type="button" class="proof-lightbox__close" aria-label="Close">&times;</button>
+    <img class="proof-lightbox__img" src="" alt="" />
+  </div>
 </section>
+
+<script>
+  (() => {
+    const box = document.getElementById('proof-lightbox');
+    if (!box) return;
+    const img = box.querySelector('.proof-lightbox__img') as HTMLImageElement;
+    const closeBtn = box.querySelector('.proof-lightbox__close') as HTMLElement;
+    let last: HTMLElement | null = null;
+
+    const open = (src: string, trigger: HTMLElement) => {
+      img.src = src;
+      img.classList.remove('is-zoomed');
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+      last = trigger;
+      closeBtn.focus();
+    };
+    const close = () => {
+      box.hidden = true;
+      img.src = '';
+      document.body.style.overflow = '';
+      if (last) last.focus();
+    };
+
+    document.querySelectorAll<HTMLElement>('.proof-thumb').forEach((b) => {
+      b.addEventListener('click', () => open(b.dataset.zoomSrc || '', b));
+    });
+    img.addEventListener('click', (e) => { e.stopPropagation(); img.classList.toggle('is-zoomed'); });
+    closeBtn.addEventListener('click', close);
+    box.addEventListener('click', (e) => { if (e.target === box) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !box.hidden) close(); });
+  })();
+</script>
 
 <style>
   .proof-gallery-heading {
@@ -101,13 +145,90 @@ import { content as c } from '@lib/content';
     display: flex;
     flex-direction: column;
   }
-  figure img {
+  .proof-thumb {
+    all: unset;
+    box-sizing: border-box;
     display: block;
     width: 100%;
     height: 340px;
-    object-fit: contain;
-    background: var(--c-bg, #f5f1e8);
+    overflow: hidden;
     border-radius: calc(var(--radius-md) - 4px);
+    background: var(--c-bg, #f5f1e8);
+    cursor: zoom-in;
+  }
+  .proof-thumb:focus-visible {
+    outline: 3px solid var(--c-primary, #c89b3c);
+    outline-offset: 3px;
+  }
+  .proof-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.55s ease;
+    will-change: transform;
+  }
+  .proof-thumb:hover img,
+  .proof-thumb:focus-visible img {
+    transform: scale(1.08);
+  }
+  .is-cinematic .proof-thumb:hover img,
+  .is-cinematic .proof-thumb:focus-visible img {
+    animation: kenburns 7s ease-in-out infinite alternate;
+  }
+  @keyframes kenburns {
+    from { transform: scale(1.04) translate(0, 0); }
+    to { transform: scale(1.32) translate(-2%, -3%); }
+  }
+  .proof-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--s-4);
+    background: rgba(20, 30, 22, 0.92);
+    backdrop-filter: blur(4px);
+  }
+  .proof-lightbox[hidden] { display: none; }
+  .proof-lightbox__img {
+    max-width: 95vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    cursor: zoom-in;
+    transition: transform 0.35s ease;
+  }
+  .proof-lightbox__img.is-zoomed {
+    transform: scale(1.9);
+    cursor: zoom-out;
+  }
+  .proof-lightbox__close {
+    position: absolute;
+    top: var(--s-3);
+    right: var(--s-4);
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .proof-lightbox__close:hover { background: rgba(255, 255, 255, 0.28); }
+  @media (prefers-reduced-motion: reduce) {
+    .proof-thumb img { transition: none; }
+    .proof-thumb:hover img,
+    .proof-thumb:focus-visible img,
+    .is-cinematic .proof-thumb:hover img,
+    .is-cinematic .proof-thumb:focus-visible img {
+      animation: none;
+      transform: scale(1.04);
+    }
   }
   figcaption {
     text-align: center;
