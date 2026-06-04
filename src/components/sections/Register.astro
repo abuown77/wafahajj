@@ -1,10 +1,11 @@
 ---
 /**
  * Register — on-site request form.
- * Collects: requester name + contact, deceased parent's name,
- * and a short voice recording pronouncing the name.
- * Delivery wiring (where submissions are sent) is handled separately.
+ * Collects: requester name + contact, deceased parent's name + gender,
+ * and a short voice recording of the deceased's full name.
+ * On submit, the request is delivered, then the visitor continues to card payment.
  */
+import { CHECKOUT } from '@config/site';
 ---
 
 <section class="section section--cream register" id="register">
@@ -30,7 +31,7 @@
       <span data-lang="nb">Fortell oss hvem Umrah er for. Å spille inn navnet med din egen stemme hjelper oss å uttale det riktig.</span>
     </p>
 
-    <form class="register__form card" id="register-form" novalidate>
+    <form class="register__form card" id="register-form" data-checkout={CHECKOUT.umrahUrl} novalidate>
       <div class="field">
         <label for="rf-name">
           <span data-lang="en">Your name</span>
@@ -62,11 +63,36 @@
       </div>
 
       <div class="field">
+        <span class="field__label" id="rf-gender-label">
+          <span data-lang="en">Gender of the deceased</span>
+          <span data-lang="ar">جنس المتوفّى</span>
+          <span data-lang="sv">Den avlidnes kön</span>
+          <span data-lang="nb">Avdødes kjønn</span>
+        </span>
+        <div class="choice" role="radiogroup" aria-labelledby="rf-gender-label" id="rf-gender">
+          <label class="choice__opt">
+            <input type="radio" name="gender" value="male" required />
+            <span data-lang="en">Male</span>
+            <span data-lang="ar">ذكر</span>
+            <span data-lang="sv">Man</span>
+            <span data-lang="nb">Mann</span>
+          </label>
+          <label class="choice__opt">
+            <input type="radio" name="gender" value="female" required />
+            <span data-lang="en">Female</span>
+            <span data-lang="ar">أنثى</span>
+            <span data-lang="sv">Kvinna</span>
+            <span data-lang="nb">Kvinne</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
         <span class="field__label">
-          <span data-lang="en">Pronounce the name (voice)</span>
-          <span data-lang="ar">انطق الاسم (تسجيل صوتي)</span>
-          <span data-lang="sv">Uttala namnet (röst)</span>
-          <span data-lang="nb">Uttal navnet (stemme)</span>
+          <span data-lang="en">Record the deceased's full name in a clear voice</span>
+          <span data-lang="ar">سجّل اسم المتوفّى كاملاً بصوتٍ واضح</span>
+          <span data-lang="sv">Spela in den avlidnes fullständiga namn med tydlig röst</span>
+          <span data-lang="nb">Spill inn avdødes fulle navn med tydelig stemme</span>
         </span>
 
         <div class="recorder" id="recorder">
@@ -173,11 +199,17 @@
         <span data-lang="nb">Forespørsel mottatt</span>
       </h3>
       <p>
-        <span data-lang="en">May Allah accept it. We will be in touch shortly.</span>
-        <span data-lang="ar">تقبّل الله. سنتواصل معك قريباً.</span>
-        <span data-lang="sv">Må Allah acceptera den. Vi hör av oss snart.</span>
-        <span data-lang="nb">Måtte Allah akseptere den. Vi tar kontakt snart.</span>
+        <span data-lang="en">Taking you to secure card payment to complete the booking…</span>
+        <span data-lang="ar">ننقلك الآن إلى الدفع الآمن بالبطاقة لإتمام الحجز…</span>
+        <span data-lang="sv">Vi tar dig till säker kortbetalning för att slutföra bokningen…</span>
+        <span data-lang="nb">Vi tar deg til sikker kortbetaling for å fullføre bestillingen…</span>
       </p>
+      <a class="btn btn--gold" id="register-pay" href="#">
+        <span data-lang="en">Continue to payment</span>
+        <span data-lang="ar">المتابعة إلى الدفع</span>
+        <span data-lang="sv">Fortsätt till betalning</span>
+        <span data-lang="nb">Fortsett til betaling</span>
+      </a>
     </div>
   </div>
 </section>
@@ -222,6 +254,37 @@
   .field input[aria-invalid="true"] {
     border-color: var(--c-burgundy);
     box-shadow: 0 0 0 3px rgba(139, 45, 45, 0.14);
+  }
+
+  .choice { display: flex; gap: var(--s-3); flex-wrap: wrap; }
+  .choice__opt {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    cursor: pointer;
+    font-size: var(--fs-md);
+    color: var(--c-ink);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-md);
+    background: var(--c-paper);
+    padding: 0.7rem 1.1rem;
+    flex: 1;
+    min-width: 120px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  html[lang="ar"] .choice__opt { font-family: var(--ff-arabic); }
+  .choice__opt input {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    accent-color: var(--c-green-900);
+  }
+  .choice__opt:has(input:checked) {
+    border-color: var(--c-gold-500);
+    box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.18);
+  }
+  .choice[aria-invalid="true"] .choice__opt {
+    border-color: var(--c-burgundy);
   }
 
   .recorder {
@@ -420,6 +483,10 @@
       else start();
     });
 
+    const payUrl = form.dataset.checkout || '';
+    const payLink = document.getElementById('register-pay') as HTMLAnchorElement | null;
+    if (payLink && payUrl) payLink.href = payUrl;
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       let ok = true;
@@ -429,6 +496,10 @@
         input.setAttribute('aria-invalid', invalid ? 'true' : 'false');
         if (invalid && ok) { input.focus(); ok = false; }
       });
+      const genderEl = document.getElementById('rf-gender') as HTMLElement;
+      const gender = form.querySelector<HTMLInputElement>('input[name="gender"]:checked');
+      genderEl.setAttribute('aria-invalid', gender ? 'false' : 'true');
+      if (!gender && ok) { genderEl.querySelector('input')?.focus(); ok = false; }
       const terms = document.getElementById('rf-terms') as HTMLInputElement;
       terms.setAttribute('aria-invalid', terms.checked ? 'false' : 'true');
       if (!terms.checked && ok) { terms.focus(); ok = false; }
@@ -439,6 +510,7 @@
       fd.append('name', (document.getElementById('rf-name') as HTMLInputElement).value.trim());
       fd.append('contact', (document.getElementById('rf-contact') as HTMLInputElement).value.trim());
       fd.append('deceased', (document.getElementById('rf-deceased') as HTMLInputElement).value.trim());
+      fd.append('gender', gender ? gender.value : '');
       if (voiceBlob) {
         const ext = (voiceBlob.type.split('/')[1] || 'webm').split(';')[0];
         fd.append('voice', voiceBlob, `voice-${Date.now()}.${ext}`);
@@ -447,11 +519,21 @@
       fd.append('_template', 'table');
       fd.append('_captcha', 'false');
 
+      // Deliver the request, then continue to card payment.
+      let redirected = false;
+      const goToPayment = () => {
+        if (redirected) return;
+        redirected = true;
+        if (payUrl) window.location.href = payUrl;
+      };
+
       fetch('https://formsubmit.co/info@wafahajj.com', {
         method: 'POST',
         body: fd,
         mode: 'no-cors',
-      }).catch(() => {});
+      }).then(goToPayment).catch(goToPayment);
+      // Fallback in case the request hangs.
+      window.setTimeout(goToPayment, 2500);
 
       form.hidden = true;
       doneEl.hidden = false;
