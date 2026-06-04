@@ -1,5 +1,4 @@
 ---
-import AssetSlot from '@components/ui/AssetSlot.astro';
 import { content as c } from '@lib/content';
 ---
 
@@ -35,67 +34,5 @@ import { content as c } from '@lib/content';
       ))}
     </ul>
 
-    <p class="proof-gallery-heading">
-      {(['en','ar','sv','nb'] as const).map((l) => (
-        <span data-lang={l}>{c.proof.galleryHeading[l]}</span>
-      ))}
-    </p>
-
-    <div class="proof-gallery">
-      <figure>
-        <AssetSlot title="Certificate" filename="certificate.jpg" />
-        <figcaption>
-          {(['en','ar','sv','nb'] as const).map((l) => (
-            <span data-lang={l}>{c.proof.galleryCaptions.certificate[l]}</span>
-          ))}
-        </figcaption>
-      </figure>
-      <figure>
-        <AssetSlot title="Hady Receipt" filename="hady-receipt.jpg" />
-        <figcaption>
-          {(['en','ar','sv','nb'] as const).map((l) => (
-            <span data-lang={l}>{c.proof.galleryCaptions.hadyReceipt[l]}</span>
-          ))}
-        </figcaption>
-      </figure>
-      <figure>
-        <AssetSlot title="Arafah Video" filename="arafa-thumb.jpg" />
-        <figcaption>
-          {(['en','ar','sv','nb'] as const).map((l) => (
-            <span data-lang={l}>{c.proof.galleryCaptions.arafaThumb[l]}</span>
-          ))}
-        </figcaption>
-      </figure>
-    </div>
   </div>
 </section>
-
-<style>
-  .proof-gallery-heading {
-    text-align: center;
-    margin-top: var(--s-6);
-    font-size: var(--fs-sm);
-    font-weight: 600;
-    color: var(--c-secondary);
-    letter-spacing: 0.01em;
-  }
-  .proof-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: var(--s-4);
-    margin-top: var(--s-5);
-  }
-  figure {
-    margin: 0;
-    background: #fff;
-    border-radius: var(--radius-md);
-    padding: var(--s-3);
-    box-shadow: var(--shadow-card);
-  }
-  figcaption {
-    text-align: center;
-    margin-top: var(--s-2);
-    font-size: var(--fs-xs);
-    color: var(--c-text-soft);
-  }
-</style>
