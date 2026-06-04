@@ -49,20 +49,10 @@ const ringColor = onGreen ? 'rgba(228,197,130,0.55)' : 'rgba(200,155,60,0.5)';
       </mask>
     </defs>
 
-    {/* seal ring — finely dashed so its slow counter-rotation reads as an engraved seal */}
-    <circle
-      class="wh-logo__ring"
-      cx="90"
-      cy="90"
-      r="72"
-      fill="none"
-      stroke={ringColor}
-      stroke-width="1.4"
-      stroke-dasharray="3 7"
-      stroke-linecap="round"
-    />
+    {/* seal ring — complete circle; spins on its vertical axis (narrows then widens) */}
+    <circle class="wh-logo__ring" cx="90" cy="90" r="72" fill="none" stroke={ringColor} stroke-width="1.4" />
 
-    {/* gold crescent — slowly turns; grouped so its mask rotates with it */}
+    {/* gold crescent — spins on its vertical axis; grouped so its mask turns with it */}
     <g class="wh-logo__crescent">
       <circle cx="90" cy="92" r="42" fill="url(#wh-gold)" mask="url(#wh-crescent)" />
     </g>
@@ -90,22 +80,22 @@ const ringColor = onGreen ? 'rgba(228,197,130,0.55)' : 'rgba(200,155,60,0.5)';
 
   .wh-logo__mark { display: block; flex-shrink: 0; overflow: visible; }
 
-  /* the crescent slowly turns; the seal ring drifts the opposite way */
+  /* crescent spins on its vertical axis; the seal ring spins the opposite way */
   .wh-logo__crescent {
     transform-box: view-box;
     transform-origin: 90px 92px;
-    animation: wh-crescent-spin 30s linear infinite;
+    animation: wh-crescent-spin 9s linear infinite;
   }
   .wh-logo__ring {
     transform-box: view-box;
     transform-origin: 90px 90px;
-    animation: wh-ring-spin 44s linear infinite;
+    animation: wh-ring-spin 12s linear infinite;
   }
   @keyframes wh-crescent-spin {
-    to { transform: rotate(360deg); }
+    to { transform: rotateY(360deg); }
   }
   @keyframes wh-ring-spin {
-    to { transform: rotate(-360deg); }
+    to { transform: rotateY(-360deg); }
   }
 
   .wh-logo__wordmark {
