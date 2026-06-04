@@ -90,7 +90,7 @@ import { content as c } from '@lib/content';
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: var(--s-4);
     margin-top: var(--s-5);
-    align-items: start;
+    align-items: stretch;
   }
   figure {
     margin: 0;
@@ -98,16 +98,21 @@ import { content as c } from '@lib/content';
     border-radius: var(--radius-md);
     padding: var(--s-3);
     box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
   }
   figure img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 340px;
+    object-fit: contain;
+    background: var(--c-bg, #f5f1e8);
     border-radius: calc(var(--radius-md) - 4px);
   }
   figcaption {
     text-align: center;
-    margin-top: var(--s-3);
+    margin-top: auto;
+    padding-top: var(--s-3);
     font-size: var(--fs-xs);
     color: var(--c-text-soft);
   }
