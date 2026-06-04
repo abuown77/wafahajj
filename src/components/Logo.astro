@@ -30,33 +30,30 @@ const ringColor = onGreen ? 'rgba(228,197,130,0.55)' : 'rgba(200,155,60,0.5)';
   aria-label={ariaLabel}
   style={`--wh-logo-scale: ${scale};`}
 >
-  <svg
-    class="wh-logo__mark"
-    width={markSize}
-    height={markSize}
-    viewBox="0 0 180 180"
-    aria-hidden="true"
-  >
-    <defs>
-      <linearGradient id="wh-gold" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#E4C582" />
-        <stop offset="55%" stop-color="#C89B3C" />
-        <stop offset="100%" stop-color="#A87B28" />
-      </linearGradient>
-      <mask id="wh-crescent">
-        <circle cx="90" cy="92" r="42" fill="#FFFFFF" />
-        <circle cx="106" cy="80" r="37" fill="#000000" />
-      </mask>
-    </defs>
+  {/* Two stacked layers in a 3D perspective box so the crescent and the ring
+      visibly turn in OPPOSITE directions around the vertical axis. */}
+  <div class="wh-logo__mark" style={`width:${markSize}px;height:${markSize}px;`} aria-hidden="true">
+    {/* seal ring — complete circle, turns one way */}
+    <svg class="wh-logo__layer wh-logo__ring-layer" viewBox="0 0 180 180">
+      <circle cx="90" cy="90" r="72" fill="none" stroke={ringColor} stroke-width="1.4" />
+    </svg>
 
-    {/* seal ring — complete circle; spins on its vertical axis (narrows then widens) */}
-    <circle class="wh-logo__ring" cx="90" cy="90" r="72" fill="none" stroke={ringColor} stroke-width="1.4" />
-
-    {/* gold crescent — spins on its vertical axis; grouped so its mask turns with it */}
-    <g class="wh-logo__crescent">
+    {/* gold crescent — turns the opposite way */}
+    <svg class="wh-logo__layer wh-logo__crescent-layer" viewBox="0 0 180 180">
+      <defs>
+        <linearGradient id="wh-gold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#E4C582" />
+          <stop offset="55%" stop-color="#C89B3C" />
+          <stop offset="100%" stop-color="#A87B28" />
+        </linearGradient>
+        <mask id="wh-crescent">
+          <circle cx="90" cy="92" r="42" fill="#FFFFFF" />
+          <circle cx="106" cy="80" r="37" fill="#000000" />
+        </mask>
+      </defs>
       <circle cx="90" cy="92" r="42" fill="url(#wh-gold)" mask="url(#wh-crescent)" />
-    </g>
-  </svg>
+    </svg>
+  </div>
 
   {showWordmark && (
     <div class="wh-logo__wordmark">
@@ -78,17 +75,26 @@ const ringColor = onGreen ? 'rgba(228,197,130,0.55)' : 'rgba(200,155,60,0.5)';
     gap: calc(12px * var(--wh-logo-scale));
   }
 
-  .wh-logo__mark { display: block; flex-shrink: 0; overflow: visible; }
-
-  /* crescent spins on its vertical axis; the seal ring spins the opposite way */
-  .wh-logo__crescent {
-    transform-box: view-box;
-    transform-origin: 90px 92px;
+  /* 3D box: real depth so opposite vertical-axis spins are clearly distinguishable */
+  .wh-logo__mark {
+    position: relative;
+    flex-shrink: 0;
+    perspective: 700px;
+  }
+  .wh-logo__layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    transform-origin: center center;
+    backface-visibility: visible;
+  }
+  /* crescent turns one way, the seal ring the opposite way */
+  .wh-logo__crescent-layer {
     animation: wh-crescent-spin 9s linear infinite;
   }
-  .wh-logo__ring {
-    transform-box: view-box;
-    transform-origin: 90px 90px;
+  .wh-logo__ring-layer {
     animation: wh-ring-spin 12s linear infinite;
   }
   @keyframes wh-crescent-spin {
