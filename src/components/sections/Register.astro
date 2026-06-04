@@ -84,6 +84,59 @@
         <input type="hidden" name="voice" id="rf-voice" />
       </div>
 
+      <div class="field field--terms">
+        <details class="terms">
+          <summary class="terms__summary">
+            <span data-lang="en">Terms of Service — please read before agreeing</span>
+            <span data-lang="ar">شروط الخدمة — يُرجى قراءتها قبل الموافقة</span>
+            <span data-lang="sv">Användarvillkor — läs innan du godkänner</span>
+            <span data-lang="nb">Vilkår for tjenesten — les før du godtar</span>
+          </summary>
+          <ul class="terms__list">
+            <li>
+              <span data-lang="en">We perform the Umrah on behalf of the deceased you name, through a trusted person in Makkah.</span>
+              <span data-lang="ar">نؤدّي العمرة نيابةً عن المتوفّى الذي تذكره، عبر شخص موثوق في مكة.</span>
+              <span data-lang="sv">Vi utför Umrah på den avlidnes vägnar som du anger, genom en betrodd person i Mecka.</span>
+              <span data-lang="nb">Vi utfører Umrah på vegne av den avdøde du oppgir, gjennom en betrodd person i Mekka.</span>
+            </li>
+            <li>
+              <span data-lang="en">You receive proof of completion: a video and photos of the performance.</span>
+              <span data-lang="ar">تستلم إثبات الإتمام: فيديو وصور لأداء العمرة.</span>
+              <span data-lang="sv">Du får bevis på genomförandet: en video och foton av utförandet.</span>
+              <span data-lang="nb">Du mottar bevis på fullføring: en video og bilder av utførelsen.</span>
+            </li>
+            <li>
+              <span data-lang="en">Your details and voice recording are used only to fulfil this Umrah and are never shared.</span>
+              <span data-lang="ar">تُستخدم بياناتك وتسجيلك الصوتي لإتمام هذه العمرة فقط، ولا تُشارك مع أي جهة.</span>
+              <span data-lang="sv">Dina uppgifter och röstinspelning används endast för att utföra denna Umrah och delas aldrig.</span>
+              <span data-lang="nb">Opplysningene dine og stemmeopptaket brukes kun til å utføre denne Umrah og deles aldri.</span>
+            </li>
+            <li>
+              <span data-lang="en">The fee is $199, paid by card. Once the Umrah has been performed, the fee is non-refundable.</span>
+              <span data-lang="ar">الرسوم 199 دولاراً تُدفع بالبطاقة. بعد أداء العمرة لا تُسترد الرسوم.</span>
+              <span data-lang="sv">Avgiften är 199 USD och betalas med kort. När Umrah har utförts återbetalas avgiften inte.</span>
+              <span data-lang="nb">Avgiften er 199 USD og betales med kort. Når Umrah er utført, refunderes ikke avgiften.</span>
+            </li>
+            <li>
+              <span data-lang="en">We carry it out with care; its acceptance and reward rest with Allah alone.</span>
+              <span data-lang="ar">نؤدّيها بعناية، وقبولها وأجرها عند الله وحده.</span>
+              <span data-lang="sv">Vi utför den med omsorg; dess godtagande och belöning ligger hos Allah allena.</span>
+              <span data-lang="nb">Vi utfører den med omhu; aksept og belønning hviler hos Allah alene.</span>
+            </li>
+          </ul>
+        </details>
+
+        <label class="terms__agree" for="rf-terms">
+          <input type="checkbox" id="rf-terms" name="terms" required />
+          <span class="terms__agree-text">
+            <span data-lang="en">I have read and agree to the Terms of Service.</span>
+            <span data-lang="ar">قرأت شروط الخدمة وأوافق عليها.</span>
+            <span data-lang="sv">Jag har läst och godkänner användarvillkoren.</span>
+            <span data-lang="nb">Jeg har lest og godtar vilkårene for tjenesten.</span>
+          </span>
+        </label>
+      </div>
+
       <button type="submit" class="btn btn--gold register__submit">
         <span data-lang="en">Send the request</span>
         <span data-lang="ar">أرسل الطلب</span>
@@ -186,6 +239,58 @@
     margin: var(--s-2) 0 0;
     min-height: 1em;
   }
+
+  .field--terms { gap: var(--s-3); }
+
+  .terms {
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-md);
+    background: var(--c-paper);
+  }
+  .terms__summary {
+    cursor: pointer;
+    padding: 0.85rem 1rem;
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    color: var(--c-secondary);
+    list-style-position: inside;
+  }
+  .terms__summary:focus-visible {
+    outline: 2px solid var(--c-gold-500);
+    outline-offset: 2px;
+  }
+  .terms__list {
+    margin: 0;
+    padding: 0 1.4rem 1rem;
+    display: grid;
+    gap: var(--s-2);
+    font-size: var(--fs-sm);
+    color: var(--c-text-soft);
+  }
+  html[lang="ar"] .terms__list { font-family: var(--ff-arabic); }
+
+  .terms__agree {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--s-3);
+    cursor: pointer;
+  }
+  .terms__agree input {
+    width: 20px;
+    height: 20px;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+    accent-color: var(--c-green-900);
+  }
+  .terms__agree input[aria-invalid="true"] {
+    outline: 2px solid var(--c-burgundy);
+    outline-offset: 2px;
+  }
+  .terms__agree-text {
+    font-size: var(--fs-sm);
+    color: var(--c-ink);
+  }
+  html[lang="ar"] .terms__agree-text { font-family: var(--ff-arabic); }
 
   .register__submit { justify-content: center; margin-top: var(--s-2); }
 
@@ -310,6 +415,9 @@
         input.setAttribute('aria-invalid', invalid ? 'true' : 'false');
         if (invalid && ok) { input.focus(); ok = false; }
       });
+      const terms = document.getElementById('rf-terms') as HTMLInputElement;
+      terms.setAttribute('aria-invalid', terms.checked ? 'false' : 'true');
+      if (!terms.checked && ok) { terms.focus(); ok = false; }
       if (!ok) return;
       if (recorderEl.classList.contains('is-recording')) stop();
       // Delivery is wired in the next step; for now confirm capture.
