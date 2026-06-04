@@ -22,7 +22,7 @@
   - DNSSEC: غير مفعّل (سنفعّله لاحقاً)
 - **Registrar Owner Email**: `abuown@gmail.com`
 - **الاستضافة المختارة**: Cloudflare Pages (لم يُربط بعد — بانتظار أول build)
-- **البريد الموحَّد المخطَّط**: `info@wafahajj.com` عبر Cloudflare Email Routing → Gmail
+- **البريد الرسمي (يعمل بالكامل 4 يونيو 2026)**: `info@wafahajj.com` على **Google Workspace** — يرسل ويستقبل، بحماية SPF+DKIM+DMARC. حلّ محلّ تحويل Cloudflare القديم (كان استقبالاً فقط). راجع ذاكرة `decision_email_google_workspace`. الهدف القادم: مراقب بريد آلي ٢٤ ساعة على خادم المالك.
 - ⚠️ **تحديث (متجاوِز للقديم)**: القناة صارت **Telegram** (`@wafahajj` → `https://t.me/wafahajj`) — واتساب أُزيل من الموقع. الدفع صار **بالبطاقة** عبر Fourthwall (منتج عمرة البدل $199 شغّال). راجع ذاكرة `decision_telegram_payment`.
 
 ### الأسعار (لا تُخفَّض)
