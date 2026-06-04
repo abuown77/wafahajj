@@ -12,10 +12,10 @@
 
   "hero": {
     "eyebrow": {
-      "en": "Wafa Hajj · al-Badr",
+      "en": "Wafa Hajj",
       "ar": "وفاء الحج",
-      "sv": "Wafa Hajj · al-Badr",
-      "nb": "Wafa Hajj · al-Badr"
+      "sv": "Wafa Hajj",
+      "nb": "Wafa Hajj"
     },
     "headline": {
       "en": "A promise kept.",
@@ -364,10 +364,10 @@
 
   "footer": {
     "tagline": {
-      "en": "A promise kept. A pillar fulfilled.",
-      "ar": "«وفاءٌ للعهد، وإتمامٌ للرُّكن»",
-      "sv": "Ett löfte hålls. En pelare fullbordas.",
-      "nb": "Et løfte holdt. En søyle fullført."
+      "en": "A promise kept. A duty fulfilled.",
+      "ar": "«وعدٌ يُوفى، وفريضةٌ تُؤدّى.»",
+      "sv": "Ett löfte hålls. En plikt uppfylld.",
+      "nb": "Et løfte holdt. En plikt oppfylt."
     },
     "identity": {
       "en": "Wafa Hajj · Founded 2026 · Makkah",

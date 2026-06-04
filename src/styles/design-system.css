@@ -1,6 +1,6 @@
 /* =========================================================
    Wafa Hajj — Design System
-   Based on Claude Design handoff (Badr identity).
+   Based on the adopted Wafa Hajj digital identity (crescent, 4 June 2026).
    3 font families · 11 colors · editorial whitespace.
    ========================================================= */
 
@@ -121,6 +121,23 @@ a {
   color: inherit;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+}
+
+/* Visible, on-brand focus ring — accessibility reads as quality & trust */
+:focus-visible {
+  outline: 2px solid var(--c-gold-500);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
