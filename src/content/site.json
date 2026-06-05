@@ -30,10 +30,10 @@
       "nb": "En Umrah i deres navn."
     },
     "subhead": {
-      "en": "Umrah Badal — and Hajj Badal — on behalf of your late parents, performed from within Makkah, under full shariah supervision, documented with a video in their name.",
-      "ar": "توفّي والدك — رحمه الله — وفي قلبه أمنيةٌ لم تكتمل: أن يعتمر ويطوف بالبيت العتيق. رحلت والدتك، وبقيت عمرتها أمنيةً تتمنى تحقيقها. أنت من حمل الأمانة بعدهم.",
-      "sv": "Umrah Badal — och Hajj Badal — på dina föräldrars vägnar, utförd från Makkah, under full shariah-tillsyn, dokumenterad med en video i deras namn.",
-      "nb": "Umrah Badal — og Hajj Badal — på dine foreldres vegne, utført fra Makkah, under full shariah-tilsyn, dokumentert med en video i deres navn."
+      "en": "Umrah Badal — and Hajj Badal — on behalf of your late parents, or anyone you have lost, performed from within Makkah, under full shariah supervision, documented with a video in their name.",
+      "ar": "توفّي والدك — رحمه الله — وفي قلبه أمنيةٌ لم تكتمل: أن يعتمر ويطوف بالبيت العتيق. رحلت والدتك، وبقيت عمرتها أمنيةً تتمنى تحقيقها. أنت من حمل الأمانة بعدهم — أو عمّن فقدتَ: قريبٍ، صديقٍ، حتى شهيدٍ لا تعرفه.",
+      "sv": "Umrah Badal — och Hajj Badal — på dina föräldrars vägnar, eller vem som helst du förlorat, utförd från Makkah, under full shariah-tillsyn, dokumenterad med en video i deras namn.",
+      "nb": "Umrah Badal — og Hajj Badal — på dine foreldres vegne, eller hvem som helst du har mistet, utført fra Makkah, under full shariah-tilsyn, dokumentert med en video i deres navn."
     },
     "primaryCta": {
       "en": "Message us on Telegram",
@@ -111,7 +111,7 @@
       ],
       "ar": [
         { "title": "إشراف شرعي مباشر", "body": "أنا شخصياً أشرف على كل عملية، لست وسيطاً." },
-        { "title": "توثيق مصوَّر", "body": "كل نسك يُؤدّى باسم والدك، مُوثَّقاً بصوت وصورة." },
+        { "title": "توثيق مصوَّر", "body": "كل نسك يُؤدّى باسم من فقدتَ، مُوثَّقاً بصوت وصورة." },
         { "title": "قناة واحدة واضحة", "body": "اطلب من الموقع مباشرة، أو تواصل عبر تلجرام — بلا نماذج طويلة أو منصات معقّدة." }
       ],
       "sv": [
@@ -142,10 +142,10 @@
     },
     "items": {
       "en": [
-        { "label": "Video of the intention", "detail": "the substitute pronounces the niyyah clearly in your late parent's name" }
+        { "label": "Video of the intention", "detail": "the substitute pronounces the niyyah clearly in the name of the one you have lost" }
       ],
       "ar": [
-        { "label": "فيديو النية", "detail": "النائب ينطق النية بوضوح باسم والدك المتوفّى" }
+        { "label": "فيديو النية", "detail": "النائب ينطق النية بوضوح باسم من فقدتَه" }
       ],
       "sv": [
         { "label": "Video av avsikten (niyyah)", "detail": "ställföreträdaren uttalar avsikten tydligt i din avlidna anhörigs namn" }
@@ -260,16 +260,16 @@
     },
     "steps": {
       "en": [
-        { "title": "Submit the Request", "body": "On the site, enter your late parent's name and a short voice recording pronouncing it — so it is said correctly." },
+        { "title": "Submit the Request", "body": "On the site, enter the name of the one you have lost and a short voice recording pronouncing it — so it is said correctly." },
         { "title": "Pay Securely", "body": "Pay the $199 by card on the site; for any question you can reach us on Telegram." },
-        { "title": "Umrah Performed", "body": "A substitute who has completed his own Umrah performs it in your parent's name, from within Makkah, under direct shariah supervision." },
-        { "title": "Documentation Delivered", "body": "A video of the intention pronounced in your parent's name arrives within days of the Umrah." }
+        { "title": "Umrah Performed", "body": "A substitute who has completed his own Umrah performs it in their name, from within Makkah, under direct shariah supervision." },
+        { "title": "Documentation Delivered", "body": "A video of the intention pronounced in their name arrives within days of the Umrah." }
       ],
       "ar": [
-        { "title": "أرسل الطلب", "body": "من الموقع، أدخِل اسم والدك أو والدتك المتوفّى، وتسجيلاً صوتياً قصيراً بنطق الاسم — ليُؤدّى بالصيغة الصحيحة." },
+        { "title": "أرسل الطلب", "body": "من الموقع، أدخِل اسم من فقدتَه — والداً كان أو غيره — وتسجيلاً صوتياً قصيراً بنطق الاسم — ليُؤدّى بالصيغة الصحيحة." },
         { "title": "ادفع بأمان", "body": "ادفع الـ$199 بالبطاقة عبر الموقع، ولأي استفسار تواصل معنا عبر تلجرام." },
-        { "title": "أداء العمرة", "body": "نائبٌ قد اعتمر عن نفسه يؤدّي العمرة باسم والدك، من داخل مكّة المكرّمة، تحت إشرافٍ شرعيٍّ مباشر." },
-        { "title": "تسليم التوثيق", "body": "يصلك خلال أيام: فيديو النية مَنطوقةً بوضوح باسم والدك." }
+        { "title": "أداء العمرة", "body": "نائبٌ قد اعتمر عن نفسه يؤدّي العمرة باسمه، من داخل مكّة المكرّمة، تحت إشرافٍ شرعيٍّ مباشر." },
+        { "title": "تسليم التوثيق", "body": "يصلك خلال أيام: فيديو النية مَنطوقةً بوضوح باسمه." }
       ],
       "sv": [
         { "title": "Skicka begäran", "body": "På webbplatsen anger du din avlidna anhörigs namn och ett kort röstmeddelande som uttalar det — så att det sägs korrekt." },
@@ -303,22 +303,25 @@
       "en": [
         { "q": "Is Umrah on behalf of a deceased parent permissible?", "a": "Yes. It is established in the Sunnah — the Prophet ﷺ instructed a man to perform Hajj and Umrah on behalf of his father, and the scholars apply the same to the mother." },
         { "q": "Do I need anyone's permission?", "a": "For a deceased parent, no permission is required. You may arrange the Umrah for them directly." },
-        { "q": "Who actually performs the Umrah?", "a": "A trustworthy student of knowledge in Makkah who has already completed his own Umrah, performing it in your parent's name under direct shariah supervision." },
+        { "q": "Can I do this for someone other than my parents?", "a": "Yes. You can offer the Umrah for any deceased Muslim — a relative, a friend, a colleague, or even someone you never knew, such as a martyr. It becomes a gift and an ongoing charity in their name." },
+        { "q": "Who actually performs the Umrah?", "a": "A trustworthy student of knowledge in Makkah who has already completed his own Umrah, performing it in their name under direct shariah supervision." },
         { "q": "When will the Umrah be performed?", "a": "The date is set according to the substitutes' availability, and we notify you of it once your payment is complete." },
-        { "q": "How do I know it was truly done?", "a": "You receive a video in which the intention is pronounced clearly in your parent's name — within days." },
+        { "q": "How do I know it was truly done?", "a": "You receive a video in which the intention is pronounced clearly in their name — within days." },
         { "q": "How do I pay?", "a": "Securely by card (Visa/Mastercard) on the site. One flat price of $199, no hidden fees." }
       ],
       "ar": [
         { "q": "هل تجوز العمرة عن الوالد المتوفّى؟", "a": "نعم، وهي ثابتةٌ بالسنّة — أمر النبيُّ ﷺ رجلاً أن يحجّ ويعتمر عن أبيه، وألحق العلماءُ الأمَّ بذلك." },
         { "q": "هل أحتاج إذناً من أحد؟", "a": "للوالد المتوفّى لا يلزم إذن. يمكنك ترتيب العمرة عنه مباشرةً." },
-        { "q": "من الذي يؤدّي العمرة فعلاً؟", "a": "طالب علمٍ ثقةٌ في مكّة قد اعتمر عن نفسه أوّلاً، يؤدّيها باسم والدك تحت إشرافٍ شرعيٍّ مباشر." },
+        { "q": "هل يمكن أن تكون عن غير الوالدين؟", "a": "نعم. يمكنك أن تُهديها لأيّ مسلمٍ متوفّى — قريبٍ، صديقٍ، زميلٍ، بل وعن شخصٍ لا تعرفه كشهيدٍ. فتكون هديةً وصدقةً جاريةً باسمه." },
+        { "q": "من الذي يؤدّي العمرة فعلاً؟", "a": "طالب علمٍ ثقةٌ في مكّة قد اعتمر عن نفسه أوّلاً، يؤدّيها باسمه تحت إشرافٍ شرعيٍّ مباشر." },
         { "q": "متى ستُؤدّى العمرة؟", "a": "يُحدَّد الموعد بحسب المتاح من النوّاب، ونُبلغك به بعد إتمام عملية الدفع." },
-        { "q": "كيف أتأكّد أنّها أُدّيت حقّاً؟", "a": "يصلك فيديو تُنطَق فيه النية بوضوح باسم والدك — خلال أيام." },
+        { "q": "كيف أتأكّد أنّها أُدّيت حقّاً؟", "a": "يصلك فيديو تُنطَق فيه النية بوضوح باسمه — خلال أيام." },
         { "q": "كيف أدفع؟", "a": "بأمان بالبطاقة (فيزا/ماستركارد) عبر الموقع. سعرٌ واحد شامل $199، بلا رسوم خفية." }
       ],
       "sv": [
         { "q": "Är Umrah på en avliden förälders vägnar tillåten?", "a": "Ja. Den är grundad i Sunnah — Profeten ﷺ uppmanade en man att utföra Hajj och Umrah för sin far, och de lärde tillämpar detsamma på modern." },
         { "q": "Behöver jag någons tillstånd?", "a": "För en avliden förälder krävs inget tillstånd. Du kan ordna Umrah för dem direkt." },
+        { "q": "Kan jag göra detta för någon annan än mina föräldrar?", "a": "Ja. Du kan skänka denna Umrah för vilken avliden muslim som helst — en släkting, en vän, en kollega, eller till och med någon du aldrig känt, såsom en martyr. Den blir en gåva och en fortlöpande välgörenhet i deras namn." },
         { "q": "Vem utför egentligen Umrah?", "a": "En pålitlig kunskapsstudent i Makkah som redan fullbordat sin egen Umrah, och utför den i din anhörigs namn under direkt shariah-tillsyn." },
         { "q": "När utförs Umrah?", "a": "Datumet bestäms utifrån ställföreträdarnas tillgänglighet, och vi meddelar dig det när din betalning är genomförd." },
         { "q": "Hur vet jag att den verkligen utfördes?", "a": "Du får en video där avsikten uttalas tydligt i din anhörigs namn — inom några dagar." },
@@ -327,6 +330,7 @@
       "nb": [
         { "q": "Er Umrah på vegne av en avdød forelder tillatt?", "a": "Ja. Det er grunnfestet i Sunnah — Profeten ﷺ ba en mann utføre Hajj og Umrah for sin far, og de lærde anvender det samme på moren." },
         { "q": "Trenger jeg noens tillatelse?", "a": "For en avdød forelder kreves ingen tillatelse. Du kan ordne Umrah for dem direkte." },
+        { "q": "Kan jeg gjøre dette for noen andre enn mine foreldre?", "a": "Ja. Du kan skjenke denne Umrah for hvilken som helst avdød muslim — en slektning, en venn, en kollega, eller til og med noen du aldri kjente, slik som en martyr. Den blir en gave og en vedvarende veldedighet i deres navn." },
         { "q": "Hvem utfører egentlig Umrah?", "a": "En pålitelig kunnskapsstudent i Makkah som allerede har fullført sin egen Umrah, og utfører den i din kjæres navn under direkte shariah-tilsyn." },
         { "q": "Når utføres Umrah?", "a": "Datoen fastsettes etter stedfortredernes tilgjengelighet, og vi gir deg beskjed når betalingen din er fullført." },
         { "q": "Hvordan vet jeg at den virkelig ble utført?", "a": "Du mottar en video der intensjonen uttales tydelig i din kjæres navn — innen få dager." },
@@ -343,10 +347,10 @@
       "nb": "Her er noe du bør vite:"
     },
     "subhead": {
-      "en": "Umrah Badal for your late parents — performed from within Makkah, all year round, with no season to wait for. An affordable, fully documented service. Begin on the site, or reach out on Telegram.",
-      "ar": "عمرة البدل عن والديك المتوفّين — تُؤدّى من داخل مكّة المكرّمة على مدار العام، لا تنتظر موسماً. مبلغٌ ميسور وتوثيقٌ كامل يصلك. ابدأ من الموقع، أو تواصل معنا عبر تلجرام.",
-      "sv": "Umrah Badal för dina avlidna föräldrar — utförd från Makkah, året runt, utan att vänta på en säsong. En prisvärd tjänst med full dokumentation. Börja på webbplatsen, eller kontakta oss på Telegram.",
-      "nb": "Umrah Badal for dine avdøde foreldre — utført fra Makkah, hele året, uten å vente på en sesong. En rimelig tjeneste med full dokumentasjon. Begynn på nettstedet, eller ta kontakt på Telegram."
+      "en": "Umrah Badal for your late parents — or anyone who has passed, even a martyr you never knew — performed from within Makkah, all year round, with no season to wait for. An affordable, fully documented service. Begin on the site, or reach out on Telegram.",
+      "ar": "عمرة البدل عن والديك المتوفّين — أو عن أيّ راحلٍ، حتى شهيدٍ لا تعرفه — تُؤدّى من داخل مكّة المكرّمة على مدار العام، لا تنتظر موسماً. مبلغٌ ميسور وتوثيقٌ كامل يصلك. ابدأ من الموقع، أو تواصل معنا عبر تلجرام.",
+      "sv": "Umrah Badal för dina avlidna föräldrar — eller för vem som helst som gått bort, till och med en martyr du aldrig känt — utförd från Makkah, året runt, utan att vänta på en säsong. En prisvärd tjänst med full dokumentation. Börja på webbplatsen, eller kontakta oss på Telegram.",
+      "nb": "Umrah Badal for dine avdøde foreldre — eller for hvem som helst som har gått bort, til og med en martyr du aldri kjente — utført fra Makkah, hele året, uten å vente på en sesong. En rimelig tjeneste med full dokumentasjon. Begynn på nettstedet, eller ta kontakt på Telegram."
     },
     "primaryCta": {
       "en": "Message us on Telegram",
@@ -391,10 +395,10 @@
       "nb": "Wafa Hajj — Umrah og Hajj Badal fra Makkah"
     },
     "description": {
-      "en": "Umrah Badal on behalf of your late parents from $199, performed from within Makkah under full shariah supervision. Documented with a video in their name. Hajj Badal also available.",
-      "ar": "عمرة البدل عن والديك المتوفّين من $199، تحت إشراف شرعي مباشر من داخل مكة المكرمة، موثّقة بفيديو باسمهما. وحج البدل متاح أيضاً.",
-      "sv": "Umrah Badal på dina föräldrars vägnar från 199 USD, från Makkah, under full shariah-tillsyn. Dokumenterat med en video i deras namn. Hajj Badal finns också.",
-      "nb": "Umrah Badal på dine foreldres vegne fra 199 USD, fra Makkah, under full shariah-tilsyn. Dokumentert med en video i deres namn. Hajj Badal er også tilgjengelig."
+      "en": "Umrah Badal on behalf of your late parents — or anyone who has passed, even a martyr — from $199, performed from within Makkah under full shariah supervision. Documented with a video in their name. Hajj Badal also available.",
+      "ar": "عمرة البدل عن والديك المتوفّين أو أيّ راحلٍ حتى الشهداء من $199، تحت إشراف شرعي مباشر من داخل مكة المكرمة، موثّقة بفيديو باسمه. وحج البدل متاح أيضاً.",
+      "sv": "Umrah Badal på dina föräldrars vägnar — eller vem som helst som gått bort, även en martyr — från 199 USD, från Makkah, under full shariah-tillsyn. Dokumenterat med en video i deras namn. Hajj Badal finns också.",
+      "nb": "Umrah Badal på dine foreldres vegne — eller hvem som helst som har gått bort, selv en martyr — fra 199 USD, fra Makkah, under full shariah-tilsyn. Dokumentert med en video i deres navn. Hajj Badal er også tilgjengelig."
     }
   }
 }
