@@ -1,8 +1,8 @@
 ---
 /**
- * Wafa Hajj — Badr Logo
- * Recreated as pure SVG from Claude Design handoff.
- * No Kaaba, no dome. The full moon = completion of the five pillars.
+ * Wafa Hajj — Crescent Logo (adopted 4 June 2026)
+ * Recreated as pure SVG to match the approved crescent mark.
+ * No Kaaba, no dome. Gold crescent + seal ring on the brand palette.
  */
 interface Props {
   scale?: number;          // visual scale multiplier
@@ -21,9 +21,7 @@ const {
 } = Astro.props;
 
 const markSize = 180 * scale;
-const inscribeColor = '#1E4D2B';
-const rayColor = onGreen ? 'rgba(255,255,255,0.20)' : 'rgba(200,155,60,0.28)';
-const haloStart = onGreen ? 0.55 : 0.55;
+const ringColor = onGreen ? 'rgba(228,197,130,0.55)' : 'rgba(200,155,60,0.5)';
 ---
 
 <div
@@ -32,82 +30,30 @@ const haloStart = onGreen ? 0.55 : 0.55;
   aria-label={ariaLabel}
   style={`--wh-logo-scale: ${scale};`}
 >
-  <svg
-    class="wh-logo__mark"
-    width={markSize}
-    height={markSize}
-    viewBox="0 0 180 180"
-    aria-hidden="true"
-  >
-    <defs>
-      <radialGradient id="wh-halo" cx="50%" cy="50%" r="50%">
-        <stop offset="25%" stop-color="#FFFFFF" stop-opacity="1" />
-        <stop offset="48%" stop-color="#FFFFFF" stop-opacity={haloStart} />
-        <stop offset="72%" stop-color="#FFFFFF" stop-opacity="0.18" />
-        <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
-      </radialGradient>
-    </defs>
+  {/* Two stacked layers in a 3D perspective box so the crescent and the ring
+      visibly turn in OPPOSITE directions around the vertical axis. */}
+  <div class="wh-logo__mark" style={`width:${markSize}px;height:${markSize}px;`} aria-hidden="true">
+    {/* seal ring — complete circle, turns one way */}
+    <svg class="wh-logo__layer wh-logo__ring-layer" viewBox="0 0 180 180">
+      <circle cx="90" cy="90" r="72" fill="none" stroke={ringColor} stroke-width="1.4" />
+    </svg>
 
-    {/* 24 light rays */}
-    {Array.from({ length: 24 }).map((_, i) => {
-      const angle = (i * 360) / 24;
-      const long = i % 3 === 0;
-      const r1 = long ? 62 : 58;
-      const r2 = long ? 82 : 74;
-      return (
-        <line
-          x1="90" y1={90 - r1}
-          x2="90" y2={90 - r2}
-          stroke={rayColor}
-          stroke-width={long ? 1.2 : 0.8}
-          stroke-linecap="round"
-          transform={`rotate(${angle} 90 90)`}
-        />
-      );
-    })}
-
-    {/* soft halo */}
-    <circle cx="90" cy="90" r="78" fill="url(#wh-halo)" />
-    <circle cx="90" cy="90" r="60" fill="url(#wh-halo)" />
-
-    {/* pure white moon */}
-    <circle cx="90" cy="90" r="48" fill="#FFFFFF" />
-    <circle
-      cx="90" cy="90" r="48"
-      fill="none"
-      stroke={onGreen ? 'rgba(255,255,255,0.25)' : 'rgba(30,77,43,0.08)'}
-      stroke-width="0.5"
-    />
-
-    {/* Wafa (inscribed) */}
-    <text
-      x="90" y="86"
-      text-anchor="middle"
-      dominant-baseline="middle"
-      font-family="Playfair Display, serif"
-      font-style="italic"
-      font-size="15"
-      font-weight="500"
-      fill={inscribeColor}
-      letter-spacing="0.2"
-    >Wafa</text>
-
-    {/* Hajj (inscribed) */}
-    <text
-      x="90" y="103"
-      text-anchor="middle"
-      dominant-baseline="middle"
-      font-family="Playfair Display, serif"
-      font-style="italic"
-      font-size="15"
-      font-weight="500"
-      fill={inscribeColor}
-      letter-spacing="0.2"
-    >Hajj</text>
-
-    {/* ornament dot */}
-    <circle cx="90" cy="117" r="0.8" fill={inscribeColor} opacity="0.5" />
-  </svg>
+    {/* gold crescent — turns the opposite way */}
+    <svg class="wh-logo__layer wh-logo__crescent-layer" viewBox="0 0 180 180">
+      <defs>
+        <linearGradient id="wh-gold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#E4C582" />
+          <stop offset="55%" stop-color="#C89B3C" />
+          <stop offset="100%" stop-color="#A87B28" />
+        </linearGradient>
+        <mask id="wh-crescent">
+          <circle cx="90" cy="92" r="42" fill="#FFFFFF" />
+          <circle cx="106" cy="80" r="37" fill="#000000" />
+        </mask>
+      </defs>
+      <circle cx="90" cy="92" r="42" fill="url(#wh-gold)" mask="url(#wh-crescent)" />
+    </svg>
+  </div>
 
   {showWordmark && (
     <div class="wh-logo__wordmark">
@@ -129,7 +75,34 @@ const haloStart = onGreen ? 0.55 : 0.55;
     gap: calc(12px * var(--wh-logo-scale));
   }
 
-  .wh-logo__mark { display: block; flex-shrink: 0; }
+  /* 3D box: real depth so opposite vertical-axis spins are clearly distinguishable */
+  .wh-logo__mark {
+    position: relative;
+    flex-shrink: 0;
+    perspective: 700px;
+  }
+  .wh-logo__layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    transform-origin: center center;
+    backface-visibility: visible;
+  }
+  /* crescent turns one way, the seal ring the opposite way */
+  .wh-logo__crescent-layer {
+    animation: wh-crescent-spin 9s linear infinite;
+  }
+  .wh-logo__ring-layer {
+    animation: wh-ring-spin 12s linear infinite;
+  }
+  @keyframes wh-crescent-spin {
+    to { transform: rotateY(360deg); }
+  }
+  @keyframes wh-ring-spin {
+    to { transform: rotateY(-360deg); }
+  }
 
   .wh-logo__wordmark {
     display: flex;
@@ -150,6 +123,45 @@ const haloStart = onGreen ? 0.55 : 0.55;
     color: var(--c-secondary);
   }
   .wh-logo--on-green .wh-logo__name { color: #ffffff; }
+
+  /* a slow gold sheen travels across the name (sweep of light, base colour kept) */
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .wh-logo__name {
+      background: linear-gradient(
+        100deg,
+        var(--c-secondary) 0%,
+        var(--c-secondary) 40%,
+        #e4c582 50%,
+        var(--c-secondary) 60%,
+        var(--c-secondary) 100%
+      );
+      background-size: 260% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      animation: wh-name-sheen 6.5s ease-in-out infinite;
+    }
+    .wh-logo--on-green .wh-logo__name {
+      background: linear-gradient(
+        100deg,
+        #ffffff 0%,
+        #ffffff 40%,
+        #f4e3b8 50%,
+        #ffffff 60%,
+        #ffffff 100%
+      );
+      background-size: 260% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+  }
+  @keyframes wh-name-sheen {
+    0% { background-position: 130% 0; }
+    100% { background-position: -130% 0; }
+  }
 
   .wh-logo__nameAr {
     font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif;

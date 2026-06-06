@@ -48,5 +48,12 @@ import { content as c } from '@lib/content';
     font-style: normal;
     font-weight: 500;
     font-size: clamp(1.4rem, 3vw + 0.4rem, 2.25rem);
+    /* Arabic is cursive — any tracking breaks the letter joins. Keep it normal. */
+    letter-spacing: normal;
+    line-height: 1.6;
+  }
+  :global(html[lang="ar"]) .problem-list {
+    max-width: none;
+    text-wrap: balance;
   }
 </style>

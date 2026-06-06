@@ -1,5 +1,4 @@
 ---
-import AssetSlot from '@components/ui/AssetSlot.astro';
 import { content as c } from '@lib/content';
 ---
 
@@ -43,7 +42,9 @@ import { content as c } from '@lib/content';
 
     <div class="proof-gallery">
       <figure>
-        <AssetSlot title="Certificate" filename="certificate.jpg" />
+        <button type="button" class="proof-thumb" data-zoom-src="/proof/certificate.jpg" aria-label="Enlarge certificate">
+          <img src="/proof/certificate.jpg" alt="Official Hajj Badal certificate" width="760" height="537" loading="lazy" decoding="async" />
+        </button>
         <figcaption>
           {(['en','ar','sv','nb'] as const).map((l) => (
             <span data-lang={l}>{c.proof.galleryCaptions.certificate[l]}</span>
@@ -51,15 +52,31 @@ import { content as c } from '@lib/content';
         </figcaption>
       </figure>
       <figure>
-        <AssetSlot title="Hady Receipt" filename="hady-receipt.jpg" />
+        <button type="button" class="proof-thumb is-video" data-zoom-video="/proof/umrah-video.mp4" aria-label="Play documented Umrah video">
+          <img src="/proof/umrah-video.jpg" alt="Frame from the documented Umrah video — Tawaf at the Kaaba" width="720" height="1280" loading="lazy" decoding="async" />
+          <span class="proof-badge" data-badge>
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.proof.galleryLabels.umrah[l]}</span>
+            ))}
+          </span>
+          <span class="proof-play" aria-hidden="true"></span>
+        </button>
         <figcaption>
           {(['en','ar','sv','nb'] as const).map((l) => (
-            <span data-lang={l}>{c.proof.galleryCaptions.hadyReceipt[l]}</span>
+            <span data-lang={l}>{c.proof.galleryCaptions.umrahVideo[l]}</span>
           ))}
         </figcaption>
       </figure>
       <figure>
-        <AssetSlot title="Arafah Video" filename="arafa-thumb.jpg" />
+        <button type="button" class="proof-thumb is-video" data-zoom-video="/proof/hajj-video.mp4" aria-label="Play documented Hajj video">
+          <img src="/proof/hajj-video.jpg" alt="Frame from the documented Hajj video" width="640" height="800" loading="lazy" decoding="async" />
+          <span class="proof-badge" data-badge>
+            {(['en','ar','sv','nb'] as const).map((l) => (
+              <span data-lang={l}>{c.proof.galleryLabels.hajj[l]}</span>
+            ))}
+          </span>
+          <span class="proof-play" aria-hidden="true"></span>
+        </button>
         <figcaption>
           {(['en','ar','sv','nb'] as const).map((l) => (
             <span data-lang={l}>{c.proof.galleryCaptions.arafaThumb[l]}</span>
@@ -67,8 +84,80 @@ import { content as c } from '@lib/content';
         </figcaption>
       </figure>
     </div>
+
+    <p class="proof-privacy">
+      {(['en','ar','sv','nb'] as const).map((l) => (
+        <span data-lang={l}>{c.proof.privacyNote[l]}</span>
+      ))}
+    </p>
+
+  </div>
+
+  <div class="proof-lightbox" id="proof-lightbox" hidden role="dialog" aria-modal="true">
+    <button type="button" class="proof-lightbox__close" aria-label="Close">&times;</button>
+    <span class="proof-lightbox__label" hidden></span>
+    <img class="proof-lightbox__img" src="" alt="" />
+    <video class="proof-lightbox__video" controls playsinline hidden></video>
   </div>
 </section>
+
+<script>
+  (() => {
+    const box = document.getElementById('proof-lightbox');
+    if (!box) return;
+    const img = box.querySelector('.proof-lightbox__img') as HTMLImageElement;
+    const video = box.querySelector('.proof-lightbox__video') as HTMLVideoElement;
+    const closeBtn = box.querySelector('.proof-lightbox__close') as HTMLElement;
+    const label = box.querySelector('.proof-lightbox__label') as HTMLElement;
+    let last: HTMLElement | null = null;
+
+    const open = (trigger: HTMLElement) => {
+      const vsrc = trigger.dataset.zoomVideo;
+      const badge = trigger.querySelector('[data-badge]');
+      if (badge) {
+        label.innerHTML = badge.innerHTML;
+        label.hidden = false;
+      } else {
+        label.innerHTML = '';
+        label.hidden = true;
+      }
+      if (vsrc) {
+        img.hidden = true;
+        img.src = '';
+        video.hidden = false;
+        video.src = vsrc;
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      } else {
+        video.hidden = true;
+        video.removeAttribute('src');
+        img.hidden = false;
+        img.src = trigger.dataset.zoomSrc || '';
+        img.classList.remove('is-zoomed');
+      }
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+      last = trigger;
+      closeBtn.focus();
+    };
+    const close = () => {
+      box.hidden = true;
+      video.pause();
+      video.removeAttribute('src');
+      img.src = '';
+      document.body.style.overflow = '';
+      if (last) last.focus();
+    };
+
+    document.querySelectorAll<HTMLElement>('.proof-thumb').forEach((b) => {
+      b.addEventListener('click', () => open(b));
+    });
+    img.addEventListener('click', (e) => { e.stopPropagation(); img.classList.toggle('is-zoomed'); });
+    closeBtn.addEventListener('click', close);
+    box.addEventListener('click', (e) => { if (e.target === box) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !box.hidden) close(); });
+  })();
+</script>
 
 <style>
   .proof-gallery-heading {
@@ -84,6 +173,7 @@ import { content as c } from '@lib/content';
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: var(--s-4);
     margin-top: var(--s-5);
+    align-items: stretch;
   }
   figure {
     margin: 0;
@@ -91,11 +181,164 @@ import { content as c } from '@lib/content';
     border-radius: var(--radius-md);
     padding: var(--s-3);
     box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+  }
+  .proof-thumb {
+    all: unset;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+    border-radius: calc(var(--radius-md) - 4px);
+    background: var(--c-bg, #f5f1e8);
+    cursor: zoom-in;
+  }
+  .proof-thumb:focus-visible {
+    outline: 3px solid var(--c-primary, #c89b3c);
+    outline-offset: 3px;
+  }
+  .proof-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.55s ease;
+    will-change: transform;
+  }
+  .proof-thumb:hover img,
+  .proof-thumb:focus-visible img {
+    transform: scale(1.08);
+  }
+  .proof-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--s-4);
+    background: rgba(20, 30, 22, 0.92);
+    backdrop-filter: blur(4px);
+  }
+  .proof-lightbox[hidden] { display: none; }
+  .proof-lightbox__img {
+    max-width: 95vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    cursor: zoom-in;
+    transition: transform 0.35s ease;
+  }
+  .proof-lightbox__img.is-zoomed {
+    transform: scale(1.9);
+    cursor: zoom-out;
+  }
+  .proof-lightbox__video {
+    max-width: 95vw;
+    max-height: 90vh;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    background: #000;
+  }
+  .proof-lightbox__video[hidden] { display: none; }
+  .proof-thumb { position: relative; }
+  .proof-badge {
+    position: absolute;
+    top: var(--s-3);
+    left: var(--s-3);
+    z-index: 2;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--c-primary, #c89b3c);
+    color: var(--c-secondary, #1e4d2b);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+  }
+  .proof-lightbox__label {
+    position: absolute;
+    top: var(--s-4);
+    left: var(--s-4);
+    z-index: 210;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: var(--c-primary, #c89b3c);
+    color: var(--c-secondary, #1e4d2b);
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  }
+  .proof-lightbox__label[hidden] { display: none; }
+  .proof-play {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(139, 45, 45, 0.85);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  .proof-play::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: 15px 0 15px 26px;
+    border-color: transparent transparent transparent #fff;
+  }
+  .is-video:hover .proof-play,
+  .is-video:focus-visible .proof-play {
+    transform: scale(1.12);
+    background: rgba(139, 45, 45, 0.95);
+  }
+  .proof-lightbox__close {
+    position: absolute;
+    top: var(--s-3);
+    right: var(--s-4);
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .proof-lightbox__close:hover { background: rgba(255, 255, 255, 0.28); }
+  @media (prefers-reduced-motion: reduce) {
+    .proof-thumb img { transition: none; }
+    .proof-thumb:hover img,
+    .proof-thumb:focus-visible img {
+      animation: none;
+      transform: scale(1.04);
+    }
   }
   figcaption {
     text-align: center;
-    margin-top: var(--s-2);
+    margin-top: auto;
+    padding-top: var(--s-3);
     font-size: var(--fs-xs);
     color: var(--c-text-soft);
+  }
+  .proof-privacy {
+    text-align: center;
+    margin-top: var(--s-4);
+    font-size: var(--fs-xs);
+    color: var(--c-text-soft);
+    opacity: 0.85;
   }
 </style>

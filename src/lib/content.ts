@@ -58,9 +58,14 @@ export interface SiteContent {
     galleryHeading: I18nString;
     galleryCaptions: {
       certificate: I18nString;
-      hadyReceipt: I18nString;
+      umrahVideo: I18nString;
       arafaThumb: I18nString;
     };
+    galleryLabels: {
+      umrah: I18nString;
+      hajj: I18nString;
+    };
+    privacyNote: I18nString;
   };
   pricing: {
     eyebrow: I18nString;

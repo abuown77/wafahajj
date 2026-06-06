@@ -7,8 +7,8 @@ export const SITE = {
   url: import.meta.env.PUBLIC_SITE_URL ?? 'https://wafahajj.com',
   name: 'Wafa Hajj',
   nameAr: 'وفاء الحج',
-  tagline: 'A promise kept. A pillar fulfilled.',
-  taglineAr: 'وفاءٌ للعهد، وإتمامٌ للركن.',
+  tagline: 'A promise kept. A duty fulfilled.',
+  taglineAr: 'وعدٌ يُوفى، وفريضةٌ تُؤدّى.',
 } as const;
 
 export const TELEGRAM = {

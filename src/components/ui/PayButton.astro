@@ -1,6 +1,4 @@
 ---
-import { CHECKOUT } from '@config/site';
-
 interface Props {
   variant?: 'gold' | 'ghost';
   size?: 'default' | 'lg';
@@ -11,9 +9,7 @@ const { variant = 'gold', size = 'lg', class: className } = Astro.props;
 ---
 
 <a
-  href={CHECKOUT.umrahUrl}
-  target="_blank"
-  rel="noopener"
+  href="#register"
   class:list={['btn', `btn--${variant}`, size === 'lg' && 'btn--lg', className]}
   data-pay-link
 >

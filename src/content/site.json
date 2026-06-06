@@ -12,10 +12,10 @@
 
   "hero": {
     "eyebrow": {
-      "en": "Wafa Hajj · al-Badr",
+      "en": "Wafa Hajj",
       "ar": "وفاء الحج",
-      "sv": "Wafa Hajj · al-Badr",
-      "nb": "Wafa Hajj · al-Badr"
+      "sv": "Wafa Hajj",
+      "nb": "Wafa Hajj"
     },
     "headline": {
       "en": "A promise kept.",
@@ -167,18 +167,38 @@
         "sv": "Officiellt Hajj Badal-intyg",
         "nb": "Offisielt Hajj Badal-sertifikat"
       },
-      "hadyReceipt": {
-        "en": "Official stamped Hady receipt",
-        "ar": "صكُّ الهدي الرسمي المختوم",
-        "sv": "Officiellt stämplat Hady-kvitto",
-        "nb": "Offisielt stemplet Hady-kvittering"
+      "umrahVideo": {
+        "en": "Documented Umrah Badal — Tawaf at the Kaaba",
+        "ar": "توثيق عمرة البدل — الطواف حول الكعبة",
+        "sv": "Dokumenterad Umrah Badal — Tawaf vid Kaba",
+        "nb": "Dokumentert Umrah Badal — Tawaf ved Kaba"
       },
       "arafaThumb": {
-        "en": "Frame from the Day of Arafah video",
-        "ar": "لقطة من فيديو يوم عرفة",
-        "sv": "Stillbild från Arafat-dagens video",
-        "nb": "Stillbilde fra Arafat-dagens video"
+        "en": "Frame from the documented Hajj video",
+        "ar": "لقطة من فيديو توثيق الحج",
+        "sv": "Stillbild från den dokumenterade Hajj-videon",
+        "nb": "Stillbilde fra den dokumenterte Hajj-videoen"
       }
+    },
+    "galleryLabels": {
+      "umrah": {
+        "en": "Umrah Badal",
+        "ar": "عمرة البدل",
+        "sv": "Umrah Badal",
+        "nb": "Umrah Badal"
+      },
+      "hajj": {
+        "en": "Hajj Badal",
+        "ar": "حج البدل",
+        "sv": "Hajj Badal",
+        "nb": "Hajj Badal"
+      }
+    },
+    "privacyNote": {
+      "en": "The name of the deceased is hidden out of respect for the family's privacy.",
+      "ar": "اسم المتوفّى مُغطّى حفاظاً على خصوصية العائلة.",
+      "sv": "Den avlidnes namn är dolt av hänsyn till familjens integritet.",
+      "nb": "Avdødes navn er skjult av hensyn til familiens personvern."
     }
   },
 
@@ -368,16 +388,16 @@
 
   "footer": {
     "tagline": {
-      "en": "A promise kept. A pillar fulfilled.",
-      "ar": "«وفاءٌ للعهد، وإتمامٌ للرُّكن»",
-      "sv": "Ett löfte hålls. En pelare fullbordas.",
-      "nb": "Et løfte holdt. En søyle fullført."
+      "en": "A promise kept. A duty fulfilled.",
+      "ar": "«وعدٌ يُوفى، وفريضةٌ تُؤدّى.»",
+      "sv": "Ett löfte hålls. En plikt uppfylld.",
+      "nb": "Et løfte holdt. En plikt oppfylt."
     },
     "identity": {
-      "en": "Wafa Hajj · Founded 2026 · Amman ↔ Makkah",
-      "ar": "Wafa Hajj · أُسّست 2026 · عمّان ↔ مكّة المكرّمة",
-      "sv": "Wafa Hajj · Grundad 2026 · Amman ↔ Makkah",
-      "nb": "Wafa Hajj · Grunnlagt 2026 · Amman ↔ Makkah"
+      "en": "Wafa Hajj · Founded 2026 · Makkah",
+      "ar": "Wafa Hajj · أُسّست 2026 · مكّة المكرّمة",
+      "sv": "Wafa Hajj · Grundad 2026 · Makkah",
+      "nb": "Wafa Hajj · Grunnlagt 2026 · Makkah"
     },
     "rights": {
       "en": "© 2026 Wafa Hajj — All rights reserved.",

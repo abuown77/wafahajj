@@ -1,10 +1,11 @@
 ---
 /**
  * Register — on-site request form.
- * Collects: requester name + contact, deceased parent's name,
- * and a short voice recording pronouncing the name.
- * Delivery wiring (where submissions are sent) is handled separately.
+ * Collects: requester name + contact, deceased parent's name + gender,
+ * and a short voice recording of the deceased's full name.
+ * On submit, the request is delivered, then the visitor continues to card payment.
  */
+import { CHECKOUT } from '@config/site';
 ---
 
 <section class="section section--cream register" id="register">
@@ -30,7 +31,7 @@
       <span data-lang="nb">Fortell oss hvem Umrah er for. Å spille inn navnet med din egen stemme hjelper oss å uttale det riktig.</span>
     </p>
 
-    <form class="register__form card" id="register-form" novalidate>
+    <form class="register__form card" id="register-form" data-checkout={CHECKOUT.umrahUrl} novalidate>
       <div class="field">
         <label for="rf-name">
           <span data-lang="en">Your name</span>
@@ -62,11 +63,36 @@
       </div>
 
       <div class="field">
+        <span class="field__label" id="rf-gender-label">
+          <span data-lang="en">Gender of the deceased</span>
+          <span data-lang="ar">جنس المتوفّى</span>
+          <span data-lang="sv">Den avlidnes kön</span>
+          <span data-lang="nb">Avdødes kjønn</span>
+        </span>
+        <div class="choice" role="radiogroup" aria-labelledby="rf-gender-label" id="rf-gender">
+          <label class="choice__opt">
+            <input type="radio" name="gender" value="male" required />
+            <span data-lang="en">Male</span>
+            <span data-lang="ar">ذكر</span>
+            <span data-lang="sv">Man</span>
+            <span data-lang="nb">Mann</span>
+          </label>
+          <label class="choice__opt">
+            <input type="radio" name="gender" value="female" required />
+            <span data-lang="en">Female</span>
+            <span data-lang="ar">أنثى</span>
+            <span data-lang="sv">Kvinna</span>
+            <span data-lang="nb">Kvinne</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
         <span class="field__label">
-          <span data-lang="en">Pronounce the name (voice)</span>
-          <span data-lang="ar">انطق الاسم (تسجيل صوتي)</span>
-          <span data-lang="sv">Uttala namnet (röst)</span>
-          <span data-lang="nb">Uttal navnet (stemme)</span>
+          <span data-lang="en">Record the deceased's full name in a clear voice</span>
+          <span data-lang="ar">سجّل اسم المتوفّى كاملاً بصوتٍ واضح</span>
+          <span data-lang="sv">Spela in den avlidnes fullständiga namn med tydlig röst</span>
+          <span data-lang="nb">Spill inn avdødes fulle navn med tydelig stemme</span>
         </span>
 
         <div class="recorder" id="recorder">
@@ -82,6 +108,71 @@
         </div>
         <p class="recorder__hint" id="rec-hint"></p>
         <input type="hidden" name="voice" id="rf-voice" />
+      </div>
+
+      <div class="field field--terms">
+        <details class="terms">
+          <summary class="terms__summary">
+            <span data-lang="en">Terms of Service — please read before agreeing</span>
+            <span data-lang="ar">شروط الخدمة — يُرجى قراءتها قبل الموافقة</span>
+            <span data-lang="sv">Användarvillkor — läs innan du godkänner</span>
+            <span data-lang="nb">Vilkår for tjenesten — les før du godtar</span>
+          </summary>
+          <ul class="terms__list">
+            <li>
+              <span data-lang="en">We perform the Umrah on behalf of the deceased you name, through a trusted person in Makkah.</span>
+              <span data-lang="ar">نؤدّي العمرة نيابةً عن المتوفّى الذي تذكره، عبر شخص موثوق في مكة.</span>
+              <span data-lang="sv">Vi utför Umrah på den avlidnes vägnar som du anger, genom en betrodd person i Mecka.</span>
+              <span data-lang="nb">Vi utfører Umrah på vegne av den avdøde du oppgir, gjennom en betrodd person i Mekka.</span>
+            </li>
+            <li>
+              <span data-lang="en">The Umrah is genuinely performed on behalf of the deceased, in accordance with what is established in the books of fiqh permitting Umrah by proxy — this is not a fatwa of our own — based on the authentic hadith of Shubrumah, the position of the majority of jurists, and what major contemporary fiqh bodies (such as the International Islamic Fiqh Academy and the Permanent Committee for Iftaa) have affirmed regarding the permissibility of proxy in Hajj and Umrah, under direct shariah supervision; and the client has chosen this service of their own free will.</span>
+              <span data-lang="ar">تُؤدّى العمرة فعلاً نيابةً عن المتوفّى، وفق ما هو ثابتٌ في كتب الفقه من جواز العمرة بالنيابة — لا فتوى خاصة بنا — استناداً إلى حديث شُبْرُمة الصحيح، وما عليه جمهور الفقهاء، وما أقرّته كبرى الهيئات الفقهية المعاصرة (كمجمع الفقه الإسلامي الدولي واللجنة الدائمة للإفتاء) من جواز النيابة في الحج والعمرة، تحت إشرافٍ شرعيٍّ مباشر، وقد اختار العميل هذه الخدمة بمحض إرادته.</span>
+              <span data-lang="sv">Umrah utförs verkligen på den avlidnes vägnar, i enlighet med det som är fastställt i fiqh-litteraturen om tillåtligheten av Umrah genom ombud — detta är inte en egen fatwa från oss — grundat på den autentiska hadithen om Shubrumah, majoriteten av de lärdas ståndpunkt, och det som stora samtida fiqh-organ (såsom Internationella islamiska fiqh-akademin och Ständiga kommittén för fatwa) har bekräftat om tillåtligheten av ombud vid Hajj och Umrah, under direkt shariah-tillsyn; och klienten har valt denna tjänst av egen fri vilja.</span>
+              <span data-lang="nb">Umrah utføres faktisk på vegne av den avdøde, i samsvar med det som er fastslått i fiqh-litteraturen om tillatelsen av Umrah ved stedfortreder — dette er ikke en egen fatwa fra oss — basert på den autentiske hadithen om Shubrumah, flertallet av de lærdes standpunkt, og det som store samtidige fiqh-organer (som Den internasjonale islamske fiqh-akademien og Den faste komité for fatwa) har bekreftet om tillatelsen av stedfortreder ved Hajj og Umrah, under direkte shariah-tilsyn; og klienten har valgt denne tjenesten av egen fri vilje.</span>
+            </li>
+            <li>
+              <span data-lang="en">A covenant upon the substitute to perform the Umrah in a way pleasing to Allah — with no deceit, misrepresentation, substitution, or alteration of its known form: ihram and intention (niyyah), tawaf of seven circuits, saʿy of seven rounds between Safa and Marwah, then shaving or trimming the hair.</span>
+              <span data-lang="ar">عهدٌ على المعتمر أن ينفّذ العمرة بما يُرضي الله، من دون غشٍّ أو تدليسٍ أو تبديلٍ أو تغييرٍ لصفتها التي نعلم: من إحرامٍ ونيّةٍ، وطوافٍ سبعة أشواط، وسعيٍ سبعة أشواط بين الصفا والمروة، ثم الحلق أو التقصير.</span>
+              <span data-lang="sv">Ett löfte från ställföreträdaren att utföra Umrah så att den behagar Allah — utan bedrägeri, vilseledande, utbyte eller förändring av dess kända form: ihram och avsikt (niyyah), tawaf med sju varv, saʿy med sju varv mellan Safa och Marwah, därefter rakning eller klippning av håret.</span>
+              <span data-lang="nb">Et løfte fra stedfortrederen om å utføre Umrah slik at den behager Allah — uten bedrageri, villedning, utbytting eller endring av dens kjente form: ihram og hensikt (niyyah), tawaf med sju runder, saʿy med sju runder mellom Safa og Marwa, deretter barbering eller klipping av håret.</span>
+            </li>
+            <li>
+              <span data-lang="en">You receive proof of completion: a video and photos of the performance.</span>
+              <span data-lang="ar">تستلم إثبات الإتمام: فيديو وصور لأداء العمرة.</span>
+              <span data-lang="sv">Du får bevis på genomförandet: en video och foton av utförandet.</span>
+              <span data-lang="nb">Du mottar bevis på fullføring: en video og bilder av utførelsen.</span>
+            </li>
+            <li>
+              <span data-lang="en">Your details and voice recording are used only to fulfil this Umrah and are never shared.</span>
+              <span data-lang="ar">تُستخدم بياناتك وتسجيلك الصوتي لإتمام هذه العمرة فقط، ولا تُشارك مع أي جهة.</span>
+              <span data-lang="sv">Dina uppgifter och röstinspelning används endast för att utföra denna Umrah och delas aldrig.</span>
+              <span data-lang="nb">Opplysningene dine og stemmeopptaket brukes kun til å utføre denne Umrah og deles aldri.</span>
+            </li>
+            <li>
+              <span data-lang="en">The fee is $199, paid in full and in advance at the time of booking, by card. It is non-refundable.</span>
+              <span data-lang="ar">الرسوم 199 دولاراً تُدفع كاملةً ومقدماً عند الحجز بالبطاقة، وهي غير قابلة للاسترداد.</span>
+              <span data-lang="sv">Avgiften är 199 USD och betalas i sin helhet i förskott vid bokningen, med kort. Den återbetalas inte.</span>
+              <span data-lang="nb">Avgiften er 199 USD og betales i sin helhet på forhånd ved bestillingen, med kort. Den refunderes ikke.</span>
+            </li>
+            <li>
+              <span data-lang="en">We carry it out with care; its acceptance and reward rest with Allah alone.</span>
+              <span data-lang="ar">نؤدّيها بعناية، وقبولها وأجرها عند الله وحده.</span>
+              <span data-lang="sv">Vi utför den med omsorg; dess godtagande och belöning ligger hos Allah allena.</span>
+              <span data-lang="nb">Vi utfører den med omhu; aksept og belønning hviler hos Allah alene.</span>
+            </li>
+          </ul>
+        </details>
+
+        <label class="terms__agree" for="rf-terms">
+          <input type="checkbox" id="rf-terms" name="terms" required />
+          <span class="terms__agree-text">
+            <span data-lang="en">I have read and agree to the Terms of Service.</span>
+            <span data-lang="ar">قرأت شروط الخدمة وأوافق عليها.</span>
+            <span data-lang="sv">Jag har läst och godkänner användarvillkoren.</span>
+            <span data-lang="nb">Jeg har lest og godtar vilkårene for tjenesten.</span>
+          </span>
+        </label>
       </div>
 
       <button type="submit" class="btn btn--gold register__submit">
@@ -108,11 +199,17 @@
         <span data-lang="nb">Forespørsel mottatt</span>
       </h3>
       <p>
-        <span data-lang="en">May Allah accept it. We will be in touch shortly.</span>
-        <span data-lang="ar">تقبّل الله. سنتواصل معك قريباً.</span>
-        <span data-lang="sv">Må Allah acceptera den. Vi hör av oss snart.</span>
-        <span data-lang="nb">Måtte Allah akseptere den. Vi tar kontakt snart.</span>
+        <span data-lang="en">Taking you to secure card payment to complete the booking…</span>
+        <span data-lang="ar">ننقلك الآن إلى الدفع الآمن بالبطاقة لإتمام الحجز…</span>
+        <span data-lang="sv">Vi tar dig till säker kortbetalning för att slutföra bokningen…</span>
+        <span data-lang="nb">Vi tar deg til sikker kortbetaling for å fullføre bestillingen…</span>
       </p>
+      <a class="btn btn--gold" id="register-pay" href="#">
+        <span data-lang="en">Continue to payment</span>
+        <span data-lang="ar">المتابعة إلى الدفع</span>
+        <span data-lang="sv">Fortsätt till betalning</span>
+        <span data-lang="nb">Fortsett til betaling</span>
+      </a>
     </div>
   </div>
 </section>
@@ -159,6 +256,37 @@
     box-shadow: 0 0 0 3px rgba(139, 45, 45, 0.14);
   }
 
+  .choice { display: flex; gap: var(--s-3); flex-wrap: wrap; }
+  .choice__opt {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    cursor: pointer;
+    font-size: var(--fs-md);
+    color: var(--c-ink);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-md);
+    background: var(--c-paper);
+    padding: 0.7rem 1.1rem;
+    flex: 1;
+    min-width: 120px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  html[lang="ar"] .choice__opt { font-family: var(--ff-arabic); }
+  .choice__opt input {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    accent-color: var(--c-green-900);
+  }
+  .choice__opt:has(input:checked) {
+    border-color: var(--c-gold-500);
+    box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.18);
+  }
+  .choice[aria-invalid="true"] .choice__opt {
+    border-color: var(--c-burgundy);
+  }
+
   .recorder {
     display: flex;
     align-items: center;
@@ -186,6 +314,58 @@
     margin: var(--s-2) 0 0;
     min-height: 1em;
   }
+
+  .field--terms { gap: var(--s-3); }
+
+  .terms {
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-md);
+    background: var(--c-paper);
+  }
+  .terms__summary {
+    cursor: pointer;
+    padding: 0.85rem 1rem;
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    color: var(--c-secondary);
+    list-style-position: inside;
+  }
+  .terms__summary:focus-visible {
+    outline: 2px solid var(--c-gold-500);
+    outline-offset: 2px;
+  }
+  .terms__list {
+    margin: 0;
+    padding: 0 1.4rem 1rem;
+    display: grid;
+    gap: var(--s-2);
+    font-size: var(--fs-sm);
+    color: var(--c-text-soft);
+  }
+  html[lang="ar"] .terms__list { font-family: var(--ff-arabic); }
+
+  .terms__agree {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--s-3);
+    cursor: pointer;
+  }
+  .terms__agree input {
+    width: 20px;
+    height: 20px;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+    accent-color: var(--c-green-900);
+  }
+  .terms__agree input[aria-invalid="true"] {
+    outline: 2px solid var(--c-burgundy);
+    outline-offset: 2px;
+  }
+  .terms__agree-text {
+    font-size: var(--fs-sm);
+    color: var(--c-ink);
+  }
+  html[lang="ar"] .terms__agree-text { font-family: var(--ff-arabic); }
 
   .register__submit { justify-content: center; margin-top: var(--s-2); }
 
@@ -237,6 +417,7 @@
 
     let mediaRecorder: MediaRecorder | null = null;
     let chunks: BlobPart[] = [];
+    let voiceBlob: Blob | null = null;
     let timer = 0;
     let tick: number | undefined;
 
@@ -273,6 +454,7 @@
         mediaRecorder.onstop = () => {
           stream.getTracks().forEach((t) => t.stop());
           const blob = new Blob(chunks, { type: mediaRecorder?.mimeType || 'audio/webm' });
+          voiceBlob = blob;
           audioEl.src = URL.createObjectURL(blob);
           audioEl.hidden = false;
           const reader = new FileReader();
@@ -301,6 +483,10 @@
       else start();
     });
 
+    const payUrl = form.dataset.checkout || '';
+    const payLink = document.getElementById('register-pay') as HTMLAnchorElement | null;
+    if (payLink && payUrl) payLink.href = payUrl;
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       let ok = true;
@@ -310,9 +496,45 @@
         input.setAttribute('aria-invalid', invalid ? 'true' : 'false');
         if (invalid && ok) { input.focus(); ok = false; }
       });
+      const genderEl = document.getElementById('rf-gender') as HTMLElement;
+      const gender = form.querySelector<HTMLInputElement>('input[name="gender"]:checked');
+      genderEl.setAttribute('aria-invalid', gender ? 'false' : 'true');
+      if (!gender && ok) { genderEl.querySelector('input')?.focus(); ok = false; }
+      const terms = document.getElementById('rf-terms') as HTMLInputElement;
+      terms.setAttribute('aria-invalid', terms.checked ? 'false' : 'true');
+      if (!terms.checked && ok) { terms.focus(); ok = false; }
       if (!ok) return;
       if (recorderEl.classList.contains('is-recording')) stop();
-      // Delivery is wired in the next step; for now confirm capture.
+
+      const fd = new FormData();
+      fd.append('name', (document.getElementById('rf-name') as HTMLInputElement).value.trim());
+      fd.append('contact', (document.getElementById('rf-contact') as HTMLInputElement).value.trim());
+      fd.append('deceased', (document.getElementById('rf-deceased') as HTMLInputElement).value.trim());
+      fd.append('gender', gender ? gender.value : '');
+      if (voiceBlob) {
+        const ext = (voiceBlob.type.split('/')[1] || 'webm').split(';')[0];
+        fd.append('voice', voiceBlob, `voice-${Date.now()}.${ext}`);
+      }
+      fd.append('_subject', 'New proxy Umrah request — Wafa Hajj');
+      fd.append('_template', 'table');
+      fd.append('_captcha', 'false');
+
+      // Deliver the request, then continue to card payment.
+      let redirected = false;
+      const goToPayment = () => {
+        if (redirected) return;
+        redirected = true;
+        if (payUrl) window.location.href = payUrl;
+      };
+
+      fetch('https://formsubmit.co/info@wafahajj.com', {
+        method: 'POST',
+        body: fd,
+        mode: 'no-cors',
+      }).then(goToPayment).catch(goToPayment);
+      // Fallback in case the request hangs.
+      window.setTimeout(goToPayment, 2500);
+
       form.hidden = true;
       doneEl.hidden = false;
       doneEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
