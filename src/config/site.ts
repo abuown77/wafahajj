@@ -22,6 +22,13 @@ export const CHECKOUT = {
     ?? 'https://wafahajj-shop.fourthwall.com/products/umrah-badal-proxy-umrah-for-a-deceased-parent',
 } as const;
 
+/**
+ * Google Apps Script web app that records each request into the
+ * info@wafahajj.com order tracker (Sheet) and saves the voice file to Drive.
+ */
+export const SHEETS_ENDPOINT = import.meta.env.PUBLIC_SHEETS_ENDPOINT
+  ?? 'https://script.google.com/macros/s/AKfycbx0bhJHbXQGmdEc9aajQj5NH9M1R6fETuewsy15bJs5E1HjMjjKtpcf1D68nd4BO5o/exec';
+
 export const PRICING = {
   hajjBadal: 1990,
   umrahBadal: 199,

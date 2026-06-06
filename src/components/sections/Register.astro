@@ -5,7 +5,7 @@
  * and a short voice recording of the deceased's full name.
  * On submit, the request is delivered, then the visitor continues to card payment.
  */
-import { CHECKOUT } from '@config/site';
+import { CHECKOUT, SHEETS_ENDPOINT } from '@config/site';
 ---
 
 <section class="section section--cream register" id="register">
@@ -31,7 +31,7 @@ import { CHECKOUT } from '@config/site';
       <span data-lang="nb">Fortell oss hvem Umrah er for. Å spille inn navnet med din egen stemme hjelper oss å uttale det riktig.</span>
     </p>
 
-    <form class="register__form card" id="register-form" data-checkout={CHECKOUT.umrahUrl} novalidate>
+    <form class="register__form card" id="register-form" data-checkout={CHECKOUT.umrahUrl} data-sheet={SHEETS_ENDPOINT} novalidate>
       <div class="field">
         <label for="rf-name">
           <span data-lang="en">Your name</span>
@@ -518,6 +518,19 @@ import { CHECKOUT } from '@config/site';
       fd.append('_subject', 'New proxy Umrah request — Wafa Hajj');
       fd.append('_template', 'table');
       fd.append('_captcha', 'false');
+
+      // Also record the request in the Google Sheet order tracker (voice → Drive).
+      const sheetUrl = form.dataset.sheet || '';
+      if (sheetUrl) {
+        const sd = new FormData();
+        sd.append('name', (document.getElementById('rf-name') as HTMLInputElement).value.trim());
+        sd.append('contact', (document.getElementById('rf-contact') as HTMLInputElement).value.trim());
+        sd.append('deceased', (document.getElementById('rf-deceased') as HTMLInputElement).value.trim());
+        sd.append('gender', gender ? gender.value : '');
+        sd.append('lang', document.documentElement.lang || 'en');
+        sd.append('voice', voiceInput.value || '');
+        fetch(sheetUrl, { method: 'POST', body: sd, mode: 'no-cors' }).catch(() => {});
+      }
 
       // Deliver the request, then continue to card payment.
       let redirected = false;
