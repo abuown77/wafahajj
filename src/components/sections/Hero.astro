@@ -25,7 +25,9 @@ import { content as c } from '@lib/content';
     <h1 class="hero__title display">
       {(['en','ar','sv','nb'] as const).map((l) => (
         <span data-lang={l}>
-          {c.hero.headline[l]}
+          {c.hero.headline[l].split('\n').map((line, i) => (
+            <Fragment>{i > 0 && <br />}{line}</Fragment>
+          ))}
           <br />
           <em>{c.hero.headlineAccent[l]}</em>
         </span>
