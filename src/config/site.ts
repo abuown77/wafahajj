@@ -27,7 +27,7 @@ export const CHECKOUT = {
  * info@wafahajj.com order tracker (Sheet) and saves the voice file to Drive.
  */
 export const SHEETS_ENDPOINT = import.meta.env.PUBLIC_SHEETS_ENDPOINT
-  ?? 'https://script.google.com/macros/s/AKfycbx0bhJHbXQGmdEc9aajQj5NH9M1R6fETuewsy15bJs5E1HjMjjKtpcf1D68nd4BO5o/exec';
+  ?? 'https://script.google.com/macros/s/AKfycbwPtwvng-e6tNwkquN4b6jJgs7P9vwgVQcCsLW_Rf-VhBWUCvxv7PKaI5iXEZr5bDYh/exec';
 
 export const PRICING = {
   hajjBadal: 1990,
