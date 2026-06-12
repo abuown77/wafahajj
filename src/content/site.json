@@ -107,22 +107,22 @@
       "en": [
         { "title": "Direct Shariah Oversight", "body": "The founder supervises every file; pilgrims are students of knowledge in Makkah." },
         { "title": "Documented Niyābah", "body": "Every rite performed in the name of its principal, witnessed with documents and video." },
-        { "title": "One Clear Channel", "body": "Request on the site, or reach us on Telegram — no long forms, no confusing platforms." }
+        { "title": "Easy, Direct Contact", "body": "Request on the site, or reach us on Telegram or WhatsApp — no long forms, no confusing platforms." }
       ],
       "ar": [
         { "title": "إشراف شرعي مباشر", "body": "أنا شخصياً أشرف على كل عملية، لست وسيطاً." },
         { "title": "توثيق مصوَّر", "body": "كل نسك يُؤدّى باسم من فقدتَ، مُوثَّقاً بصوت وصورة." },
-        { "title": "قناة واحدة واضحة", "body": "اطلب من الموقع مباشرة، أو تواصل عبر تلجرام — بلا نماذج طويلة أو منصات معقّدة." }
+        { "title": "تواصل مباشر وسهل", "body": "اطلب من الموقع مباشرة، أو تواصل عبر تلجرام أو واتساب — بلا نماذج طويلة أو منصات معقّدة." }
       ],
       "sv": [
         { "title": "Direkt shariah-tillsyn", "body": "Grundaren följer varje ärende; pilgrimerna är kunskapsstudenter i Makkah." },
         { "title": "Dokumenterad niyābah", "body": "Varje rit utförs i huvudmannens namn, styrkt med dokument och video." },
-        { "title": "En tydlig kanal", "body": "Begär på webbplatsen, eller nå oss på Telegram — inga långa formulär, inga förvirrande plattformar." }
+        { "title": "Enkel, direkt kontakt", "body": "Begär på webbplatsen, eller nå oss på Telegram eller WhatsApp — inga långa formulär, inga förvirrande plattformar." }
       ],
       "nb": [
         { "title": "Direkte shariah-tilsyn", "body": "Grunnleggeren følger hver sak; pilegrimene er kunnskapsstudenter i Makkah." },
         { "title": "Dokumentert niyābah", "body": "Hver rite utføres i hovedmannens navn, bekreftet med dokumenter og video." },
-        { "title": "Én tydelig kanal", "body": "Be om det på nettstedet, eller kontakt oss på Telegram — ingen lange skjemaer, ingen forvirrende plattformer." }
+        { "title": "Enkel, direkte kontakt", "body": "Be om det på nettstedet, eller kontakt oss på Telegram eller WhatsApp — ingen lange skjemaer, ingen forvirrende plattformer." }
       ]
     }
   },
@@ -258,8 +258,8 @@
       "nb": "Deres Umrah er vårt ansvar innfor Allah."
     },
     "footnote": {
-      "en": "Payment by bank transfer. Your bank's transfer fees are paid by you.",
-      "ar": "الدفع بالتحويل البنكي. رسوم التحويل من بنكك تُدفع منك. نساعدك في اختيار الطريقة الأقل كلفة.",
+      "en": "Payment securely by card (Visa/Mastercard) on the site. No hidden fees.",
+      "ar": "الدفع بأمان بالبطاقة (فيزا/ماستركارد) عبر الموقع. بلا رسوم خفية.",
       "sv": "Inga dolda avgifter. Ingen visum. Ingen Nusuk-plattform. Ingen resa för dig.",
       "nb": "Ingen skjulte avgifter. Ingen visum. Ingen Nusuk-plattform. Ingen reise for deg."
     }
@@ -281,25 +281,25 @@
     "steps": {
       "en": [
         { "title": "Submit the Request", "body": "On the site, enter the name of the one you have lost and a short voice recording pronouncing it — so it is said correctly." },
-        { "title": "Pay Securely", "body": "Pay the $199 by card on the site; for any question you can reach us on Telegram." },
+        { "title": "Pay Securely", "body": "Pay the $199 by card on the site; for any question you can reach us on Telegram or WhatsApp." },
         { "title": "Umrah Performed", "body": "A substitute who has completed his own Umrah performs it in their name, from within Makkah, under direct shariah supervision." },
         { "title": "Documentation Delivered", "body": "A video of the intention pronounced in their name arrives within days of the Umrah." }
       ],
       "ar": [
         { "title": "أرسل الطلب", "body": "من الموقع، أدخِل اسم من فقدتَه — والداً كان أو غيره — وتسجيلاً صوتياً قصيراً بنطق الاسم — ليُؤدّى بالصيغة الصحيحة." },
-        { "title": "ادفع بأمان", "body": "ادفع الـ$199 بالبطاقة عبر الموقع، ولأي استفسار تواصل معنا عبر تلجرام." },
+        { "title": "ادفع بأمان", "body": "ادفع الـ$199 بالبطاقة عبر الموقع، ولأي استفسار تواصل معنا عبر تلجرام أو واتساب." },
         { "title": "أداء العمرة", "body": "نائبٌ قد اعتمر عن نفسه يؤدّي العمرة باسمه، من داخل مكّة المكرّمة، تحت إشرافٍ شرعيٍّ مباشر." },
         { "title": "تسليم التوثيق", "body": "يصلك خلال أيام: فيديو النية مَنطوقةً بوضوح باسمه." }
       ],
       "sv": [
         { "title": "Skicka begäran", "body": "På webbplatsen anger du din avlidna anhörigs namn och ett kort röstmeddelande som uttalar det — så att det sägs korrekt." },
-        { "title": "Betala säkert", "body": "Betala 199 USD med kort på webbplatsen; vid frågor når du oss på Telegram." },
+        { "title": "Betala säkert", "body": "Betala 199 USD med kort på webbplatsen; vid frågor når du oss på Telegram eller WhatsApp." },
         { "title": "Umrah utförs", "body": "En ställföreträdare som fullbordat sin egen Umrah utför den i din anhörigs namn, från Makkah, under direkt shariah-tillsyn." },
         { "title": "Dokumentation levereras", "body": "En video av avsikten uttalad i din anhörigs namn kommer inom några dagar efter Umrah." }
       ],
       "nb": [
         { "title": "Send forespørselen", "body": "På nettstedet oppgir du din avdøde kjæres navn og en kort talemelding som uttaler det — så det sies riktig." },
-        { "title": "Betal trygt", "body": "Betal 199 USD med kort på nettstedet; ved spørsmål når du oss på Telegram." },
+        { "title": "Betal trygt", "body": "Betal 199 USD med kort på nettstedet; ved spørsmål når du oss på Telegram eller WhatsApp." },
         { "title": "Umrah utføres", "body": "En stedfortreder som har fullført sin egen Umrah utfører den i din kjæres navn, fra Makkah, under direkte shariah-tilsyn." },
         { "title": "Dokumentasjon leveres", "body": "En video av intensjonen uttalt i din kjæres navn kommer innen få dager etter Umrah." }
       ]
@@ -367,10 +367,10 @@
       "nb": "Her er noe du bør vite:"
     },
     "subhead": {
-      "en": "Umrah Badal for your late parents — or anyone who has passed, even a martyr you never knew — performed from within Makkah, all year round, with no season to wait for. An affordable, fully documented service. Begin on the site, or reach out on Telegram.",
-      "ar": "عمرة البدل عن والديك المتوفّين — أو عن أيّ راحلٍ، حتى شهيدٍ لا تعرفه — تُؤدّى من داخل مكّة المكرّمة على مدار العام، لا تنتظر موسماً. مبلغٌ ميسور وتوثيقٌ كامل يصلك. ابدأ من الموقع، أو تواصل معنا عبر تلجرام.",
-      "sv": "Umrah Badal för dina avlidna föräldrar — eller för vem som helst som gått bort, till och med en martyr du aldrig känt — utförd från Makkah, året runt, utan att vänta på en säsong. En prisvärd tjänst med full dokumentation. Börja på webbplatsen, eller kontakta oss på Telegram.",
-      "nb": "Umrah Badal for dine avdøde foreldre — eller for hvem som helst som har gått bort, til og med en martyr du aldri kjente — utført fra Makkah, hele året, uten å vente på en sesong. En rimelig tjeneste med full dokumentasjon. Begynn på nettstedet, eller ta kontakt på Telegram."
+      "en": "Umrah Badal for your late parents — or anyone who has passed, even a martyr you never knew — performed from within Makkah, all year round, with no season to wait for. An affordable, fully documented service. Begin on the site, or reach out on Telegram or WhatsApp.",
+      "ar": "عمرة البدل عن والديك المتوفّين — أو عن أيّ راحلٍ، حتى شهيدٍ لا تعرفه — تُؤدّى من داخل مكّة المكرّمة على مدار العام، لا تنتظر موسماً. مبلغٌ ميسور وتوثيقٌ كامل يصلك. ابدأ من الموقع، أو تواصل معنا عبر تلجرام أو واتساب.",
+      "sv": "Umrah Badal för dina avlidna föräldrar — eller för vem som helst som gått bort, till och med en martyr du aldrig känt — utförd från Makkah, året runt, utan att vänta på en säsong. En prisvärd tjänst med full dokumentation. Börja på webbplatsen, eller kontakta oss på Telegram eller WhatsApp.",
+      "nb": "Umrah Badal for dine avdøde foreldre — eller for hvem som helst som har gått bort, til og med en martyr du aldri kjente — utført fra Makkah, hele året, uten å vente på en sesong. En rimelig tjeneste med full dokumentasjon. Begynn på nettstedet, eller ta kontakt på Telegram eller WhatsApp."
     },
     "primaryCta": {
       "en": "Message us on Telegram",
@@ -379,10 +379,10 @@
       "nb": "Kontakt oss på Telegram"
     },
     "note": {
-      "en": "Replies within hours · @wafahajj on Telegram",
-      "ar": "الرد عادةً خلال ساعات · تلجرام @wafahajj",
-      "sv": "Svar inom timmar · @wafahajj på Telegram",
-      "nb": "Svar innen timer · @wafahajj på Telegram"
+      "en": "Replies within hours · Telegram or WhatsApp",
+      "ar": "الرد عادةً خلال ساعات · تلجرام أو واتساب",
+      "sv": "Svar inom timmar · Telegram eller WhatsApp",
+      "nb": "Svar innen timer · Telegram eller WhatsApp"
     }
   },
 

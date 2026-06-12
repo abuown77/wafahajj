@@ -36,3 +36,16 @@ Wafa Hajj/
 Wafa Hajj-handoff.zip
 *.zip
 
+# Sensitive client material — NEVER commit (PII, raw recordings, receipts)
+client-videos/source/
+wafahajj-drive/
+الاضحية.mp4
+النية.mp4
+النية2.mp4
+CamScanner*.pdf
+WhatsApp Image*
+WhatsApp*.jpeg
+Untitled.png
+filelist.txt
+wafa-hajj-proof-reel.mp4
+

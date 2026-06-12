@@ -331,6 +331,16 @@ html[lang="ar"] .btn { font-family: var(--ff-arabic); }
   box-shadow: 0 14px 40px rgba(34, 158, 217, 0.38);
 }
 .btn--telegram svg { width: 22px; height: 22px; fill: currentColor; }
+
+.btn--whatsapp {
+  background: #25D366;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.28);
+}
+.btn--whatsapp:hover {
+  box-shadow: 0 14px 40px rgba(37, 211, 102, 0.38);
+}
+.btn--whatsapp svg { width: 22px; height: 22px; fill: currentColor; }
 .btn--gold svg,
 .btn--ghost svg { width: 22px; height: 22px; fill: currentColor; }
 

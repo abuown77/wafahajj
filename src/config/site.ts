@@ -17,6 +17,12 @@ export const TELEGRAM = {
   display: '@wafahajj',
 } as const;
 
+export const WHATSAPP = {
+  number: import.meta.env.PUBLIC_WHATSAPP_NUMBER ?? '12342800554',
+  url: `https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_NUMBER ?? '12342800554'}`,
+  display: '+1 (234) 280-0554',
+} as const;
+
 export const CHECKOUT = {
   umrahUrl: import.meta.env.PUBLIC_CHECKOUT_UMRAH_URL
     ?? 'https://wafahajj-shop.fourthwall.com/products/umrah-badal-proxy-umrah-for-a-deceased-parent',

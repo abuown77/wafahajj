@@ -1,6 +1,7 @@
 ---
 import Logo from '@components/Logo.astro';
 import TelegramButton from '@components/ui/TelegramButton.astro';
+import WhatsAppButton from '@components/ui/WhatsAppButton.astro';
 import { content as c } from '@lib/content';
 ---
 
@@ -42,6 +43,7 @@ import { content as c } from '@lib/content';
 
     <div class="hero__actions">
       <TelegramButton variant="telegram" size="lg" />
+      <WhatsAppButton variant="whatsapp" size="lg" />
       <a class="btn btn--ghost" href="#pricing">
         {(['en','ar','sv','nb'] as const).map((l) => (
           <span data-lang={l}>{c.hero.secondaryCta[l]}</span>
