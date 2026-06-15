@@ -5,7 +5,7 @@
  * and a short voice recording of the deceased's full name.
  * On submit, the request is delivered, then the visitor continues to card payment.
  */
-import { CHECKOUT } from '@config/site';
+import { CHECKOUT, ORDERS } from '@config/site';
 ---
 
 <section class="section section--cream register" id="register">
@@ -31,7 +31,7 @@ import { CHECKOUT } from '@config/site';
       <span data-lang="nb">Fortell oss hvem Umrah er for. Å spille inn navnet med din egen stemme hjelper oss å uttale det riktig.</span>
     </p>
 
-    <form class="register__form card" id="register-form" data-checkout={CHECKOUT.umrahUrl} novalidate>
+    <form class="register__form card" id="register-form" data-checkout={CHECKOUT.umrahUrl} data-endpoint={ORDERS.endpoint} data-token={ORDERS.token} novalidate>
       <div class="field">
         <label for="rf-name">
           <span data-lang="en">Your name</span>
@@ -506,18 +506,15 @@ import { CHECKOUT } from '@config/site';
       if (!ok) return;
       if (recorderEl.classList.contains('is-recording')) stop();
 
-      const fd = new FormData();
-      fd.append('name', (document.getElementById('rf-name') as HTMLInputElement).value.trim());
-      fd.append('contact', (document.getElementById('rf-contact') as HTMLInputElement).value.trim());
-      fd.append('deceased', (document.getElementById('rf-deceased') as HTMLInputElement).value.trim());
-      fd.append('gender', gender ? gender.value : '');
-      if (voiceBlob) {
-        const ext = (voiceBlob.type.split('/')[1] || 'webm').split(';')[0];
-        fd.append('voice', voiceBlob, `voice-${Date.now()}.${ext}`);
-      }
-      fd.append('_subject', 'New proxy Umrah request — Wafa Hajj');
-      fd.append('_template', 'table');
-      fd.append('_captcha', 'false');
+      const params = new URLSearchParams();
+      params.append('token', form.dataset.token || '');
+      params.append('name', (document.getElementById('rf-name') as HTMLInputElement).value.trim());
+      params.append('contact', (document.getElementById('rf-contact') as HTMLInputElement).value.trim());
+      params.append('deceased', (document.getElementById('rf-deceased') as HTMLInputElement).value.trim());
+      params.append('gender', gender ? gender.value : '');
+      params.append('lang', lang());
+      // Voice is captured as a base64 data URL in the hidden field.
+      if (voiceInput.value) params.append('voice', voiceInput.value);
 
       // Deliver the request, then continue to card payment.
       let redirected = false;
@@ -527,12 +524,15 @@ import { CHECKOUT } from '@config/site';
         if (payUrl) window.location.href = payUrl;
       };
 
-      fetch('https://formsubmit.co/info@wafahajj.com', {
-        method: 'POST',
-        body: fd,
-        mode: 'no-cors',
-      }).then(goToPayment).catch(goToPayment);
-      // Fallback in case the request hangs.
+      const endpoint = form.dataset.endpoint || '';
+      if (endpoint) {
+        fetch(endpoint, {
+          method: 'POST',
+          body: params,
+          mode: 'no-cors',
+        }).then(goToPayment).catch(goToPayment);
+      }
+      // Fallback in case the request hangs or no endpoint is set.
       window.setTimeout(goToPayment, 2500);
 
       form.hidden = true;

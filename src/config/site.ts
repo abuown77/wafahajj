@@ -28,6 +28,18 @@ export const CHECKOUT = {
     ?? 'https://wafahajj-shop.fourthwall.com/products/umrah-badal-proxy-umrah-for-a-deceased-parent',
 } as const;
 
+/**
+ * Orders endpoint — Google Apps Script web app bound to the orders Sheet.
+ * Receives each request (incl. voice) and records it; Fourthwall's order
+ * webhook hits the same URL to auto-mark payment. Token gates form posts.
+ * Not a real secret (exposed in client JS) — just blocks trivial bot posts.
+ */
+export const ORDERS = {
+  endpoint: import.meta.env.PUBLIC_ORDERS_ENDPOINT
+    ?? 'https://script.google.com/macros/s/AKfycbx8mnV-2HsPZQ8AeQQXEOiBJDi7LUFrYTS4Mfeoxw_8p9rHvNbDltrLpgI2m26Q4B3N/exec',
+  token: import.meta.env.PUBLIC_ORDERS_TOKEN ?? 'wh_8f3kq2mz7xptr9',
+} as const;
+
 export const PRICING = {
   hajjBadal: 1990,
   umrahBadal: 199,
