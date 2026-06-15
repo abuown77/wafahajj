@@ -34,7 +34,7 @@
   - Nameservers: `LARA.NS.CLOUDFLARE.COM`, `REMY.NS.CLOUDFLARE.COM` (نشطة)
   - DNSSEC: غير مفعّل (سنفعّله لاحقاً)
 - **Registrar Owner Email**: `abuown@gmail.com`
-- **الاستضافة المختارة**: Cloudflare Pages (لم يُربط بعد — بانتظار أول build)
+- **الاستضافة**: Cloudflare Pages — ✅ **منشور حيّاً (15 يونيو 2026)**. مشروع `wafahajj` (`wafahajj.pages.dev`). النطاق `wafahajj.com` + `www` مربوطان (CNAME → pages.dev، proxied) و SSL يعمل. النشر تمّ برفع مباشر عبر wrangler (لا ربط Git تلقائي بعد). الحساب: `Abuown@gmail.com's Account`.
 - **البريد الموحَّد المخطَّط**: `info@wafahajj.com` عبر Cloudflare Email Routing → Gmail
 - ⚠️ **تحديث (متجاوِز للقديم) — 12 يونيو 2026**: قناتا التواصل **معاً على الموقع**: **Telegram** (`@wafahajj` → `https://t.me/wafahajj`) **و WhatsApp** (`+1 (234) 280-0554` → `https://wa.me/12342800554`). الدفع **بالبطاقة (فيزا/ماستركارد)** عبر Fourthwall (منتج عمرة البدل $199 شغّال). راجع ذاكرة `decision_telegram_payment`.
 
@@ -105,8 +105,9 @@
   - `arafa-thumb.jpg` (ثمبنيل فيديو عرفة)
 - [ ] **Handoff من Claude Design** (هوية، شعار، تصميم نهائي)
 - [ ] **الترجمات من Claude Cowork**: EN / SE / NO
-- [ ] ربط Cloudflare Pages بمستودع GitHub (بعد أول build)
-- [ ] ربط النطاق `wafahajj.com` بمشروع Pages + شهادة SSL
+- [x] رفع الموقع على Cloudflare Pages (رفع مباشر عبر wrangler) — ✅ 15 يونيو 2026
+- [x] ربط النطاق `wafahajj.com` + `www` بمشروع Pages + شهادة SSL — ✅ حيّ على https://wafahajj.com
+- [ ] (لاحقاً) ربط Pages بمستودع GitHub لنشر تلقائي عند كل تحديث (بدل الرفع اليدوي)
 - [ ] تفعيل Cloudflare Email Routing لـ `info@wafahajj.com`
 - [ ] تفعيل DNSSEC (أمان إضافي)
 
