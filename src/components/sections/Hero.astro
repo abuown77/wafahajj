@@ -1,7 +1,5 @@
 ---
 import Logo from '@components/Logo.astro';
-import TelegramButton from '@components/ui/TelegramButton.astro';
-import WhatsAppButton from '@components/ui/WhatsAppButton.astro';
 import { content as c } from '@lib/content';
 ---
 
@@ -42,8 +40,11 @@ import { content as c } from '@lib/content';
     </p>
 
     <div class="hero__actions">
-      <TelegramButton variant="telegram" size="lg" />
-      <WhatsAppButton variant="whatsapp" size="lg" />
+      <a class="btn btn--gold btn--lg" href="#register">
+        {(['en','ar','sv','nb'] as const).map((l) => (
+          <span data-lang={l}>{c.hero.primaryCta[l]}</span>
+        ))}
+      </a>
       <a class="btn btn--ghost" href="#pricing">
         {(['en','ar','sv','nb'] as const).map((l) => (
           <span data-lang={l}>{c.hero.secondaryCta[l]}</span>
@@ -123,6 +124,10 @@ import { content as c } from '@lib/content';
     gap: var(--s-3);
     justify-content: center;
     align-items: center;
+  }
+  .hero__actions .btn--lg {
+    padding: 1.15rem 2.5rem;
+    font-size: 1.125rem;
   }
 
   /* gold frame decoration (inset borders from handoff) */

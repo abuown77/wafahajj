@@ -1,7 +1,6 @@
 ---
-import TelegramButton from '@components/ui/TelegramButton.astro';
-import WhatsAppButton from '@components/ui/WhatsAppButton.astro';
 import PayButton from '@components/ui/PayButton.astro';
+import { TELEGRAM, WHATSAPP } from '@config/site';
 import { content as c } from '@lib/content';
 ---
 
@@ -20,14 +19,13 @@ import { content as c } from '@lib/content';
 
     <div class="final-cta__action">
       <PayButton variant="gold" size="lg" />
-      <TelegramButton variant="ghost" size="lg" />
-      <WhatsAppButton variant="ghost" size="lg" />
     </div>
 
-    <p class="final-cta__note">
-      {(['en','ar','sv','nb'] as const).map((l) => (
-        <span data-lang={l}>{c.finalCta.note[l]}</span>
-      ))}
+    <p class="final-cta__contact">
+      <span data-lang="en">Have a question first? Reach us on <a href={TELEGRAM.url} target="_blank" rel="noopener">Telegram</a> or <a href={WHATSAPP.url} target="_blank" rel="noopener">WhatsApp</a>.</span>
+      <span data-lang="ar">عندك سؤال أولاً؟ تواصل معنا عبر <a href={TELEGRAM.url} target="_blank" rel="noopener">تلجرام</a> أو <a href={WHATSAPP.url} target="_blank" rel="noopener">واتساب</a>.</span>
+      <span data-lang="sv">Har du en fråga först? Nå oss på <a href={TELEGRAM.url} target="_blank" rel="noopener">Telegram</a> eller <a href={WHATSAPP.url} target="_blank" rel="noopener">WhatsApp</a>.</span>
+      <span data-lang="nb">Har du et spørsmål først? Ta kontakt på <a href={TELEGRAM.url} target="_blank" rel="noopener">Telegram</a> eller <a href={WHATSAPP.url} target="_blank" rel="noopener">WhatsApp</a>.</span>
     </p>
   </div>
 </section>
@@ -55,9 +53,15 @@ import { content as c } from '@lib/content';
     justify-content: center;
     align-items: center;
   }
-  .final-cta__note {
+  .final-cta__contact {
     margin-top: var(--s-4);
     font-size: var(--fs-sm);
     color: rgba(245, 241, 232, 0.55);
   }
+  .final-cta__contact a {
+    color: var(--c-gold-300);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .final-cta__contact a:hover { color: #fff; }
 </style>
