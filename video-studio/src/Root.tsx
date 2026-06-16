@@ -3,10 +3,10 @@ import {Composition} from 'remotion';
 import {BrandIntro} from './BrandIntro';
 import {Promo, PromoProps} from './Promo';
 
-// نص افتراضي إنجليزي (أمريكا/كندا/السويد/النرويج)
+// نص افتراضي إنجليزي — مطابق للموقع الحيّ (إطلاق أمريكا، عمرة البدل $199)
 const defaultPromo: PromoProps = {
-  headline: 'Fulfil their Hajj.\nHonour their memory.',
-  body: 'We perform Hajj & Umrah by proxy for your departed loved ones — with proof, dignity, and care.',
+  headline: 'Gone from sight.\nStill in the heart.',
+  body: 'Gift them an Umrah — performed in their name from within Makkah, filmed with their name pronounced at the Sacred House. $199.',
   cta: 'A promise kept. A duty fulfilled.',
   arabic: false,
 };
