@@ -32,6 +32,12 @@ import { CHECKOUT, ORDERS } from '@config/site';
     </p>
 
     <form class="register__form card" id="register-form" data-checkout={CHECKOUT.umrahUrl} data-endpoint={ORDERS.endpoint} data-token={ORDERS.token} novalidate>
+      {/* Anti-spam honeypot: hidden from people, only bots fill it. Real submissions leave it empty. */}
+      <div class="hp-field" aria-hidden="true">
+        <label for="rf-website">Leave this field empty</label>
+        <input type="text" id="rf-website" name="website" tabindex="-1" autocomplete="off" />
+      </div>
+
       <div class="field">
         <label for="rf-name">
           <span data-lang="en">Your name</span>
@@ -217,6 +223,15 @@ import { CHECKOUT, ORDERS } from '@config/site';
 <style>
   .register__lead { margin-inline: auto; text-align: center; }
 
+  /* Honeypot: kept off-screen (not display:none, which some bots skip) */
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
   .register__form {
     max-width: 560px;
     margin: var(--s-5) auto 0;
@@ -396,6 +411,8 @@ import { CHECKOUT, ORDERS } from '@config/site';
 <script>
   const form = document.getElementById('register-form') as HTMLFormElement | null;
   if (form) {
+    // Anti-spam: timestamp when the form is ready; bots submit near-instantly.
+    const formLoadedAt = Date.now();
     const toggle = document.getElementById('rec-toggle') as HTMLButtonElement;
     const recorderEl = document.getElementById('recorder') as HTMLElement;
     const timerEl = document.getElementById('rec-timer') as HTMLElement;
@@ -508,6 +525,9 @@ import { CHECKOUT, ORDERS } from '@config/site';
 
       const params = new URLSearchParams();
       params.append('token', form.dataset.token || '');
+      // Anti-spam signals: honeypot value (empty for humans) + how long the form took.
+      params.append('website', (document.getElementById('rf-website') as HTMLInputElement).value);
+      params.append('elapsed', String(Date.now() - formLoadedAt));
       params.append('name', (document.getElementById('rf-name') as HTMLInputElement).value.trim());
       params.append('contact', (document.getElementById('rf-contact') as HTMLInputElement).value.trim());
       params.append('deceased', (document.getElementById('rf-deceased') as HTMLInputElement).value.trim());
