@@ -1,0 +1,10 @@
+node_modules/
+.wrangler/
+dist/
+*.log
+# operator inputs may reference local media paths / be transient
+smoke.json
+week*.json
+# never commit secrets
+*.secret
+.dev.vars

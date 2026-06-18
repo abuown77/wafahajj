@@ -1,0 +1,23 @@
+name = "wafa-fb-publisher"
+main = "src/index.ts"
+compatibility_date = "2024-09-09"
+
+[triggers]
+crons = ["0 22 * * *"]
+
+[vars]
+FB_API_VERSION = "v21.0"
+FB_PAGE_ID = "1190439857478674"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "wafa-fb-publisher"
+database_id = "PUT_DATABASE_ID_HERE"
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "wafa-fb-media"
+
+[[send_email]]
+name = "ALERT_EMAIL"
+destination_address = "info@wafahajj.com"
