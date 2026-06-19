@@ -12,7 +12,7 @@ FB_PAGE_ID = "1190439857478674"
 [[d1_databases]]
 binding = "DB"
 database_name = "wafa-fb-publisher"
-database_id = "PUT_DATABASE_ID_HERE"
+database_id = "b67c160d-f97f-4684-92c2-e7232d454574"
 
 [[r2_buckets]]
 binding = "MEDIA"
