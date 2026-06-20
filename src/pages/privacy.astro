@@ -1,0 +1,130 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Logo from '@components/Logo.astro';
+import { SITE } from '@config/site';
+
+const updated = 'June 20, 2026';
+---
+
+<BaseLayout>
+  <main id="main" class="legal">
+    <div class="container legal__inner">
+      <a href="/" class="legal__home" aria-label={SITE.name}>
+        <Logo scale={0.5} showWordmark={true} />
+      </a>
+
+      <h1 class="legal__title">Privacy Policy</h1>
+      <p class="legal__updated">Last updated: {updated}</p>
+
+      <p>
+        Wafa Hajj ("we", "us") provides Umrah and Hajj performed on behalf of a
+        deceased person. This page explains what information we collect, how we
+        use it, and the choices you have. We keep this simple and we collect only
+        what is needed to provide the service.
+      </p>
+
+      <h2>Information we collect</h2>
+      <p>When you place an order or contact us, you may provide:</p>
+      <ul>
+        <li>Your name and contact details (email, phone, or messaging handle).</li>
+        <li>The name of the deceased person the Umrah or Hajj is performed for.</li>
+        <li>An optional voice message you choose to record with your request.</li>
+      </ul>
+      <p>
+        We also collect basic, anonymous usage statistics (such as page visits)
+        through standard analytics to understand how the site is used.
+      </p>
+
+      <h2>How we use your information</h2>
+      <ul>
+        <li>To perform the requested Umrah or Hajj and deliver proof of completion (such as a video and an official certificate).</li>
+        <li>To contact you about your order and answer your questions.</li>
+        <li>To improve our website and service.</li>
+      </ul>
+
+      <h2>Payments</h2>
+      <p>
+        Card payments are processed by our payment provider (Fourthwall). We do
+        not see or store your full card details on our website.
+      </p>
+
+      <h2>Sharing</h2>
+      <p>
+        We do not sell your personal information. We share information only with
+        the people and services needed to fulfill your order — for example, the
+        team performing the Umrah or Hajj, and our payment provider — and only as
+        required to deliver the service or comply with the law.
+      </p>
+
+      <h2>Data retention</h2>
+      <p>
+        We keep order information for as long as needed to provide the service
+        and to deliver your proof of completion. You may ask us to delete your
+        personal information at any time.
+      </p>
+
+      <h2>Your choices</h2>
+      <p>
+        You can ask us to access, correct, or delete the personal information we
+        hold about you. Contact us using the details below and we will respond.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        For any privacy question or request, email us at
+        <a href="mailto:info@wafahajj.com">info@wafahajj.com</a>.
+      </p>
+
+      <p class="legal__back"><a href="/">&larr; Back to home</a></p>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .legal {
+    padding-block: var(--s-6) var(--s-7);
+    background: var(--c-paper);
+  }
+  .legal__inner {
+    max-width: 70ch;
+  }
+  .legal__home {
+    display: inline-flex;
+    margin-bottom: var(--s-5);
+    text-decoration: none;
+  }
+  .legal__title {
+    font-family: var(--ff-display);
+    color: var(--c-secondary);
+    margin: 0 0 var(--s-1);
+  }
+  .legal__updated {
+    color: var(--c-text-soft);
+    font-size: var(--fs-sm);
+    margin: 0 0 var(--s-5);
+  }
+  .legal h2 {
+    font-family: var(--ff-display);
+    color: var(--c-secondary);
+    margin-top: var(--s-5);
+    margin-bottom: var(--s-2);
+    font-size: var(--fs-xl);
+  }
+  .legal p,
+  .legal li {
+    color: var(--c-text);
+    line-height: 1.7;
+  }
+  .legal ul {
+    padding-inline-start: 1.25rem;
+  }
+  .legal li {
+    margin-bottom: var(--s-1);
+  }
+  .legal a {
+    color: var(--c-primary);
+  }
+  .legal__back {
+    margin-top: var(--s-6);
+  }
+</style>
