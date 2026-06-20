@@ -2,6 +2,7 @@
 import '@styles/design-system.css';
 import Meta from '@components/seo/Meta.astro';
 import ServiceSchema from '@components/seo/ServiceSchema.astro';
+import FaqSchema from '@components/seo/FaqSchema.astro';
 
 interface Props {
   bodyClass?: string;
@@ -32,6 +33,7 @@ const BASE = import.meta.env.BASE_URL.endsWith('/')
 
     <Meta />
     <ServiceSchema />
+    <FaqSchema />
 
     <!-- Google tag — GA4 analytics (G-) + Google Ads conversion (AW-). Purchase fires on Fourthwall. -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NRL1KT7J8D"></script>

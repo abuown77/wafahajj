@@ -327,7 +327,13 @@
         { "q": "Who actually performs the Umrah?", "a": "A trustworthy student of knowledge in Makkah who has already completed his own Umrah, performing it in their name under direct shariah supervision." },
         { "q": "When will the Umrah be performed?", "a": "The date is set according to the substitutes' availability, and we notify you of it once your payment is complete." },
         { "q": "How do I know it was truly done?", "a": "You receive a video in which the intention is pronounced clearly in their name — within days." },
-        { "q": "How do I pay?", "a": "Securely by card (Visa/Mastercard) on the site. One flat price of $199, no hidden fees." }
+        { "q": "How do I pay?", "a": "Securely by card (Visa/Mastercard) on the site. One flat price of $199, no hidden fees." },
+        { "q": "How do I know an Umrah Badal service is trustworthy?", "a": "Ask one question: who performs it, and will you see proof? With Wafa Hajj, a named, known student of knowledge in Makkah performs it — never an anonymous stand-in — and you receive a video in which the intention is pronounced in your loved one's name, plus a certificate. Nothing is hidden." },
+        { "q": "What is the best service to perform Umrah for a deceased person?", "a": "Judge any service by three things: a known performer (not outsourced to a cheaper substitute), real video proof in the deceased's name, and a clear flat price. Wafa Hajj was built on exactly these — $199, fully documented, performed from within Makkah all year." },
+        { "q": "How do I get proof the Umrah was actually performed?", "a": "You receive an HD video in which your loved one's name is spoken aloud as the intention, along with a digital certificate of completion — usually within days, sent to you directly." },
+        { "q": "Do I receive a certificate?", "a": "Yes — a personalized digital certificate naming the person the Umrah was performed for, alongside the video proof." },
+        { "q": "Is Hajj Badal also available, and how much?", "a": "Yes. Hajj Badal (the pilgrimage on behalf of a deceased person) is $1,990, all-inclusive and fully documented. Umrah Badal is $199 and available all year round." },
+        { "q": "Can a dua be made at the Kaaba in my loved one's name?", "a": "Yes. The intention is pronounced in their name, and dua is made for them during the rites — captured in the video you receive." }
       ],
       "ar": [
         { "q": "هل تجوز العمرة عن الوالد المتوفّى؟", "a": "نعم، وهي ثابتةٌ بالسنّة — أمر النبيُّ ﷺ رجلاً أن يحجّ ويعتمر عن أبيه، وألحق العلماءُ الأمَّ بذلك." },
@@ -336,7 +342,13 @@
         { "q": "من الذي يؤدّي العمرة فعلاً؟", "a": "طالب علمٍ ثقةٌ في مكّة قد اعتمر عن نفسه أوّلاً، يؤدّيها باسمه تحت إشرافٍ شرعيٍّ مباشر." },
         { "q": "متى ستُؤدّى العمرة؟", "a": "يُحدَّد الموعد بحسب المتاح من النوّاب، ونُبلغك به بعد إتمام عملية الدفع." },
         { "q": "كيف أتأكّد أنّها أُدّيت حقّاً؟", "a": "يصلك فيديو تُنطَق فيه النية بوضوح باسمه — خلال أيام." },
-        { "q": "كيف أدفع؟", "a": "بأمان بالبطاقة (فيزا/ماستركارد) عبر الموقع. سعرٌ واحد شامل $199، بلا رسوم خفية." }
+        { "q": "كيف أدفع؟", "a": "بأمان بالبطاقة (فيزا/ماستركارد) عبر الموقع. سعرٌ واحد شامل $199، بلا رسوم خفية." },
+        { "q": "كيف أعرف أنّ خدمة عمرة البدل موثوقة؟", "a": "اسأل سؤالاً واحداً: مَن يؤدّيها؟ وهل سترى إثباتاً؟ مع وفاء الحج يؤدّيها طالب علمٍ معروفٌ بالاسم في مكّة — لا نائبٌ مجهول — ويصلك فيديو تُنطق فيه النية باسم فقيدك، مع شهادة. لا شيء خفيّ." },
+        { "q": "ما أفضل خدمة لأداء العمرة عن متوفّى؟", "a": "احكم على أيّ خدمة بثلاثة أمور: منفّذٌ معروف (لا يُسلَّم لبديلٍ أرخص)، فيديو إثبات حقيقي باسم المتوفّى، وسعرٌ واحد واضح. وفاء الحج بُنيت على هذا تماماً — $199، توثيق كامل، تُؤدّى من داخل مكّة على مدار العام." },
+        { "q": "كيف أحصل على إثبات أنّ العمرة أُدّيت فعلاً؟", "a": "يصلك فيديو عالي الجودة يُنطق فيه اسم فقيدك جهراً عند النية، مع شهادة رقمية بإتمامها — عادةً خلال أيام، تُرسَل إليك مباشرة." },
+        { "q": "هل أحصل على شهادة؟", "a": "نعم — شهادة رقمية باسم مَن أُدّيت العمرة عنه، إلى جانب فيديو الإثبات." },
+        { "q": "هل حج البدل متاح أيضاً، وكم سعره؟", "a": "نعم. حج البدل (الحج عن متوفّى) سعره $1,990 شاملاً وموثَّقاً بالكامل. وعمرة البدل $199 متاحة على مدار العام." },
+        { "q": "هل يُدعى للفقيد عند الكعبة باسمه؟", "a": "نعم. تُنطق النية باسمه، ويُدعى له أثناء النُّسك — ويُوثَّق ذلك في الفيديو الذي يصلك." }
       ],
       "sv": [
         { "q": "Är Umrah på en avliden förälders vägnar tillåten?", "a": "Ja. Den är grundad i Sunnah — Profeten ﷺ uppmanade en man att utföra Hajj och Umrah för sin far, och de lärde tillämpar detsamma på modern." },
@@ -345,7 +357,13 @@
         { "q": "Vem utför egentligen Umrah?", "a": "En pålitlig kunskapsstudent i Makkah som redan fullbordat sin egen Umrah, och utför den i din anhörigs namn under direkt shariah-tillsyn." },
         { "q": "När utförs Umrah?", "a": "Datumet bestäms utifrån ställföreträdarnas tillgänglighet, och vi meddelar dig det när din betalning är genomförd." },
         { "q": "Hur vet jag att den verkligen utfördes?", "a": "Du får en video där avsikten uttalas tydligt i din anhörigs namn — inom några dagar." },
-        { "q": "Hur betalar jag?", "a": "Säkert med kort (Visa/Mastercard) på webbplatsen. Ett fast pris på 199 USD, inga dolda avgifter." }
+        { "q": "Hur betalar jag?", "a": "Säkert med kort (Visa/Mastercard) på webbplatsen. Ett fast pris på 199 USD, inga dolda avgifter." },
+        { "q": "Hur vet jag att en Umrah Badal-tjänst är pålitlig?", "a": "Ställ en enda fråga: vem utför den, och får du se bevis? Med Wafa Hajj utförs den av en namngiven, känd kunskapsstudent i Makkah — aldrig en anonym ersättare — och du får en video där avsikten uttalas i din anhörigs namn, plus ett intyg. Inget döljs." },
+        { "q": "Vilken är den bästa tjänsten för att utföra Umrah för en avliden?", "a": "Bedöm varje tjänst utifrån tre saker: en känd utförare (inte utlagd på en billigare ersättare), äkta videobevis i den avlidnes namn, och ett tydligt fast pris. Wafa Hajj byggdes på exakt detta — 199 USD, fullt dokumenterat, utfört från Makkah året runt." },
+        { "q": "Hur får jag bevis på att Umrah verkligen utfördes?", "a": "Du får en HD-video där din anhörigs namn uttalas högt som avsikt, tillsammans med ett digitalt intyg om fullbordan — vanligtvis inom några dagar, skickat direkt till dig." },
+        { "q": "Får jag ett intyg?", "a": "Ja — ett personligt digitalt intyg som namnger personen som Umrah utfördes för, tillsammans med videobeviset." },
+        { "q": "Finns Hajj Badal också, och vad kostar det?", "a": "Ja. Hajj Badal (vallfärden för en avliden) kostar 1 990 USD, allt inkluderat och fullt dokumenterat. Umrah Badal kostar 199 USD och är tillgänglig året runt." },
+        { "q": "Kan en dua göras vid Kaba i min anhörigs namn?", "a": "Ja. Avsikten uttalas i deras namn, och dua görs för dem under riterna — fångat i videon du får." }
       ],
       "nb": [
         { "q": "Er Umrah på vegne av en avdød forelder tillatt?", "a": "Ja. Det er grunnfestet i Sunnah — Profeten ﷺ ba en mann utføre Hajj og Umrah for sin far, og de lærde anvender det samme på moren." },
@@ -354,7 +372,13 @@
         { "q": "Hvem utfører egentlig Umrah?", "a": "En pålitelig kunnskapsstudent i Makkah som allerede har fullført sin egen Umrah, og utfører den i din kjæres navn under direkte shariah-tilsyn." },
         { "q": "Når utføres Umrah?", "a": "Datoen fastsettes etter stedfortredernes tilgjengelighet, og vi gir deg beskjed når betalingen din er fullført." },
         { "q": "Hvordan vet jeg at den virkelig ble utført?", "a": "Du mottar en video der intensjonen uttales tydelig i din kjæres navn — innen få dager." },
-        { "q": "Hvordan betaler jeg?", "a": "Trygt med kort (Visa/Mastercard) på nettstedet. Én fast pris på 199 USD, ingen skjulte avgifter." }
+        { "q": "Hvordan betaler jeg?", "a": "Trygt med kort (Visa/Mastercard) på nettstedet. Én fast pris på 199 USD, ingen skjulte avgifter." },
+        { "q": "Hvordan vet jeg at en Umrah Badal-tjeneste er pålitelig?", "a": "Still ett spørsmål: hvem utfører den, og får du se bevis? Med Wafa Hajj utføres den av en navngitt, kjent kunnskapsstudent i Makkah — aldri en anonym stedfortreder — og du mottar en video der intensjonen uttales i din kjæres navn, pluss et sertifikat. Ingenting skjules." },
+        { "q": "Hva er den beste tjenesten for å utføre Umrah for en avdød?", "a": "Vurder enhver tjeneste ut fra tre ting: en kjent utfører (ikke satt bort til en billigere stedfortreder), ekte videobevis i den avdødes navn, og en tydelig fast pris. Wafa Hajj ble bygget på nettopp dette — 199 USD, fullt dokumentert, utført fra Makkah hele året." },
+        { "q": "Hvordan får jeg bevis på at Umrah virkelig ble utført?", "a": "Du mottar en HD-video der din kjæres navn uttales høyt som intensjon, sammen med et digitalt sertifikat på fullføring — vanligvis innen få dager, sendt direkte til deg." },
+        { "q": "Får jeg et sertifikat?", "a": "Ja — et personlig digitalt sertifikat som navngir personen Umrah ble utført for, sammen med videobeviset." },
+        { "q": "Er Hajj Badal også tilgjengelig, og hva koster det?", "a": "Ja. Hajj Badal (pilegrimsferden for en avdød) koster 1 990 USD, alt inkludert og fullt dokumentert. Umrah Badal koster 199 USD og er tilgjengelig hele året." },
+        { "q": "Kan en dua gjøres ved Kaba i min kjæres navn?", "a": "Ja. Intensjonen uttales i deres navn, og dua gjøres for dem under ritene — fanget i videoen du mottar." }
       ]
     }
   },

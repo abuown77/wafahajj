@@ -1,0 +1,18 @@
+---
+import { content as c } from '@lib/content';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: c.faq.items.en.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
