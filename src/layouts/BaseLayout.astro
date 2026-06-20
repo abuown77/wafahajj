@@ -8,8 +8,6 @@ interface Props {
 }
 const { bodyClass = '' } = Astro.props;
 
-const GA4_ID = import.meta.env.PUBLIC_GA4_ID;
-
 // Normalise base so it always ends with a single "/"
 const BASE = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
@@ -35,27 +33,15 @@ const BASE = import.meta.env.BASE_URL.endsWith('/')
     <Meta />
     <ServiceSchema />
 
-    {GA4_ID && (
-      <>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
-        <script is:inline define:vars={{ GA4_ID }}>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', GA4_ID, { send_page_view: true });
-          window.gtag = gtag;
-        </script>
-      </>
-    )}
-
-    <!-- Google Ads (conversion tracking — purchase fires on Fourthwall) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18255385299"></script>
+    <!-- Google tag — GA4 analytics (G-) + Google Ads conversion (AW-). Purchase fires on Fourthwall. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NRL1KT7J8D"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+      gtag('config', 'G-NRL1KT7J8D', { send_page_view: true });
       gtag('config', 'AW-18255385299');
-      window.gtag = window.gtag || gtag;
+      window.gtag = gtag;
     </script>
 
     <!-- Meta (Facebook) Pixel -->
