@@ -523,6 +523,10 @@ import { CHECKOUT, ORDERS } from '@config/site';
       if (!ok) return;
       if (recorderEl.classList.contains('is-recording')) stop();
 
+      // Funnel: request completed → visitor is being sent to payment.
+      // @ts-ignore
+      if (typeof window.whTrack === 'function') window.whTrack('request_submitted');
+
       const params = new URLSearchParams();
       params.append('token', form.dataset.token || '');
       // Anti-spam signals: honeypot value (empty for humans) + how long the form took.

@@ -135,6 +135,43 @@ const BASE = import.meta.env.BASE_URL.endsWith('/')
         });
       });
 
+      // Funnel counter — reveals exactly where visitors drop off between landing and payment.
+      // Steps: page_view → view_form → form_start → request_submitted → (Purchase on checkout).
+      function whTrack(name) {
+        var lang = document.documentElement.lang;
+        // @ts-ignore
+        if (typeof window.gtag === 'function') window.gtag('event', name, { event_category: 'funnel', event_label: lang });
+        // @ts-ignore
+        if (typeof window.fbq === 'function') window.fbq('trackCustom', name, { lang: lang });
+      }
+      // @ts-ignore
+      window.whTrack = whTrack;
+
+      // Step: visitor reached the order form (scrolled it into view)
+      var regSection = document.getElementById('register');
+      if (regSection && 'IntersectionObserver' in window) {
+        var seenForm = false;
+        var formObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting && !seenForm) {
+              seenForm = true;
+              whTrack('view_form');
+              formObserver.disconnect();
+            }
+          });
+        }, { threshold: 0.3 });
+        formObserver.observe(regSection);
+      }
+
+      // Step: visitor started filling the form (first field interaction)
+      var regForm = document.getElementById('register-form');
+      if (regForm) {
+        var formStarted = false;
+        regForm.addEventListener('input', function () {
+          if (!formStarted) { formStarted = true; whTrack('form_start'); }
+        });
+      }
+
     </script>
 
     <!-- Scroll-reveal: content rises into view as you scroll (the eye follows motion).
