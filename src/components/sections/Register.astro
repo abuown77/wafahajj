@@ -156,10 +156,10 @@ import { CHECKOUT, ORDERS } from '@config/site';
               <span data-lang="nb">Opplysningene dine og stemmeopptaket brukes kun til å utføre denne Umrah og deles aldri.</span>
             </li>
             <li>
-              <span data-lang="en">The fee is $199, paid in full and in advance at the time of booking, by card. It is non-refundable.</span>
-              <span data-lang="ar">الرسوم 199 دولاراً تُدفع كاملةً ومقدماً عند الحجز بالبطاقة، وهي غير قابلة للاسترداد.</span>
-              <span data-lang="sv">Avgiften är 199 USD och betalas i sin helhet i förskott vid bokningen, med kort. Den återbetalas inte.</span>
-              <span data-lang="nb">Avgiften er 199 USD og betales i sin helhet på forhånd ved bestillingen, med kort. Den refunderes ikke.</span>
+              <span data-lang="en">The fee is $199, paid by card at the time of booking. You are paying for an Umrah that is actually performed: if we do not perform it and send you the proof (video and photos), your payment is refunded in full. Once the proof has been delivered, the Umrah is complete and the fee is not refundable.</span>
+              <span data-lang="ar">الرسوم 199 دولاراً تُدفع بالبطاقة عند الحجز. أنت تدفع مقابل عمرة تُؤدّى فعلاً: فإن لم نؤدِّها ولم يصلك إثباتها (فيديو وصور)، تُسترجع أموالك كاملة. وبمجرد وصول الإثبات تكون العمرة قد تمّت، ولا تُسترد الرسوم بعد ذلك.</span>
+              <span data-lang="sv">Avgiften är 199 USD och betalas med kort vid bokningen. Du betalar för en Umrah som faktiskt utförs: om vi inte utför den och skickar dig beviset (video och foton) återbetalas hela beloppet. När beviset har levererats är Umrah slutförd och avgiften återbetalas inte.</span>
+              <span data-lang="nb">Avgiften er 199 USD og betales med kort ved bestillingen. Du betaler for en Umrah som faktisk utføres: hvis vi ikke utfører den og sender deg beviset (video og bilder), refunderes hele beløpet. Når beviset er levert, er Umrah fullført og avgiften refunderes ikke.</span>
             </li>
             <li>
               <span data-lang="en">We carry it out with care; its acceptance and reward rest with Allah alone.</span>
@@ -180,6 +180,16 @@ import { CHECKOUT, ORDERS } from '@config/site';
           </span>
         </label>
       </div>
+
+      <p class="register__guarantee">
+        <span class="register__guarantee-icon" aria-hidden="true">↺</span>
+        <span class="register__guarantee-text">
+          <span data-lang="en">You pay for an Umrah that is actually performed. If we don't perform it and send you the proof, you're refunded in full.</span>
+          <span data-lang="ar">تدفع مقابل عمرة تُؤدّى فعلاً. إن لم نؤدِّها ولم يصلك إثباتها، تُسترجع أموالك كاملة.</span>
+          <span data-lang="sv">Du betalar för en Umrah som faktiskt utförs. Om vi inte utför den och skickar dig beviset återbetalas hela beloppet.</span>
+          <span data-lang="nb">Du betaler for en Umrah som faktisk utføres. Hvis vi ikke utfører den og sender deg beviset, får du full refusjon.</span>
+        </span>
+      </p>
 
       <button type="submit" class="btn btn--gold register__submit">
         <span data-lang="en">Send the request</span>
@@ -390,6 +400,30 @@ import { CHECKOUT, ORDERS } from '@config/site';
     text-align: center;
     margin: 0;
   }
+
+  /* Delivery guarantee — reassurance at the point of action */
+  .register__guarantee {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    margin: var(--s-2) 0 0;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--c-gold-500);
+    border-radius: var(--radius-md);
+    background: rgba(200, 155, 60, 0.08);
+  }
+  .register__guarantee-icon {
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    line-height: 1;
+    color: var(--c-gold-700);
+  }
+  .register__guarantee-text {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--c-secondary);
+  }
+  html[lang="ar"] .register__guarantee-text { font-family: var(--ff-arabic); }
 
   .register__done {
     max-width: 560px;
