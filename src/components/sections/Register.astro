@@ -25,10 +25,10 @@ import { CHECKOUT, ORDERS } from '@config/site';
     <div class="ornament" aria-hidden="true"><span class="ornament-dot"></span></div>
 
     <p class="lead register__lead">
-      <span data-lang="en">Tell us who the Umrah is for. Recording the name in your own voice helps us pronounce it correctly.</span>
-      <span data-lang="ar">أخبرنا لمن تكون العمرة. تسجيل الاسم بصوتك يساعدنا على نطقه نطقاً صحيحاً.</span>
-      <span data-lang="sv">Berätta vem Umrah är för. Att spela in namnet med din egen röst hjälper oss att uttala det rätt.</span>
-      <span data-lang="nb">Fortell oss hvem Umrah er for. Å spille inn navnet med din egen stemme hjelper oss å uttale det riktig.</span>
+      <span data-lang="en">Tell us who the Umrah is for. It only takes a moment — then you continue to secure card payment.</span>
+      <span data-lang="ar">أخبرنا لمن تكون العمرة. لحظات قليلة، ثم تتابع إلى الدفع الآمن بالبطاقة.</span>
+      <span data-lang="sv">Berätta vem Umrah är för. Det tar bara ett ögonblick — sedan fortsätter du till säker kortbetalning.</span>
+      <span data-lang="nb">Fortell oss hvem Umrah er for. Det tar bare et øyeblikk — deretter fortsetter du til sikker kortbetaling.</span>
     </p>
 
     <form class="register__form card" id="register-form" data-checkout={CHECKOUT.umrahUrl} data-endpoint={ORDERS.endpoint} data-token={ORDERS.token} novalidate>
@@ -93,29 +93,6 @@ import { CHECKOUT, ORDERS } from '@config/site';
         </div>
       </div>
 
-      <div class="field">
-        <span class="field__label">
-          <span data-lang="en">Record the deceased's full name in a clear voice</span>
-          <span data-lang="ar">سجّل اسم المتوفّى كاملاً بصوتٍ واضح</span>
-          <span data-lang="sv">Spela in den avlidnes fullständiga namn med tydlig röst</span>
-          <span data-lang="nb">Spill inn avdødes fulle navn med tydelig stemme</span>
-        </span>
-
-        <div class="recorder" id="recorder">
-          <button type="button" class="btn btn--ghost recorder__btn" id="rec-toggle">
-            <span class="rec-dot" aria-hidden="true"></span>
-            <span data-lang="en" class="rec-label" data-state="idle">Record</span>
-            <span data-lang="ar" class="rec-label" data-state="idle">سجّل</span>
-            <span data-lang="sv" class="rec-label" data-state="idle">Spela in</span>
-            <span data-lang="nb" class="rec-label" data-state="idle">Spill inn</span>
-          </button>
-          <span class="recorder__timer" id="rec-timer" aria-live="polite"></span>
-          <audio class="recorder__audio" id="rec-audio" controls hidden></audio>
-        </div>
-        <p class="recorder__hint" id="rec-hint"></p>
-        <input type="hidden" name="voice" id="rf-voice" />
-      </div>
-
       <div class="field field--terms">
         <details class="terms">
           <summary class="terms__summary">
@@ -150,10 +127,10 @@ import { CHECKOUT, ORDERS } from '@config/site';
               <span data-lang="nb">Du mottar bevis på fullføring: en video og bilder av utførelsen.</span>
             </li>
             <li>
-              <span data-lang="en">Your details and voice recording are used only to fulfil this Umrah and are never shared.</span>
-              <span data-lang="ar">تُستخدم بياناتك وتسجيلك الصوتي لإتمام هذه العمرة فقط، ولا تُشارك مع أي جهة.</span>
-              <span data-lang="sv">Dina uppgifter och röstinspelning används endast för att utföra denna Umrah och delas aldrig.</span>
-              <span data-lang="nb">Opplysningene dine og stemmeopptaket brukes kun til å utføre denne Umrah og deles aldri.</span>
+              <span data-lang="en">Your details are used only to fulfil this Umrah and are never shared.</span>
+              <span data-lang="ar">تُستخدم بياناتك لإتمام هذه العمرة فقط، ولا تُشارك مع أي جهة.</span>
+              <span data-lang="sv">Dina uppgifter används endast för att utföra denna Umrah och delas aldrig.</span>
+              <span data-lang="nb">Opplysningene dine brukes kun til å utføre denne Umrah og deles aldri.</span>
             </li>
             <li>
               <span data-lang="en">The fee is $199, paid by card at the time of booking. You are paying for an Umrah that is actually performed: if we do not perform it and send you the proof (video and photos), your payment is refunded in full. Once the proof has been delivered, the Umrah is complete and the fee is not refundable.</span>
@@ -312,34 +289,6 @@ import { CHECKOUT, ORDERS } from '@config/site';
     border-color: var(--c-burgundy);
   }
 
-  .recorder {
-    display: flex;
-    align-items: center;
-    gap: var(--s-3);
-    flex-wrap: wrap;
-  }
-  .recorder__btn { padding: 0.7rem 1.4rem; font-size: var(--fs-sm); }
-  .rec-dot {
-    width: 12px; height: 12px;
-    border-radius: 50%;
-    background: var(--c-burgundy);
-    flex-shrink: 0;
-  }
-  .recorder.is-recording .rec-dot { animation: rec-pulse 1s var(--ease-soft) infinite; }
-  @keyframes rec-pulse { 50% { opacity: 0.25; } }
-  .recorder__timer {
-    font-variant-numeric: tabular-nums;
-    font-size: var(--fs-sm);
-    color: var(--c-text-soft);
-  }
-  .recorder__audio { height: 40px; width: 100%; max-width: 340px; }
-  .recorder__hint {
-    font-size: var(--fs-xs);
-    color: var(--c-text-soft);
-    margin: var(--s-2) 0 0;
-    min-height: 1em;
-  }
-
   .field--terms { gap: var(--s-3); }
 
   .terms {
@@ -447,92 +396,8 @@ import { CHECKOUT, ORDERS } from '@config/site';
   if (form) {
     // Anti-spam: timestamp when the form is ready; bots submit near-instantly.
     const formLoadedAt = Date.now();
-    const toggle = document.getElementById('rec-toggle') as HTMLButtonElement;
-    const recorderEl = document.getElementById('recorder') as HTMLElement;
-    const timerEl = document.getElementById('rec-timer') as HTMLElement;
-    const audioEl = document.getElementById('rec-audio') as HTMLAudioElement;
-    const hintEl = document.getElementById('rec-hint') as HTMLElement;
-    const voiceInput = document.getElementById('rf-voice') as HTMLInputElement;
     const doneEl = document.getElementById('register-done') as HTMLElement;
-
-    const HINTS: Record<string, { unsupported: string; ready: string }> = {
-      en: { unsupported: 'Voice recording is not supported on this browser — you can still send without it.', ready: 'Recording saved. You can play it back or record again.' },
-      ar: { unsupported: 'التسجيل الصوتي غير مدعوم في هذا المتصفّح — يمكنك الإرسال بدونه.', ready: 'تم حفظ التسجيل. يمكنك سماعه أو إعادة التسجيل.' },
-      sv: { unsupported: 'Röstinspelning stöds inte i denna webbläsare — du kan ändå skicka utan den.', ready: 'Inspelning sparad. Du kan spela upp eller spela in igen.' },
-      nb: { unsupported: 'Stemmeopptak støttes ikke i denne nettleseren — du kan likevel sende uten.', ready: 'Opptak lagret. Du kan spille av eller spille inn på nytt.' },
-    };
     const lang = () => document.documentElement.lang || 'en';
-    const setRecLabel = (s: string) => {
-      document.querySelectorAll<HTMLElement>('.rec-label').forEach((el) => { el.dataset.state = s; });
-    };
-
-    let mediaRecorder: MediaRecorder | null = null;
-    let chunks: BlobPart[] = [];
-    let voiceBlob: Blob | null = null;
-    let timer = 0;
-    let tick: number | undefined;
-
-    const supported = typeof navigator !== 'undefined'
-      && !!navigator.mediaDevices?.getUserMedia
-      && typeof MediaRecorder !== 'undefined';
-
-    if (!supported) {
-      toggle.disabled = true;
-      hintEl.textContent = (HINTS[lang()] || HINTS.en).unsupported;
-    }
-
-    const labelFor: Record<string, { rec: string; stop: string }> = {
-      en: { rec: 'Record', stop: 'Stop' },
-      ar: { rec: 'سجّل', stop: 'إيقاف' },
-      sv: { rec: 'Spela in', stop: 'Stoppa' },
-      nb: { rec: 'Spill inn', stop: 'Stopp' },
-    };
-    const applyLabel = (kind: 'rec' | 'stop') => {
-      (['en', 'ar', 'sv', 'nb'] as const).forEach((l) => {
-        const el = document.querySelector<HTMLElement>(`.rec-label[data-lang="${l}"]`);
-        if (el) el.textContent = labelFor[l][kind];
-      });
-    };
-
-    const fmt = (s: number) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
-
-    async function start() {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        chunks = [];
-        mediaRecorder = new MediaRecorder(stream);
-        mediaRecorder.ondataavailable = (e) => { if (e.data.size) chunks.push(e.data); };
-        mediaRecorder.onstop = () => {
-          stream.getTracks().forEach((t) => t.stop());
-          const blob = new Blob(chunks, { type: mediaRecorder?.mimeType || 'audio/webm' });
-          voiceBlob = blob;
-          audioEl.src = URL.createObjectURL(blob);
-          audioEl.hidden = false;
-          const reader = new FileReader();
-          reader.onload = () => { voiceInput.value = String(reader.result); };
-          reader.readAsDataURL(blob);
-          hintEl.textContent = (HINTS[lang()] || HINTS.en).ready;
-        };
-        mediaRecorder.start();
-        recorderEl.classList.add('is-recording');
-        applyLabel('stop');
-        timer = 0; timerEl.textContent = fmt(0);
-        tick = window.setInterval(() => { timer += 1; timerEl.textContent = fmt(timer); }, 1000);
-      } catch {
-        hintEl.textContent = (HINTS[lang()] || HINTS.en).unsupported;
-      }
-    }
-    function stop() {
-      if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
-      recorderEl.classList.remove('is-recording');
-      applyLabel('rec');
-      if (tick) window.clearInterval(tick);
-    }
-
-    toggle.addEventListener('click', () => {
-      if (recorderEl.classList.contains('is-recording')) stop();
-      else start();
-    });
 
     const payUrl = form.dataset.checkout || '';
     const payLink = document.getElementById('register-pay') as HTMLAnchorElement | null;
@@ -555,7 +420,6 @@ import { CHECKOUT, ORDERS } from '@config/site';
       terms.setAttribute('aria-invalid', terms.checked ? 'false' : 'true');
       if (!terms.checked && ok) { terms.focus(); ok = false; }
       if (!ok) return;
-      if (recorderEl.classList.contains('is-recording')) stop();
 
       // Funnel: request completed → visitor is being sent to payment.
       // @ts-ignore
@@ -571,8 +435,6 @@ import { CHECKOUT, ORDERS } from '@config/site';
       params.append('deceased', (document.getElementById('rf-deceased') as HTMLInputElement).value.trim());
       params.append('gender', gender ? gender.value : '');
       params.append('lang', lang());
-      // Voice is captured as a base64 data URL in the hidden field.
-      if (voiceInput.value) params.append('voice', voiceInput.value);
 
       // Deliver the request, then continue to card payment.
       let redirected = false;
