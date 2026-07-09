@@ -545,7 +545,28 @@ import { CHECKOUT, ORDERS } from '@config/site';
       const goToPayment = () => {
         if (redirected) return;
         redirected = true;
-        if (payUrl) window.location.href = payUrl;
+        if (!payUrl) return;
+
+        // This is the REAL checkout handoff — fire the true purchase-intent events here
+        // (not on the earlier scroll-to-form button), so ad platforms optimise correctly.
+        // @ts-ignore
+        if (typeof window.fbq === 'function') window.fbq('track', 'InitiateCheckout', { value: 199, currency: 'USD' });
+        // @ts-ignore
+        if (typeof window.gtag === 'function') window.gtag('event', 'begin_checkout', { value: 199, currency: 'USD' });
+
+        // Carry ad click-ids + UTMs across the domain hop so purchases on Fourthwall
+        // can be attributed back to the ad that brought the visitor.
+        let dest = payUrl;
+        try {
+          const cur = new URLSearchParams(window.location.search);
+          const keep = ['fbclid', 'gclid', 'wbraid', 'gbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+          const carry = new URLSearchParams();
+          keep.forEach((k) => { const v = cur.get(k); if (v) carry.append(k, v); });
+          const q = carry.toString();
+          if (q) dest += (payUrl.indexOf('?') === -1 ? '?' : '&') + q;
+        } catch (e) { /* fall back to plain payUrl */ }
+
+        window.location.href = dest;
       };
 
       const endpoint = form.dataset.endpoint || '';

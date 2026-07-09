@@ -37,6 +37,10 @@ Wafa Hajj-handoff.zip
 *.zip
 
 # Sensitive client material — NEVER commit (PII, raw recordings, receipts)
+# NOTE: 3 client videos under client-videos/ were already tracked earlier; ignoring the
+# folder here only stops NEW client material (e.g. client-videos/ads/) from being staged.
+client-videos/
+wafahajj-clients/
 client-videos/source/
 wafahajj-drive/
 الاضحية.mp4

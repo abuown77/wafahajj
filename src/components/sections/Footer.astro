@@ -27,6 +27,15 @@ import { content as c } from '@lib/content';
         <span data-lang={l}>{c.footer.rights[l]}</span>
       ))}
     </p>
+
+    <p class="footer__legal">
+      <a href="/privacy">
+        <span data-lang="en">Privacy Policy</span>
+        <span data-lang="ar">سياسة الخصوصية</span>
+        <span data-lang="sv">Integritetspolicy</span>
+        <span data-lang="nb">Personvernerklæring</span>
+      </a>
+    </p>
   </div>
 </footer>
 
@@ -65,5 +74,17 @@ import { content as c } from '@lib/content';
     font-size: var(--fs-xs);
     color: var(--c-text-soft);
     opacity: 0.8;
+  }
+  .footer__legal {
+    margin: 0;
+    font-size: var(--fs-xs);
+  }
+  .footer__legal a {
+    color: var(--c-text-soft);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .footer__legal a:hover {
+    color: var(--c-secondary);
   }
 </style>

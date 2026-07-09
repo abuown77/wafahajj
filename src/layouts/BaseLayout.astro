@@ -116,7 +116,9 @@ const BASE = import.meta.env.BASE_URL.endsWith('/')
         });
       });
 
-      // Track card-payment clicks
+      // Track "pay by card" CTA clicks. These buttons scroll to the order form —
+      // they are NOT the real checkout, so we only log a soft intent here.
+      // The true InitiateCheckout fires at the actual Fourthwall handoff (Register.astro).
       document.querySelectorAll('[data-pay-link]').forEach((a) => {
         a.addEventListener('click', () => {
           // @ts-ignore
@@ -126,11 +128,6 @@ const BASE = import.meta.env.BASE_URL.endsWith('/')
               event_category: 'cta',
               event_label: document.documentElement.lang,
             });
-          }
-          // @ts-ignore
-          if (typeof window.fbq === 'function') {
-            // @ts-ignore
-            window.fbq('track', 'InitiateCheckout', { value: 199, currency: 'USD' });
           }
         });
       });

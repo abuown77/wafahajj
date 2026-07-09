@@ -260,8 +260,8 @@
     "footnote": {
       "en": "Payment securely by card (Visa/Mastercard) on the site. No hidden fees.",
       "ar": "الدفع بأمان بالبطاقة (فيزا/ماستركارد) عبر الموقع. بلا رسوم خفية.",
-      "sv": "Inga dolda avgifter. Ingen visum. Ingen Nusuk-plattform. Ingen resa för dig.",
-      "nb": "Ingen skjulte avgifter. Ingen visum. Ingen Nusuk-plattform. Ingen reise for deg."
+      "sv": "Betalning säkert med kort (Visa/Mastercard) på webbplatsen. Inga dolda avgifter.",
+      "nb": "Betaling trygt med kort (Visa/Mastercard) på nettstedet. Ingen skjulte avgifter."
     }
   },
 
@@ -439,10 +439,10 @@
       "nb": "Wafa Hajj — Umrah og Hajj Badal fra Makkah"
     },
     "description": {
-      "en": "Umrah Badal on behalf of your late parents — or anyone who has passed, even a martyr — from $199, performed from within Makkah under full shariah supervision. Documented with a video in their name. Hajj Badal also available.",
-      "ar": "عمرة البدل عن والديك المتوفّين أو أيّ راحلٍ حتى الشهداء من $199، تحت إشراف شرعي مباشر من داخل مكة المكرمة، موثّقة بفيديو باسمه. وحج البدل متاح أيضاً.",
-      "sv": "Umrah Badal på dina föräldrars vägnar — eller vem som helst som gått bort, även en martyr — från 199 USD, från Makkah, under full shariah-tillsyn. Dokumenterat med en video i deras namn. Hajj Badal finns också.",
-      "nb": "Umrah Badal på dine foreldres vegne — eller hvem som helst som har gått bort, selv en martyr — fra 199 USD, fra Makkah, under full shariah-tilsyn. Dokumentert med en video i deres navn. Hajj Badal er også tilgjengelig."
+      "en": "Umrah Badal on behalf of your late parents — or anyone who has passed, even a martyr — for $199, performed from within Makkah under full shariah supervision. Documented with a video in their name. Hajj Badal also available.",
+      "ar": "عمرة البدل عن والديك المتوفّين أو أيّ راحلٍ حتى الشهداء بـ$199، تحت إشراف شرعي مباشر من داخل مكة المكرمة، موثّقة بفيديو باسمه. وحج البدل متاح أيضاً.",
+      "sv": "Umrah Badal på dina föräldrars vägnar — eller vem som helst som gått bort, även en martyr — för 199 USD, från Makkah, under full shariah-tillsyn. Dokumenterat med en video i deras namn. Hajj Badal finns också.",
+      "nb": "Umrah Badal på dine foreldres vegne — eller hvem som helst som har gått bort, selv en martyr — for 199 USD, fra Makkah, under full shariah-tilsyn. Dokumentert med en video i deres navn. Hajj Badal er også tilgjengelig."
     }
   }
 }
