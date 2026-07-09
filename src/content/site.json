@@ -195,10 +195,10 @@
       }
     },
     "privacyNote": {
-      "en": "The name of the deceased is hidden out of respect for the family's privacy.",
-      "ar": "اسم المتوفّى مُغطّى حفاظاً على خصوصية العائلة.",
-      "sv": "Den avlidnes namn är dolt av hänsyn till familjens integritet.",
-      "nb": "Avdødes navn er skjult av hensyn til familiens personvern."
+      "en": "Shown with the family's kind permission.",
+      "ar": "يُعرض بإذنٍ كريمٍ من أهل المتوفّى.",
+      "sv": "Visas med familjens vänliga tillåtelse.",
+      "nb": "Vises med familiens vennlige tillatelse."
     }
   },
 
