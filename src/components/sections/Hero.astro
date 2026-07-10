@@ -79,22 +79,12 @@ import { content as c } from '@lib/content';
     text-transform: uppercase;
     color: var(--c-gold-300);
     margin: 0 0 var(--s-3);
-    opacity: 1;
     display: inline-block;
-    transform-origin: center;
-    animation: wh-brand-pop 6s ease-in-out infinite;
   }
   /* Arabic is cursive — never track it, and use the Arabic face */
   :global(html[lang="ar"]) .hero__eyebrow {
     letter-spacing: normal;
     font-family: var(--ff-arabic);
-  }
-  /* the brand name catches the eye: rises + nearly vanishes, then pops back larger */
-  @keyframes wh-brand-pop {
-    0%, 62% { transform: translateY(0) scale(1); opacity: 1; }
-    69% { transform: translateY(-5px) scale(1.03); opacity: 0.12; }
-    77% { transform: translateY(0) scale(1.16); opacity: 1; }
-    88%, 100% { transform: translateY(0) scale(1); opacity: 1; }
   }
 
   .hero__title {
