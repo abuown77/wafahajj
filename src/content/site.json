@@ -333,7 +333,8 @@
         { "q": "How do I get proof the Umrah was actually performed?", "a": "You receive an HD video in which your loved one's name is spoken aloud as the intention, along with a digital certificate of completion — usually within days, sent to you directly." },
         { "q": "Do I receive a certificate?", "a": "Yes — a personalized digital certificate naming the person the Umrah was performed for, alongside the video proof." },
         { "q": "Is Hajj Badal also available, and how much?", "a": "Yes. Hajj Badal (the pilgrimage on behalf of a deceased person) is $1,990, all-inclusive and fully documented. Umrah Badal is $199 and available all year round." },
-        { "q": "Can a dua be made at the Kaaba in my loved one's name?", "a": "Yes. The intention is pronounced in their name, and dua is made for them during the rites — captured in the video you receive." }
+        { "q": "Can a dua be made at the Kaaba in my loved one's name?", "a": "Yes. The intention is pronounced in their name, and dua is made for them during the rites — captured in the video you receive." },
+        { "q": "Why is there no photo or video of the founder?", "a": "We keep the focus on your loved one's Umrah, not on us — our team works quietly from Makkah. What matters is what you can actually verify: the performer, the video proof, and the certificate that arrive with every order." }
       ],
       "ar": [
         { "q": "هل تجوز العمرة عن الوالد المتوفّى؟", "a": "نعم، وهي ثابتةٌ بالسنّة — أمر النبيُّ ﷺ رجلاً أن يحجّ ويعتمر عن أبيه، وألحق العلماءُ الأمَّ بذلك." },
@@ -348,7 +349,8 @@
         { "q": "كيف أحصل على إثبات أنّ العمرة أُدّيت فعلاً؟", "a": "يصلك فيديو عالي الجودة يُنطق فيه اسم فقيدك جهراً عند النية، مع شهادة رقمية بإتمامها — عادةً خلال أيام، تُرسَل إليك مباشرة." },
         { "q": "هل أحصل على شهادة؟", "a": "نعم — شهادة رقمية باسم مَن أُدّيت العمرة عنه، إلى جانب فيديو الإثبات." },
         { "q": "هل حج البدل متاح أيضاً، وكم سعره؟", "a": "نعم. حج البدل (الحج عن متوفّى) سعره $1,990 شاملاً وموثَّقاً بالكامل. وعمرة البدل $199 متاحة على مدار العام." },
-        { "q": "هل يُدعى للفقيد عند الكعبة باسمه؟", "a": "نعم. تُنطق النية باسمه، ويُدعى له أثناء النُّسك — ويُوثَّق ذلك في الفيديو الذي يصلك." }
+        { "q": "هل يُدعى للفقيد عند الكعبة باسمه؟", "a": "نعم. تُنطق النية باسمه، ويُدعى له أثناء النُّسك — ويُوثَّق ذلك في الفيديو الذي يصلك." },
+        { "q": "لماذا لا توجد صورة أو فيديو للمؤسس؟", "a": "نُبقي التركيز على عمرة فقيدك، لا علينا — يعمل فريقنا بهدوء من مكة المكرمة. ما يهمّ فعلاً هو ما يمكنك التحقق منه: المنفّذ، وفيديو الإثبات، والشهادة التي تصلك مع كل طلب." }
       ],
       "sv": [
         { "q": "Är Umrah på en avliden förälders vägnar tillåten?", "a": "Ja. Den är grundad i Sunnah — Profeten ﷺ uppmanade en man att utföra Hajj och Umrah för sin far, och de lärde tillämpar detsamma på modern." },
@@ -363,7 +365,8 @@
         { "q": "Hur får jag bevis på att Umrah verkligen utfördes?", "a": "Du får en HD-video där din anhörigs namn uttalas högt som avsikt, tillsammans med ett digitalt intyg om fullbordan — vanligtvis inom några dagar, skickat direkt till dig." },
         { "q": "Får jag ett intyg?", "a": "Ja — ett personligt digitalt intyg som namnger personen som Umrah utfördes för, tillsammans med videobeviset." },
         { "q": "Finns Hajj Badal också, och vad kostar det?", "a": "Ja. Hajj Badal (vallfärden för en avliden) kostar 1 990 USD, allt inkluderat och fullt dokumenterat. Umrah Badal kostar 199 USD och är tillgänglig året runt." },
-        { "q": "Kan en dua göras vid Kaba i min anhörigs namn?", "a": "Ja. Avsikten uttalas i deras namn, och dua görs för dem under riterna — fångat i videon du får." }
+        { "q": "Kan en dua göras vid Kaba i min anhörigs namn?", "a": "Ja. Avsikten uttalas i deras namn, och dua görs för dem under riterna — fångat i videon du får." },
+        { "q": "Varför finns det ingen bild eller video på grundaren?", "a": "Vi håller fokus på din anhörigas Umrah, inte på oss — vårt team arbetar i det tysta från Mecka. Det som räknas är det du faktiskt kan verifiera: utföraren, videobeviset och intyget som följer med varje beställning." }
       ],
       "nb": [
         { "q": "Er Umrah på vegne av en avdød forelder tillatt?", "a": "Ja. Det er grunnfestet i Sunnah — Profeten ﷺ ba en mann utføre Hajj og Umrah for sin far, og de lærde anvender det samme på moren." },
@@ -378,7 +381,8 @@
         { "q": "Hvordan får jeg bevis på at Umrah virkelig ble utført?", "a": "Du mottar en HD-video der din kjæres navn uttales høyt som intensjon, sammen med et digitalt sertifikat på fullføring — vanligvis innen få dager, sendt direkte til deg." },
         { "q": "Får jeg et sertifikat?", "a": "Ja — et personlig digitalt sertifikat som navngir personen Umrah ble utført for, sammen med videobeviset." },
         { "q": "Er Hajj Badal også tilgjengelig, og hva koster det?", "a": "Ja. Hajj Badal (pilegrimsferden for en avdød) koster 1 990 USD, alt inkludert og fullt dokumentert. Umrah Badal koster 199 USD og er tilgjengelig hele året." },
-        { "q": "Kan en dua gjøres ved Kaba i min kjæres navn?", "a": "Ja. Intensjonen uttales i deres navn, og dua gjøres for dem under ritene — fanget i videoen du mottar." }
+        { "q": "Kan en dua gjøres ved Kaba i min kjæres navn?", "a": "Ja. Intensjonen uttales i deres navn, og dua gjøres for dem under ritene — fanget i videoen du mottar." },
+        { "q": "Hvorfor er det ikke noe bilde eller video av grunnleggeren?", "a": "Vi holder fokus på din kjæres Umrah, ikke på oss — teamet vårt jobber stille fra Mekka. Det som teller er det du faktisk kan verifisere: utføreren, videobeviset og sertifikatet som følger med hver bestilling." }
       ]
     }
   },

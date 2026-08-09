@@ -168,6 +168,14 @@ import { CHECKOUT, ORDERS } from '@config/site';
         </span>
       </p>
 
+      <p class="register__secure">
+        <span aria-hidden="true">🔒</span>
+        <span data-lang="en">Secure card payment via Fourthwall — a trusted US payment platform.</span>
+        <span data-lang="ar">دفعٌ آمنٌ بالبطاقة عبر Fourthwall — منصة دفع أمريكية موثوقة.</span>
+        <span data-lang="sv">Säker kortbetalning via Fourthwall — en betrodd amerikansk betalningsplattform.</span>
+        <span data-lang="nb">Sikker kortbetaling via Fourthwall — en pålitelig amerikansk betalingsplattform.</span>
+      </p>
+
       <button type="submit" class="btn btn--gold register__submit">
         <span data-lang="en">Send the request</span>
         <span data-lang="ar">أرسل الطلب</span>
@@ -379,6 +387,18 @@ import { CHECKOUT, ORDERS } from '@config/site';
     color: var(--c-secondary);
   }
   html[lang="ar"] .register__guarantee-text { font-family: var(--ff-arabic); }
+
+  .register__secure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: var(--s-2) 0 0;
+    font-size: var(--fs-xs);
+    color: var(--c-text-soft);
+    text-align: center;
+  }
+  html[lang="ar"] .register__secure { font-family: var(--ff-arabic); }
 
   .register__done {
     max-width: 560px;
