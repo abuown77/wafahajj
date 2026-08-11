@@ -176,6 +176,16 @@ import { CHECKOUT, ORDERS } from '@config/site';
         <span data-lang="nb">Sikker kortbetaling via Fourthwall — en pålitelig amerikansk betalingsplattform.</span>
       </p>
 
+      {/* Shown only when validation blocks the submit. Without it the button
+          appears dead: novalidate suppresses the browser's own bubbles, so a
+          visitor who misses the Terms tick taps and sees nothing happen. */}
+      <p class="register__error" id="register-error" role="alert" hidden>
+        <span data-lang="en">Please complete the highlighted fields above, including agreeing to the Terms.</span>
+        <span data-lang="ar">يُرجى إكمال الحقول المظلَّلة أعلاه، والموافقة على شروط الخدمة.</span>
+        <span data-lang="sv">Fyll i de markerade fälten ovan och godkänn användarvillkoren.</span>
+        <span data-lang="nb">Fyll ut de markerte feltene ovenfor, og godta vilkårene.</span>
+      </p>
+
       <button type="submit" class="btn btn--gold register__submit">
         <span data-lang="en">Send the request</span>
         <span data-lang="ar">أرسل الطلب</span>
@@ -355,6 +365,19 @@ import { CHECKOUT, ORDERS } from '@config/site';
   }
   html[lang="ar"] .terms__agree-text { font-family: var(--ff-arabic); }
 
+  .register__error {
+    margin: var(--s-2) 0 0;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--c-burgundy);
+    border-radius: var(--radius-md);
+    background: rgba(139, 45, 45, 0.08);
+    color: var(--c-burgundy);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    text-align: center;
+  }
+  html[lang="ar"] .register__error { font-family: var(--ff-arabic); }
+
   .register__submit { justify-content: center; margin-top: var(--s-2); }
 
   .register__privacy {
@@ -445,6 +468,10 @@ import { CHECKOUT, ORDERS } from '@config/site';
       const terms = document.getElementById('rf-terms') as HTMLInputElement;
       terms.setAttribute('aria-invalid', terms.checked ? 'false' : 'true');
       if (!terms.checked && ok) { terms.focus(); ok = false; }
+
+      // Say why nothing happened — otherwise the button reads as broken.
+      const errEl = document.getElementById('register-error') as HTMLElement | null;
+      if (errEl) errEl.hidden = ok;
       if (!ok) return;
 
       // Funnel: request completed → visitor is being sent to payment.

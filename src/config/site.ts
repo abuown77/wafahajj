@@ -23,9 +23,23 @@ export const WHATSAPP = {
   display: '+1 (234) 280-0554',
 } as const;
 
+/**
+ * Checkout handoff.
+ *
+ * Fourthwall's documented direct-checkout endpoint (/cart/checkout?products=<variantId>[:qty])
+ * lands the visitor on a checkout that ALREADY contains the item — skipping the product page
+ * and the "Add to Cart" click that used to sit between the form and paying.
+ * Verified live: 303 -> /checkout/<id> holding 1x Umrah Badal at $199 USD.
+ *
+ * The id MUST be the VARIANT uuid. Passing the product/offer id
+ * (66103955-afa1-4078-bb5e-0e5510b9f386) silently empties the cart and bounces the visitor
+ * to the shop homepage.
+ * Host must stay wafahajj-shop.fourthwall.com — the shop.wafahajj.com alias has no working
+ * certificate and fails the TLS handshake.
+ */
 export const CHECKOUT = {
   umrahUrl: import.meta.env.PUBLIC_CHECKOUT_UMRAH_URL
-    ?? 'https://wafahajj-shop.fourthwall.com/products/umrah-badal-proxy-umrah-for-a-deceased-parent',
+    ?? 'https://wafahajj-shop.fourthwall.com/cart/checkout?products=a672c107-5599-4b0d-b43a-d465e4f50174:1&currency=USD',
 } as const;
 
 /**
