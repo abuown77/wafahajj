@@ -1,0 +1,66 @@
+---
+/**
+ * Quick-jump links (Price / FAQ) inside the sticky top bar.
+ * Lets a visitor who already knows what they want skip the full
+ * scroll and land straight on pricing or the trust-building FAQ.
+ */
+---
+
+<nav class="quicknav" aria-label="Quick links">
+  <a href="#pricing" class="quicknav__link" data-quicknav="pricing">
+    <span data-lang="en">Price</span>
+    <span data-lang="ar">السعر</span>
+    <span data-lang="sv">Pris</span>
+    <span data-lang="nb">Pris</span>
+  </a>
+  <span class="quicknav__sep" aria-hidden="true">·</span>
+  <a href="#faq" class="quicknav__link" data-quicknav="faq">
+    <span data-lang="en">FAQ</span>
+    <span data-lang="ar">الأسئلة</span>
+    <span data-lang="sv">Frågor</span>
+    <span data-lang="nb">Spørsmål</span>
+  </a>
+</nav>
+
+<style is:global>
+  /* Sized to clear the sticky top bar even when it wraps to two rows
+     on narrow screens — a plain jump would otherwise land the section
+     title partly hidden underneath the bar. */
+  #pricing,
+  #faq {
+    scroll-margin-top: 140px;
+  }
+</style>
+
+<style>
+  .quicknav {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+  }
+
+  .quicknav__link {
+    font-family: var(--ff-body);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--c-secondary);
+    text-decoration: none;
+    padding: 7px 6px;
+    border-radius: var(--radius-sm);
+    transition: color 0.2s var(--ease-soft), background-color 0.2s var(--ease-soft);
+  }
+  html[lang="ar"] .quicknav__link {
+    font-family: var(--ff-arabic);
+    font-size: 0.875rem;
+  }
+  .quicknav__link:hover,
+  .quicknav__link:focus-visible {
+    color: var(--c-gold-700);
+    background: rgba(200, 155, 60, 0.12);
+  }
+
+  .quicknav__sep {
+    color: var(--c-line);
+    font-size: 0.8125rem;
+  }
+</style>

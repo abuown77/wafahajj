@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import LanguageTabs from '@components/LanguageTabs.astro';
+import QuickNav from '@components/QuickNav.astro';
 
 import Hero from '@components/sections/Hero.astro';
 import Problem from '@components/sections/Problem.astro';
@@ -17,6 +18,7 @@ import Footer from '@components/sections/Footer.astro';
 <BaseLayout>
   <div class="lang-tabs-wrapper">
     <div class="container lang-tabs-wrapper__inner">
+      <QuickNav />
       <LanguageTabs />
     </div>
   </div>
@@ -48,6 +50,9 @@ import Footer from '@components/sections/Footer.astro';
   }
   .lang-tabs-wrapper__inner {
     display: flex;
+    align-items: center;
     justify-content: center;
+    gap: var(--s-4);
+    flex-wrap: wrap;
   }
 </style>
