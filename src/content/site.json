@@ -322,6 +322,7 @@
     "items": {
       "en": [
         { "q": "Is Umrah on behalf of a deceased parent permissible?", "a": "Yes. It is established in the Sunnah — the Prophet ﷺ instructed a man to perform Hajj and Umrah on behalf of his father, and the scholars apply the same to the mother." },
+        { "q": "What is the Islamic evidence for performing Umrah on behalf of someone?", "a": "It rests on an authentic hadith narrated by Ibn Abbas (may Allah be pleased with him): a woman from the tribe of Khath'am asked the Prophet ﷺ about Hajj on behalf of her elderly father, who could no longer sit firmly on a mount. He ﷺ told her: \"Perform Hajj on his behalf.\" (Bukhari and Muslim). The majority of scholars — among them Imam an-Nawawi, Ibn Qudamah, Ibn Baz, and Ibn Uthaymeen — extended this same ruling to Umrah, by analogy with Hajj. This is the basis on which Wafa Hajj performs Umrah Badal, under direct shariah supervision." },
         { "q": "Do I need anyone's permission?", "a": "For a deceased parent, no permission is required. You may arrange the Umrah for them directly." },
         { "q": "Can I do this for someone other than my parents?", "a": "Yes. You can offer the Umrah for any deceased Muslim — a relative, a friend, a colleague, or even someone you never knew, such as a martyr. It becomes a gift and an ongoing charity in their name." },
         { "q": "Who actually performs the Umrah?", "a": "A trustworthy student of knowledge in Makkah who has already completed his own Umrah, performing it in their name under direct shariah supervision." },
@@ -338,6 +339,7 @@
       ],
       "ar": [
         { "q": "هل تجوز العمرة عن الوالد المتوفّى؟", "a": "نعم، وهي ثابتةٌ بالسنّة — أمر النبيُّ ﷺ رجلاً أن يحجّ ويعتمر عن أبيه، وألحق العلماءُ الأمَّ بذلك." },
+        { "q": "ما الدليل الشرعي على جواز أداء العمرة بالنيابة؟", "a": "الأصل في ذلك حديثٌ صحيحٌ رواه ابن عباس رضي الله عنهما: أنّ امرأةً من خَثْعَم سألت النبيَّ ﷺ عن الحجّ عن أبيها الشيخ الكبير الذي لا يستطيع الثبوت على الراحلة، فقال لها ﷺ: «حُجّي عنه». رواه البخاري ومسلم. وقاس جمهور العلماء العمرة على الحجّ في هذا الحكم، ومنهم الإمام النووي وابن قدامة وابن باز وابن عثيمين. وعلى هذا الأصل تُؤدّى عمرة البدل في وفاء الحج، تحت إشرافٍ شرعيٍّ مباشر." },
         { "q": "هل أحتاج إذناً من أحد؟", "a": "للوالد المتوفّى لا يلزم إذن. يمكنك ترتيب العمرة عنه مباشرةً." },
         { "q": "هل يمكن أن تكون عن غير الوالدين؟", "a": "نعم. يمكنك أن تُهديها لأيّ مسلمٍ متوفّى — قريبٍ، صديقٍ، زميلٍ، بل وعن شخصٍ لا تعرفه كشهيدٍ. فتكون هديةً وصدقةً جاريةً باسمه." },
         { "q": "من الذي يؤدّي العمرة فعلاً؟", "a": "طالب علمٍ ثقةٌ في مكّة قد اعتمر عن نفسه أوّلاً، يؤدّيها باسمه تحت إشرافٍ شرعيٍّ مباشر." },
@@ -354,6 +356,7 @@
       ],
       "sv": [
         { "q": "Är Umrah på en avliden förälders vägnar tillåten?", "a": "Ja. Den är grundad i Sunnah — Profeten ﷺ uppmanade en man att utföra Hajj och Umrah för sin far, och de lärde tillämpar detsamma på modern." },
+        { "q": "Vilket är det islamiska beviset för att utföra Umrah som ombud?", "a": "Grunden är en autentisk hadith berättad av Ibn Abbas (må Allah vara nöjd med honom): en kvinna från stammen Khath'am frågade Profeten ﷺ om Hajj på sin åldrige fars vägnar, som inte längre kunde sitta stadigt på ett riddjur. Han ﷺ sade till henne: \"Utför Hajj på hans vägnar.\" (Bukhari och Muslim). Majoriteten av de lärda — däribland imam an-Nawawi, Ibn Qudamah, Ibn Baz och Ibn Uthaymeen — utvidgade samma dom till att gälla Umrah, genom analogi med Hajj. Det är på denna grund som Wafa Hajj utför Umrah Badal, under direkt shariah-tillsyn." },
         { "q": "Behöver jag någons tillstånd?", "a": "För en avliden förälder krävs inget tillstånd. Du kan ordna Umrah för dem direkt." },
         { "q": "Kan jag göra detta för någon annan än mina föräldrar?", "a": "Ja. Du kan skänka denna Umrah för vilken avliden muslim som helst — en släkting, en vän, en kollega, eller till och med någon du aldrig känt, såsom en martyr. Den blir en gåva och en fortlöpande välgörenhet i deras namn." },
         { "q": "Vem utför egentligen Umrah?", "a": "En pålitlig kunskapsstudent i Makkah som redan fullbordat sin egen Umrah, och utför den i din anhörigs namn under direkt shariah-tillsyn." },
@@ -370,6 +373,7 @@
       ],
       "nb": [
         { "q": "Er Umrah på vegne av en avdød forelder tillatt?", "a": "Ja. Det er grunnfestet i Sunnah — Profeten ﷺ ba en mann utføre Hajj og Umrah for sin far, og de lærde anvender det samme på moren." },
+        { "q": "Hva er det islamske beviset for å utføre Umrah som stedfortreder?", "a": "Grunnlaget er en autentisk hadith fortalt av Ibn Abbas (måtte Allah være fornøyd med ham): en kvinne fra stammen Khath'am spurte Profeten ﷺ om Hajj på vegne av sin gamle far, som ikke lenger kunne sitte stødig på et ridedyr. Han ﷺ sa til henne: \"Utfør Hajj på hans vegne.\" (Bukhari og Muslim). Flertallet av de lærde — blant dem imam an-Nawawi, Ibn Qudamah, Ibn Baz og Ibn Uthaymeen — utvidet den samme avgjørelsen til å gjelde Umrah, ved analogi med Hajj. Det er på dette grunnlaget Wafa Hajj utfører Umrah Badal, under direkte shariah-tilsyn." },
         { "q": "Trenger jeg noens tillatelse?", "a": "For en avdød forelder kreves ingen tillatelse. Du kan ordne Umrah for dem direkte." },
         { "q": "Kan jeg gjøre dette for noen andre enn mine foreldre?", "a": "Ja. Du kan skjenke denne Umrah for hvilken som helst avdød muslim — en slektning, en venn, en kollega, eller til og med noen du aldri kjente, slik som en martyr. Den blir en gave og en vedvarende veldedighet i deres navn." },
         { "q": "Hvem utfører egentlig Umrah?", "a": "En pålitelig kunnskapsstudent i Makkah som allerede har fullført sin egen Umrah, og utfører den i din kjæres navn under direkte shariah-tilsyn." },
