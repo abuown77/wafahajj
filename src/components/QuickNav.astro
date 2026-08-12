@@ -39,11 +39,15 @@
     gap: var(--s-2);
   }
 
+  /* Text sits directly on the sticky bar's dark-green fill (no light
+     pill behind it, unlike the language tabs) — must use the same
+     gold used for text-on-dark-green elsewhere on the site (Hero.astro),
+     not a green-on-green color, or it becomes invisible. */
   .quicknav__link {
     font-family: var(--ff-body);
     font-size: 0.8125rem;
-    font-weight: 500;
-    color: var(--c-secondary);
+    font-weight: 600;
+    color: var(--c-gold-300);
     text-decoration: none;
     padding: 7px 6px;
     border-radius: var(--radius-sm);
@@ -55,12 +59,12 @@
   }
   .quicknav__link:hover,
   .quicknav__link:focus-visible {
-    color: var(--c-gold-700);
-    background: rgba(200, 155, 60, 0.12);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
   }
 
   .quicknav__sep {
-    color: var(--c-line);
+    color: rgba(245, 241, 232, 0.5);
     font-size: 0.8125rem;
   }
 </style>
