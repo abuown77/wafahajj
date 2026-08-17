@@ -1,7 +1,8 @@
 // Usage: node tools/load-week.mjs week.json
 // week.json: [{ "date":"2026-06-20", "caption":"...", "media":"D:/.../post2.mp4", "type":"video" }, ...]
-import { readFileSync } from "node:fs";
-import { basename } from "node:path";
+import { readFileSync, writeFileSync, unlinkSync } from "node:fs";
+import { basename, join } from "node:path";
+import { tmpdir } from "node:os";
 import { execFileSync } from "node:child_process";
 
 const items = JSON.parse(readFileSync(process.argv[2], "utf8"));
@@ -15,7 +16,12 @@ for (const it of items) {
     execFileSync("npx", ["wrangler", "r2", "object", "put", `wafa-fb-media/${key}`, "--file", it.media], { stdio: "inherit", shell: true });
     mediaUrl = `${R2_PUBLIC}/${encodeURIComponent(key)}`;
   }
+  // Written to a .sql file (not passed as an inline --command) because multi-line
+  // captions with em-dashes break Windows shell argument parsing.
   const sql = `INSERT INTO posts (scheduled_date, caption, media_url, media_type) VALUES ('${it.date}', '${it.caption.replace(/'/g, "''")}', '${mediaUrl}', '${it.type}');`;
-  execFileSync("npx", ["wrangler", "d1", "execute", "wafa-fb-publisher", "--remote", "--command", sql], { stdio: "inherit", shell: true });
+  const sqlFile = join(tmpdir(), `wafa-fb-post-${it.date}.sql`);
+  writeFileSync(sqlFile, sql, "utf8");
+  execFileSync("npx", ["wrangler", "d1", "execute", "wafa-fb-publisher", "--remote", "--file", sqlFile], { stdio: "inherit", shell: true });
+  unlinkSync(sqlFile);
   console.log(`Queued ${it.date}: ${it.caption.slice(0, 40)}...`);
 }
